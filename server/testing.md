@@ -1,7 +1,7 @@
 Testing with [Ginkgo](https://github.com/onsi/ginkgo)
 -----------------------------------------------------
 
-We user the BDD testing framework [Ginkgo](https://github.com/onsi/ginkgo), with the preferred patter match [Gomega](https://github.com/onsi/gomega).
+We user the BDD testing framework [Ginkgo](https://github.com/onsi/ginkgo), with the preferred pattern matcher [Gomega](https://github.com/onsi/gomega).
 
 The [Ginkgo documentation](http://onsi.github.io/ginkgo/) is extremely clear and helpful. We only include highlights here.
 
@@ -55,7 +55,7 @@ ginkgo watch # watch for changes, this subcommand takes almost all flags
 On Dot Imports
 --------------
 
-Adding a dot before an import statement in go as such:
+Adding a dot before an import statement in go, such as:
 
 ```go
 import (
@@ -66,9 +66,9 @@ import (
 )
 ```
 
-Will import that specified package at the top level namespace, namely anything you would traditionally qualify with ginkgo.<Func> you may now simple refer to as <Func>. This is not idiomatic Go and elos does not ordinarily condone dot imports. However, the alternative, to define every helper and matcher is verbose and, we feel, _less clear_.
+Will import that specified package at the top level namespace. Anything you would otherwise qualify with ginkgo.Func you may now simple refer to as Func. This is not idiomatic Go and elos does not ordinarily condone dot imports. But to define every helper and matcher is verbose ultimately _less clear_.
 
-Note: Go let's us define a <pacakage>_test package along side our package, allowing us to encapsulate testing logic separately from the package logic. This is the preferred method of testing. Dot imports are the conventional manner of importing the package you wish to test. e.g.:
+Note: Go let's us define a <package>_test package along side our package, allowing us to encapsulate testing logic separately from the package logic. Dot imports are the conventional method of importing the package you wish to test:
 
 ```go
 package util_test
