@@ -1,7 +1,7 @@
 Testing with [Ginkgo](https://github.com/onsi/ginkgo)
 -----------------------------------------------------
 
-We user the BDD testing framework [Ginkgo](https://github.com/onsi/ginkgo), with the preferred pattern matcher [Gomega](https://github.com/onsi/gomega).
+We use the BDD testing framework [Ginkgo](https://github.com/onsi/ginkgo), with the preferred pattern matcher [Gomega](https://github.com/onsi/gomega).
 
 The [Ginkgo documentation](http://onsi.github.io/ginkgo/) is extremely clear and helpful. We only include highlights here.
 
