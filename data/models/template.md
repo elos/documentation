@@ -1,7 +1,9 @@
 Model Name
 ----------
 
-Kind: json_type
+| Kind   | Concerns
+| ------ | ----------|
+| json_type  |  |
 
 #### Fields
 | Field         | JSON          | Type          | Access  |
