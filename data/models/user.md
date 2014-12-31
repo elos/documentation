@@ -1,7 +1,9 @@
 User
 ----
 
-Kind: user
+| Kind   | Concerns   |
+| ------ | ---------- |
+| user   | itself     |
 
 #### Fields
 | Field         | JSON          | Type          | Access    |
