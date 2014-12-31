@@ -2,6 +2,7 @@ Event
 -----
 
 Kind: event
+Concerns: [user](https://github.com/elos/documentation/blob/master/data/models/user.md)
 
 #### Fields
 | Field         | JSON          | Type          | Access    |
