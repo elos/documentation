@@ -9,6 +9,10 @@ Once you ssh into the server. wget setup.sh, which is in the same folder of this
 wget https://raw.githubusercontent.com/elos/documentation/master/server/setup.sh
 chmod +x setup.sh
 ./setup.sh
+source /root/.gvm/scripts/gvm
+export GOPATH=~/
+cd src/github.com/elos/server
+go run server.go
 ```
 
 ##### Setup.sh
