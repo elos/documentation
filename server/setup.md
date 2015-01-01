@@ -5,8 +5,11 @@ The elos go server should be run on an Ubuntu 14.04 x64 system. Ubuntu does not 
 
 Once you ssh into the server. wget setup.sh, which is in the same folder of this git repo.
 
+```bash
+wget https://raw.githubusercontent.com/elos/documentation/master/server/setup.sh
 chmod +x setup.sh
 ./setup.sh
+```
 
 ##### Setup.sh
 
