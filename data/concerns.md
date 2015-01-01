@@ -1,8 +1,12 @@
 Concerns
 --------
 
-Concerns are elos' method of data synchronization. A models conerns are those other models that care about this models update. A concern is often a model that also changes as a result of this change, or a model that would be interested in this change. e.g., an event changes its name, the event has concerns, in this case only it's owner user. This makes sense, every client managing data for the user would benefit from learning of the event's new updated name.
+Each model in elos has concerns. The concerns of a model is a list id of the users who care about this model being updated. Concerns are the primary means of managing relevance to limit the need to propogate data across the distributed clients.
 
-### For use in the Hub
+A concern is the model whose data depends on the changing model in question
 
-The main elos hub(need to add link) uses conerns to manage model notifications. The hub listens to a channel from the database manager for every updated model. When it recieves a model over this channel (meaning the model has been updated and persisted) the hub looks up the models concerns and notifies those concerns.
+e.g., An event changes its name. The event's concerns consist only of the owner user. Every client managing data for the user would benefit from learning of the event's new updated name.
+
+### For use in the Hub(link needed)
+
+Elos' hub uses conerns to manage model notifications. The hub listens to a channel of every updated model. When it recieves a model over this channel (implying the model has been updated and persisted) the hub inspects the model's concerns and notifies those concerned.
