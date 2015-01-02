@@ -45,7 +45,7 @@ Useful Commands
 
 ```bash
 ginkgo watch # watch for changes, this subcommand takes almost all flags
-# [-r] recursively throughout directory
+# [-r] recursively throughout sub-directories
 # [depth=1] depth of dependency tree to watch, default: 1
 # [-notify] triggers desktop notifications
 # [-p] run tests in parallel
@@ -66,9 +66,9 @@ import (
 )
 ```
 
-Will import that specified package at the top level namespace. Anything you would otherwise qualify with ginkgo.Func you may now simple refer to as Func. This is not idiomatic Go and elos does not ordinarily condone dot imports. But to define every helper and matcher is verbose ultimately _less clear_.
+Will import that specified package at the top level namespace. Anything you would otherwise qualify with ginkgo.Func you may now simple refer to as Func. This is not idiomatic Go and elos does not ordinarily condone dot imports. But to define every helper and matcher is verbose and ultimately _less clear_.
 
-Note: Go let's us define a <package>_test package along side our package, allowing us to encapsulate testing logic separately from the package logic. Dot imports are the conventional method of importing the package you wish to test:
+Note: Go let's us define a package_test package along side our package, allowing us to encapsulate testing logic separately from the package logic. Dot imports are the conventional method of importing the package you wish to test:
 
 ```go
 package util_test
