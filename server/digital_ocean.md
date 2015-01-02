@@ -5,4 +5,6 @@ Elos should run on an Ubuntu 14.04 x64 machine. Always set up with the elos_rsa 
 
 It should take ~42 seconds to create a mini instance.
 
+```bash
 ssh -i ~/.ssh/elos_rsa root@[ip]
+```
