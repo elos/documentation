@@ -1,7 +1,7 @@
 Concerns
 --------
 
-Each model in elos has concerns. The concerns of a model is a id list containing the users who care about this model being updated. Concerns are the primary means of managing which client nodes receive updated data. Concern govern this propogation of data.
+Each model in elos has concerns. A model's "concerns" is a list of IDs of the users interested in this models creation, mutation or deleteion. Concerns are the primary means of managing which client nodes receive updated data. Concerns govern the [transfer propogation](link needed) of data.
 
 A concern is the model who depends on the changing model in question
 
