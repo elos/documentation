@@ -9,7 +9,7 @@ User
 | Field         | JSON          | Type          | Access    |
 | ------------- | ------------- | ------------- | --------- |
 | Id            | id            | bson.ObjectId | Public    |
-| CreatedAt     | created_at    | ISO Date      | Personal  |
+| CreatedAt     | created_at    | ISO DateTime  | Personal  |
 | Name          | name          | String        | Personal  |
 | Key           | key           | String        | Password  |
 | EventIds      | event_ids     | []Event       | Personal  |
