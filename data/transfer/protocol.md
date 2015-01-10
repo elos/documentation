@@ -190,7 +190,7 @@ A sync is the clients method of notifying the server it has been offline, and wo
 
 ##### Server
 
-The server responds with POSTs and DELETEs as necessary.
+The server responds with posts and deletes as necessary.
 
 #### Echo
 
