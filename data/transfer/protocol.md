@@ -161,7 +161,7 @@ A sync is the clients method of notifying the server it has been offline, and wo
 ```json
 {
     "action": "SYNC",
-    data: {
+    "data": {
         "last_communication": "2014-7-13-101200",
     }
 }
