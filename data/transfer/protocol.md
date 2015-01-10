@@ -90,15 +90,36 @@ Delete is issued to remove a record.
     "action": "DELETE",
     "data": {
       "event": {
-        "id": "kaljslfjk1"
+        "id": "kaljslfjk1",
+         "name": "This is my new event",
+         "start_time": "2014-7-13-101200",
+         "end_time": "2014-7-13-101200",
+         "user_id": "asdfk1kl1"
     }
   }
 }
 ```
 
+All the model information is necessary, under the conditions that the server may be unable to actually reach the database to determine why the model could not be deleted. In that case, the best option is simply to return the information to the client.
+
 ##### Server:
 
 ###### Success:
+
+```json
+{
+    "action": "DELETE",
+    "data": {
+        "event": {
+          "id": "kaljslfjk1",
+          "name": "This is my new event",
+          "start_time": "2014-7-13-101200",
+          "end_time": "2014-7-13-101200",
+          "user_id": "asdfk1kl1"
+        }
+    }
+}
+```
 
 No response is required.
 
