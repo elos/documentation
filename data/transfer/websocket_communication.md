@@ -24,3 +24,5 @@ When the need for data arrives, query the server, but move forward synchronously
 The subsequent server POST action with the data should fill in the null (loading) values of the records instantiated on query.
 
 In practice this should prove very quick, as the UI renders along with the servers response over the socket.
+
+See [protocol](https://github.com/elos/documentation/blob/master/data/transfer/protocol.md) for the official spec.
