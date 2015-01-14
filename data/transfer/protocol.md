@@ -7,7 +7,7 @@ The transfer protocol is JSON. The general form is:
 {
     "action": "<action>",
     "data": {
-        "<kind>":{
+        "<kind>": {
             "some": "data"
         }
     }
