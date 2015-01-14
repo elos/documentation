@@ -1,16 +1,16 @@
 Protocol
 --------
 
-The transfer protocol is purely JSON. The general form is:
+The transfer protocol is JSON. The general form is:
 
 ```json
 {
-  "action": "<action>",
-  "data": {
-    "<kind>":{
-      "some":"data"
+    "action": "<action>",
+    "data": {
+        "<kind>":{
+            "some": "data"
+        }
     }
-  }
 }
 ```
 
@@ -32,16 +32,16 @@ A post is issued to create or update a record. Both the server and clients issue
 
 ```json
 {
-  "action": "POST",
-  "data": {
-    "event": {
-      "id": "lkajdsf12",
-      "name": "This is my new event",
-      "start_time": "2014-7-13-101200",
-      "end_time": "2014-7-13-101200",
-      "user_id": "asdfk1kl1"
+    "action": "POST",
+    "data": {
+        "event": {
+            "id": "lkajdsf12",
+            "name": "This is my new event",
+            "start_time": "2014-7-13-101200",
+            "end_time": "2014-7-13-101200",
+            "user_id": "asdfk1kl1"
+        }
     }
-  }
 }
 ```
 
@@ -50,31 +50,31 @@ A post is issued to create or update a record. Both the server and clients issue
 ###### Success:
 
 ```json
-  {
+{
     "action": "POST",
     "data": {
-      "event": {
-        "id": "lkajdsf12",
-        "name": "This is my new event",
-        "start_time": "2014-7-13-101200",
-        "end_time": "2014-7-13-101200",
-        "user_id": "asdfk1kl1"
+        "event": {
+            "id": "lkajdsf12",
+            "name": "This is my new event",
+            "start_time": "2014-7-13-101200",
+            "end_time": "2014-7-13-101200",
+            "user_id": "asdfk1kl1"
+        }
     }
-  }
 }
 ```
 
 ###### Failure:
 
 ```json
-    {
-        "action": "DELETE",
-        "data": {
-            "event": {
-                "id": "lkajdsf12",
-            }
+{
+    "action": "DELETE",
+    "data": {
+        "event": {
+            "id": "lkajdsf12",
         }
     }
+}
 ```
 
 Notice that the client is able and permitted to populate the id. The server's response is confirmation can be viewed as a decision and action on whether the data should stand.
@@ -86,17 +86,17 @@ Delete is issued to remove a record.
 ##### Client
 
 ```json
-  {
+{
     "action": "DELETE",
     "data": {
-      "event": {
-        "id": "kaljslfjk1",
-         "name": "This is my new event",
-         "start_time": "2014-7-13-101200",
-         "end_time": "2014-7-13-101200",
-         "user_id": "asdfk1kl1"
+        "event": {
+            "id": "kaljslfjk1",
+            "name": "This is my new event",
+            "start_time": "2014-7-13-101200",
+            "end_time": "2014-7-13-101200",
+            "user_id": "asdfk1kl1"
+        }
     }
-  }
 }
 ```
 
@@ -121,55 +121,51 @@ All the model information is necessary, under the conditions that the server may
 }
 ```
 
-No response is required.
-
 ###### Failure:
 
 ```json
 {
-  "action": "POST",
-  "data": {
-    "event": {
-      "id": "kaljslfjk1",
-      "name": "This is my new event",
-      "start_time": "2014-7-13-101200",
-      "end_time": "2014-7-13-101200",
-      "user_id": "asdfk1kl1"
+    "action": "POST",
+    "data": {
+        "event": {
+            "id": "kaljslfjk1",
+            "name": "This is my new event",
+            "start_time": "2014-7-13-101200",
+            "end_time": "2014-7-13-101200",
+            "user_id": "asdfk1kl1"
+        }
     }
-  }
 }
 ```
-
-
 #### GET
 
 ##### Client:
 
 ```json
 {
-  "action": "GET",
-  "data": {
-    "event": {
-      "id": "alksdj1"
+    "action": "GET",
+    "data": {
+        "event": {
+            "id": "alksdj1"
+        }
     }
-  }
 }
-  ```
+```
 
 ##### Server:
 
 ```json
 {
-  "action": "POST",
-  "data": {
-    "event": {
-      "id": "alksdfj1",
-      "name": "This is the event",
-      "start_time": "2014-7-13-101200",
-      "end_time": "2014-7-13-101200",
-      "user_id": "asdfk1kl1"
+    "action": "POST",
+    "data": {
+        "event": {
+            "id": "alksdfj1",
+            "name": "This is the event",
+            "start_time": "2014-7-13-101200",
+            "end_time": "2014-7-13-101200",
+            "user_id": "asdfk1kl1"
+        }
     }
-  }
 }
 ```
 
@@ -195,6 +191,3 @@ The server responds with posts and deletes as necessary.
 #### Echo
 
 Echo is used for testing. The server will simply respond with the same payload it was sent.
-
-
-
