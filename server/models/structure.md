@@ -1,7 +1,7 @@
 Structure
 ---------
 
-The elos model structure is, at first, non-intuitive. The power of interfaces, is, at first, blinding.
+The elos model structure is, at first, non-intuitive.
 
 There is an elos models package, which only manages the serialization of models. It is very general and abstract and knows nothing of the individual models relationships.
 
