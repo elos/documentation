@@ -1,9 +1,9 @@
 Event
 -----
 
-| Kind   | Concerns
-| ------ | ----------|
-| event  | [user](https://github.com/elos/documentation/blob/master/data/models/user.md) |
+| Kind   | Concerns        |
+| ------ | --------------- |
+| event  | [user](user.md) |
 
 #### Fields
 | Field         | JSON          | Type          | Access    |
