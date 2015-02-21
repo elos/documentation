@@ -5,9 +5,9 @@ Model Name
 | ---------- | ---------- |
 | json_type  |            |
 
-#### Fields
-| Field         | JSON          | Type          | Access  |
+#### Structure
+| Attributes    | JSON Key      | Type          | Access  |
 | ------------- | ------------- | ------------- | ------- |
-| [Field name]  | [JSON string] | [data kind]   | privacy |
+| [attr name]   | [JSON string] | [data kind]   | privacy |
 
 [short description]

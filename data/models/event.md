@@ -5,14 +5,15 @@ Event
 | ------ | ----------|
 | event  | [user](https://github.com/elos/documentation/blob/master/data/models/user.md) |
 
-#### Fields
-| Field         | JSON          | Type          | Access    |
-| ------------- | ------------- | ------------- | --------- |
-| Id            | id            | bson.ObjectId | Public    |
-| CreatedAt     | created_at    | ISO DateTime  | Personal  |
-| Name          | name          | String        | Personal  |
-| StartTime     | start_time    | ISO DateTime  | Personal  |
-| EndTime       | end_time      | ISO DateTime  | Personal  |
-| UserId        | user_id       | bson.ObjectId | Personal  |
+#### Structure
+| Attribute     | JSON Key      | Type               | Access    |
+| ------------- | ------------- | ------------------ | --------- |
+| ID            | id            | bson.ObjectId      | Public    |
+| CreatedAt     | created_at    | RFC 3339 DateTime  | Personal  |
+| UpdatedAt     | updated_at    | RFC 3339 DateTime  | Personal  |
+| Name          | name          | String             | Personal  |
+| StartTime     | start_time    | RFC 3339 DateTime  | Personal  |
+| EndTime       | end_time      | RFC 3339 DateTime  | Personal  |
+| UserID        | user_id       | bson.ObjectId      | Personal  |
 
 The event is the primary means of scheduling in elos. A user has many events. Each event belongs to a user and has a start and ending time.
