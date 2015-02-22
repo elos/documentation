@@ -12,12 +12,18 @@ A user has [events](event.md), [tasks](task.md), and [routines](routine.md). Add
 | user   | itself     |
 
 ### Transfer Structure
-| Attribute     | JSON Key      | Type              | Access    |
-| ------------- | ------------- | ----------------- | --------- |
-| ID            | id            | bson.ObjectId     | Public    |
-| CreatedAt     | created_at    | RFC 3339 DateTime | Personal  |
-| UpdatedAt     | updated_at    | RFC 3339 DateTime | Personal  |
-| Name          | name          | String            | Personal  |
-| Key           | key           | String            | Password  |
-| EventIDs      | event_ids     | []bson.ObjectId   | Personal  |
-
+| Attribute       | JSON Key          | Type              | Access    |
+| --------------- | ----------------- | ----------------- | --------- |
+| ID              | id                | bson.ObjectId     | Public    |
+| CreatedAt       | created_at        | RFC 3339 DateTime | Personal  |
+| UpdatedAt       | updated_at        | RFC 3339 DateTime | Personal  |
+| Name            | name              | String            | Personal  |
+| Key             | key               | String            | Password  |
+| EventIDs        | event_ids         | []bson.ObjectId   | Personal  |
+| TaskIDs         | task_ids          | []bson.ObjectId   | Personal  |
+| RoutineIDs      | routine_ids       | []bson.ObjectId   | Personal  |
+| ActionIDs       | action_ids        | []bson.ObjectId   | Personal  |
+| CalendarID      | calendar          | bson.ObjectId     | Personal  |
+| CurrentActionID | current_action_id | bson.ObjectId     | Personal  |
+| ActionableKind  | actionable_kind   | string            | Personal  |
+| ActionableID    | actionable_id     | bson.ObjectId     | Personal  |
