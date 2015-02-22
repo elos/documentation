@@ -1,11 +1,13 @@
 Event
 -----
+The event is the primary means of scheduling in elos. A user has many events. Each event belongs to a user and has a start and ending time.
 
+### Implementation
 | Kind   | Concerns        |
 | ------ | --------------- |
 | event  | [user](user.md) |
 
-#### Structure
+### Transfer Structure
 | Attribute     | JSON Key      | Type               | Access    |
 | ------------- | ------------- | ------------------ | --------- |
 | ID            | id            | bson.ObjectId      | Public    |
@@ -15,5 +17,3 @@ Event
 | StartTime     | start_time    | RFC 3339 DateTime  | Personal  |
 | EndTime       | end_time      | RFC 3339 DateTime  | Personal  |
 | UserID        | user_id       | bson.ObjectId      | Personal  |
-
-The event is the primary means of scheduling in elos. A user has many events. Each event belongs to a user and has a start and ending time.
