@@ -7,7 +7,8 @@
 | [Event](event.md)       | [event package](https://github.com/elos/models/tree/master/event)        |
 | [Fixture](fixture.md)   | [fixture package](https://github.com/elos/models/tree/master/fixture)    |
 | [Routine](routine.md)   | [routine package](https://github.com/elos/models/tree/master/routine)    |
-| [Schedule](schedule.md) | |
+| [Schedule](schedule.md) | [schedule package](https://github.com/elos/models/tree/master/schedule)  |
+| [Task](task.md)         | [task package](https://github.com/elos/models/tree/master/task)          |
 | [User](user.md)         | [user package](https://github.com/elos/models/tree/master/user)          |
 
 
