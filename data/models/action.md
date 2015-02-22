@@ -1,9 +1,9 @@
 Action
 ------
 
-An action is what anything a user can currently be doing. An action should not be confused with an event, which is anything that can occur to a user. For example, you can imagine synchronous events - a user can be studying, and the library. The events would be being at the library and studying, but that action would only ever be studying. Perhaps "going to the library" would be another.
+An action is something a user can be doing. An action should not be confused with an [event](event.md), which is anything that can happen to a user. For example, you can imagine synchronous events - a user can be studying, and at the library. The events could me split, studying would mirror being at the library, but the action would only ever be studying. Perhaps "walking to the library" would be another.
 
-An action is owned by a user, has a name, a start time and an end time, a boolean field on wheterh it has been completed, and an associated actionable -> which "created" the task.
+An action is owned by a [user](user.md), has a name, a start time and an end time, a boolean field, completed, and an associated actionable -> which "created" the task.
 
 
 ### Implementation
