@@ -1,14 +1,14 @@
 Calendar
 -------
 
-A calendar the central data structure for a user's planned, future "events." In elos, an event or appointment that has been planned for the future is known as a [fixture](fixture.md). Fixtures are arranged in [schedules](schedule.md), which are arranged in a calendar.
+A calendar is the central data structure for a user's planned, future "events." In elos, an event or appointment that has been planned for the future is known as a [fixture](fixture.md). Fixtures are arranged in [schedules](schedule.md), which are arranged in a calendar.
 
 Elos's calendar representation keeps track of several schedules:
  - There is a base schedule, for all days - the default schedule for _every_ day
- - There is a "day" schedule for Monday-Sunday days - the default schedule for _said_ day
- - There are "custom" schedule overrides.
+ - There is a "day" schedule, for each day Monday-Sunday - the default schedule for _said_ day
+ - There are date-specific unique schedule additions and overrides
 
-Note that the calendar model is the basic data structure for working with calendar data, the actual calendar resolution is implemented in an agent that is acting on behalf of a user somewhere.
+Though the calendar model is the basic data structure, the actual calendar resolution is implemented in an agent that is acting on behalf of a user.
 
 ### Implementation
 | Kind     | Concerns        |
