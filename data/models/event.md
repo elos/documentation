@@ -1,6 +1,8 @@
 Event
 -----
-The event is the primary means of scheduling in elos. A user has many events. Each event belongs to a user and has a start and ending time.
+An event records a state of or the occurance of something happening to the user. For example, "Blood Pressure High" could be an event. Likewise, "Doctor's appointment" may be another. Events should not be confused with actions, which are the directives guiding a user's course. For more on the distinction see [action](action.md). 
+
+Each event belongs to a user and has a start and ending time.
 
 ### Implementation
 | Kind   | Concerns        |
