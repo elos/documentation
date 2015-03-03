@@ -30,4 +30,4 @@ Though the calendar model is the basic data structure, the actual calendar resol
 | FridayScheduleID    | friday_schedule_id    | bson.ObjectId                       | Personal  |
 | SaturdayScheduleID  | saturday_schedule_id  | bson.ObjectId                       | Personal  |
 | SundayScheduleID    | sunday_schedule_id    | bson.ObjectId                       | Personal  |
-| ScheduleIDs         | schedules             | map[RFC 3339 DateTime]bson.ObjectId | Personal  |
+| ScheduleIDs         | schedules             | map[int]bson.ObjectId               | Personal  |
