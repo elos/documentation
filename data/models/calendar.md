@@ -8,6 +8,12 @@ Elos's calendar representation keeps track of several schedules:
  - There is a day schedule, for each day of the week - the default schedule for _said_ day
  - There are date-specific unique schedule additions and overrides
 
+Day schedule additions are stored in a map, the key values are of the following canonical format:
+
+`100 * time.MonthInteger + time.MonthDay`
+
+For example: December 31st is the integer 1231.
+
 Though the calendar model is the basic data structure, the actual calendar resolution is implemented in an agent that is acting on behalf of a user.
 
 ### Implementation
