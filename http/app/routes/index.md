@@ -1,6 +1,8 @@
 ### Index
 
-Route: /
+| Route    |
+| -------- |
+| /        |
 
 #### GET
 
