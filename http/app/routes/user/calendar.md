@@ -13,4 +13,4 @@ Main display of the user's calendar
     1. Serve calendar template
 
 ##### Access
-    User, if bad redirect to [SignIn](/http/app/routes/sign-in.md#get)
+ * User, if bad redirect to [SignIn](/http/app/routes/sign-in.md#get)
