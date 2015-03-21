@@ -8,5 +8,5 @@ The index route displays the elos landing page. Current consists of the sail ima
 ##### Action
     1. Serve the landing page
 
-#### Access
+##### Access
     Open
