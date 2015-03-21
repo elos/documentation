@@ -1,5 +1,7 @@
 ### Index
 
+Route: /
+
 #### GET
 
 ##### Description

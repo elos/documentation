@@ -4,10 +4,10 @@
 | Action      | Endpoint                          | Name                                                                      | Access                          |
 | ----------- | --------------------------------- | ------------------------------------------------------------------------- | ------------------------------- |
 | GET         | /                                 | [Index](/routes/index.md)                                                 | Open                            |
-| GET         | /sign-in                          | [SignIn](/routes/sign-in.md)                                              | Open                            |
-| POST        | /sign-in                          | [SignIn](/routes/sign-in.md)                                              | Open                            |
-| GET         | /register                         | [Register](/routes/register.md)                                           | Open                            |
-| POST        | /register                         | [Register](/routes/register.md)                                           | Open                            |
+| GET         | /sign-in                          | [SignIn](/routes/sign-in.md#get)                                          | Open                            |
+| POST        | /sign-in                          | [SignIn](/routes/sign-in.md#post)                                         | Open                            |
+| GET         | /register                         | [Register](/routes/register.md#get)                                       | Open                            |
+| POST        | /register                         | [Register](/routes/register.md#post)                                      | Open                            |
 | GET         | /user/calendar                    | [UserCalendar](/routes/user/calendar.md)                                  | User                            |
 | GET         | /user/events                      | [UserEvents](/routes/user/events.md)                                      | User                            |
 | GET         | /user/tasks                       | [UserTasks](/routes/user/tasks.md)                                        | User                            |
