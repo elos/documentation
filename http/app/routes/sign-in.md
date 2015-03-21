@@ -1,6 +1,8 @@
 ### SignIn
 
-Route: /sign-in
+| Route    |
+| -------- |
+| /sign-in |
 
 #### GET
 
