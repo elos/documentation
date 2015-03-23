@@ -10,10 +10,10 @@
 Displays the elos registration page
 
 ##### Action
-    1. Server elos registration page
+ 1. Server elos registration page
 
 ##### Access
-    Open
+ * Open
 
 #### POST
 
@@ -21,13 +21,13 @@ Displays the elos registration page
 Register a user
 
 ##### Action
-    1. Obtain name form value
-    2. If name good:
-        1. Create user with name, generated id and key
-        2. Server elos account-created page
-    3. Else:
-        1. Redirect to [Register](/http/app/routes/register.md#get)
-        2. Flash error message
+ 1. Obtain name form value
+ 2. If name good:
+    1. Create user with name, generated id and key
+    2. Server elos account-created page
+ 3. Else:
+    1. Redirect to [Register](/http/app/routes/register.md#get)
+    2. Flash error message
 
 ##### Access
-    Open
+ * Open
