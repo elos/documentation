@@ -9,6 +9,9 @@
 ##### Description
 Displays the elos sign in page. Consists of id and key fields with submit button.
 
+![Image of Authentication](/http/app/img/authentication.png)
+
+
 ##### Action
  1. Serve the sign in page
 
