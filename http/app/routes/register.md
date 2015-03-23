@@ -10,7 +10,7 @@
 Displays the elos registration page
 
 ##### Action
- 1. Server elos registration page
+ 1. Serve elos registration page
 
 ##### Access
  * Open
