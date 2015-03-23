@@ -10,10 +10,10 @@
 Displays the elos sign in page. Consists of id and key fields with submit button.
 
 ##### Action
-    1. Serve the sign in page
+ 1. Serve the sign in page
 
 ##### Access
-    Open
+ * Open
 
 #### POST
 
@@ -21,13 +21,13 @@ Displays the elos sign in page. Consists of id and key fields with submit button
 Authenticates a user
 
 ##### Action
-    1. Obtain id and key from form values
-    2. Authenticate user
-    3. If Authed:
-        1. Redirect to [UserCalendar](/http/app/routes/user/calendar.md#get)
-    4. Else:
-        1. Redirect to [SignIn](/http/app/routes/sign-in.md#get)
-        2. Flash error message
+ 1. Obtain id and key from form values
+ 2. Authenticate user
+ 3. If Authed:
+    1. Redirect to [UserCalendar](/http/app/routes/user/calendar.md#get)
+ 4. Else:
+    1. Redirect to [SignIn](/http/app/routes/sign-in.md#get)
+    2. Flash error message
 
 ##### Access
-    Open
+* Open
