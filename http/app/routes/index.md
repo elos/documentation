@@ -12,7 +12,7 @@ The index route displays the elos landing page. Currently consists of the sail i
 ![Image of Index](/http/app/img/index.png)
 
 ##### Action
-    1. Serve the landing page
+ 1. Serve the landing page
 
 ##### Access
-    Open
+ * Open
