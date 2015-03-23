@@ -9,6 +9,8 @@
 ##### Description
 Displays the elos registration page
 
+![Image of Registration](/http/app/img/registration.png)
+
 ##### Action
  1. Serve elos registration page
 
