@@ -5,12 +5,23 @@ A calendar is the central data structure for a user's planned, future "events." 
 
 Elos's calendar representation keeps track of several schedules:
  - There is a base schedule - the default schedule for _every_ day
- - There is a day schedule, for each day of the week - the default schedule for _said_ day
- - There are date-specific unique schedule additions and overrides
+ - There are weekday schedules, for each day of the week
+ - There are yearday scheduesl, for each day of the year
 
-Day schedule additions are stored in a map, the key values are of the following canonical format:
+Weekday schedules are stored:
+    {
+        "monday": <bson.ObjectId>,
+    }
 
-`100 * time.MonthInteger + time.MonthDay`
+Yearday schedules are stored:
+    {
+        "109": <bson.ObjectId>
+        "1231": <bson.ObjectId>
+    }
+
+The canonical elos representation of a year day is calculated:
+
+    `100 * time.MonthInteger + time.MonthDay`
 
 For example: December 31st is the integer 1231.
 
@@ -29,11 +40,6 @@ Though the calendar model is the basic data structure, the actual calendar resol
 | UpdatedAt           | updated_at            | RFC 3339 DateTime                   | Personal  |
 | UserID              | user_id               | bson.ObjectId                       | Personal  |
 | BaseScheduleID      | base_schedule_id      | bson.ObjectId                       | Personal  |
-| MondayScheduleID    | monday_schedule_id    | bson.ObjectId                       | Personal  |
-| TuesdayScheduleID   | tuesday_schedule_id   | bson.ObjectId                       | Personal  |
-| WednesdayScheduleID | wednesday_schedule_id | bson.ObjectId                       | Personal  |
-| ThursdayScheduleID  | thursday_schedule_id  | bson.ObjectId                       | Personal  |
-| FridayScheduleID    | friday_schedule_id    | bson.ObjectId                       | Personal  |
-| SaturdayScheduleID  | saturday_schedule_id  | bson.ObjectId                       | Personal  |
-| SundayScheduleID    | sunday_schedule_id    | bson.ObjectId                       | Personal  |
-| ScheduleIDs         | schedules             | map[int]bson.ObjectId               | Personal  |
+| WeekdaySchedules    | weekday_schedules     | map[string]bson.ObjectId            | Personal  |
+| YeardaySchedules    | yearday_shedules      | map[string]bson.ObjectId            | Personal  |
+| CurrentFixtureID    | current_fixtured_id   | bson.ObjectId                       | Personal  |
