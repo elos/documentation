@@ -6,7 +6,7 @@ A calendar is the central data structure for a user's planned, future "events." 
 Elos's calendar representation keeps track of several schedules:
  - There is a base schedule - the default schedule for _every_ day
  - There are weekday schedules, for each day of the week
- - There are yearday scheduesl, for each day of the year
+ - There are yearday schedules, for each day of the year
 
 Weekday schedules are stored:
 ```json
