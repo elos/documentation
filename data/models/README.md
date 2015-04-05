@@ -1,4 +1,4 @@
-### Models
+### Models [![GoDoc](https://godoc.org/github.com/elos/models?status.svg)](https://godoc.org/github.com/elos/models)
 
 | Docs                    | Go Implementation                                                        |
 | ----------------------- | ------------------------------------------------------------------------ |
@@ -10,8 +10,5 @@
 | [Schedule](schedule.md) | [schedule package](https://github.com/elos/models/tree/master/schedule)  |
 | [Task](task.md)         | [task package](https://github.com/elos/models/tree/master/task)          |
 | [User](user.md)         | [user package](https://github.com/elos/models/tree/master/user)          |
-
-
-[Go models package](https://github.com/elos/models)
 
 Model Doc [Template](template.md)
