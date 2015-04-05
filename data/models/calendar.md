@@ -9,15 +9,19 @@ Elos's calendar representation keeps track of several schedules:
  - There are yearday scheduesl, for each day of the year
 
 Weekday schedules are stored:
+```json
     {
-        "monday": <bson.ObjectId>,
+        "monday": "<bson.ObjectId>"
     }
+ ```
 
 Yearday schedules are stored:
+```json
     {
-        "109": <bson.ObjectId>
-        "1231": <bson.ObjectId>
+        "109": "<bson.ObjectId>",
+        "1231": "<bson.ObjectId>"
     }
+ ```
 
 The canonical elos representation of a year day is calculated:
 
