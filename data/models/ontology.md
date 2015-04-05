@@ -4,9 +4,9 @@ Ontology [![GoDoc](https://godoc.org/github.com/elos/data?status.svg)](https://g
 An ontology is the user's dynamic ontology of class definitions and object instances. A user can define classes, of which they can create instances.
 
 ### Implementation
-| Kind       | Concerns   |
-| ---------- | ---------- |
-| ontology   | user       |
+| Kind       | Concerns        |
+| ---------- | --------------- |
+| ontology   | [user](user.md) |
 
 ### Transfer Structure
 | Attribute       | JSON Key          | Type              | Access    |
