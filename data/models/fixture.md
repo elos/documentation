@@ -3,7 +3,7 @@ Fixture
 
 A fixture is a planned future event. Fixtures are composed into [schedules](schedule.md).
 
-Understanding our calendarial model is understanding the dichotomy between fixtures and [events](event.md). A fixture is something in the future, something planned, something that has not yet occured. An [event](event.md) is something that is in the past, definitely happened, and already occured. A fixture is the archetype for an [event](event.md). 
+Understanding our calendrical model is understanding the dichotomy between fixtures and [events](event.md). A fixture is something in the future, something planned, something that has not yet occured. An [event](event.md) is something that is in the past, definitely happened, and already occured. A fixture is the archetype for an [event](event.md). 
 
 For example, you may have "Math Lecture," which is a reoccuring fixture every Monday from 9-10:30. There would, in this case, only be one fixture - that of the daily [schedule](schedule.md) of Monday. But there would be several [events](event.md): there would be one for every Monday on which the user had attended the lecture.
 
