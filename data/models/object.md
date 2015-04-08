@@ -1,5 +1,4 @@
-
-Class [![GoDoc](https://godoc.org/github.com/elos/data?status.svg)](https://godoc.org/github.com/elos/models#Class)
+Object [![GoDoc](https://godoc.org/github.com/elos/data?status.svg)](https://godoc.org/github.com/elos/models#Object)
 --------
 
 An object is an instance of a [class](class.md).
