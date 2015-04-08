@@ -1,12 +1,13 @@
+
 Class [![GoDoc](https://godoc.org/github.com/elos/data?status.svg)](https://godoc.org/github.com/elos/models#Class)
 --------
 
-A class is the formal specification for a class of [objects](object.md).
+An object is an instance of a [class](class.md).
 
 ### Implementation
 | Kind       | Concerns        |
 | ---------- | --------------- |
-| class      | [user](user.md) |
+| object     | [user](user.md) |
 
 ### Transfer Structure
 | Attribute       | JSON Key          | Type                                        | Access    |
@@ -16,7 +17,7 @@ A class is the formal specification for a class of [objects](object.md).
 | UpdatedAt       | updated_at        | RFC 3339 DateTime                           | Personal  |
 | Name            | name              | string                                      | Personal  |
 | UserID          | user_id           | bson.ObjectId                               | Personal  |
-| ObjectIDs       | object_ids        | []bson.ObjectId                             | Personal  |
+| ClassID         | class_id          | bson.ObjectId                               | Personal  |
 | OntologyID      | ontology_id       | bson.ObjectId                               | Personal  |
-| Traits          | traits            | map[string][Trait](trait.md)                | Personal  |
-| Relationship    | relationships     | map[string][Relationship](relationship.md)  | Personal  |
+| Traits          | traits            | map[string]string                           | Personal  |
+| Relationship    | relationships     | map[string]mongo.IDSet                      | Personal  |
