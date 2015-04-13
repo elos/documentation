@@ -20,3 +20,16 @@ A class is the formal specification for a class of [objects](object.md).
 | OntologyID      | ontology_id       | bson.ObjectId                               | Personal  |
 | Traits          | traits            | map[string][Trait](trait.md)                | Personal  |
 | Relationship    | relationships     | map[string][Relationship](relationship.md)  | Personal  |
+
+#### Trait
+| Attribute       | JSON Key          | Type                                 |
+| --------------- | ----------------- | ------------------------------------ |
+| Name            | name              | string                               |
+| Type            | type              | string                               |
+
+#### Relationship
+| Attribute       | JSON Key          | Type                                 |
+| --------------- | ----------------- | ------------------------------------ |
+| Name            | name              | string                               |
+| Other           | other             | string                               |
+| Inverse         | inverse           | string                               |
