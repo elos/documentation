@@ -1,30 +1,31 @@
-### Register
+Register
+--------
 
 | Route     |
 | --------- |
 | /register |
 
-#### GET
+### GET
 
-##### Description
+#### Description
 Displays the elos registration page
 
 ![Image of Registration](/http/app/img/registration.png)
 
-##### Action
+#### Action
 ``` c
  1. Serve elos registration page
 ```
 
-##### Access
+#### Access
  * Open
 
-#### POST
+### POST
 
-##### Description
+#### Description
 Register a user
 
-##### Action
+#### Action
 ``` c
  1. Obtain name form value
  2. If name good:
@@ -35,5 +36,5 @@ Register a user
     2. Flash error message
 ```
 
-##### Access
+#### Access
  * Open
