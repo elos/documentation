@@ -11,6 +11,7 @@ chmod +x setup.sh
 ./setup.sh
 source /root/.gvm/scripts/gvm
 export GOPATH=~/
+
 cd src/github.com/elos/server
 go run server.go
 ```
