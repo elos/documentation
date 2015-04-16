@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Install requirements (GVM et al)
-apt-get update install htop curl git mercurial make binutils bison gcc build-essential -y
+apt-get update
+apt-get install htop curl git mercurial make binutils bison gcc build-essential --fix-missing -y
 
 # Install GVM
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
