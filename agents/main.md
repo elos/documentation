@@ -6,8 +6,11 @@ The main agent is the primary access point for all agents on elos. You can think
 The main agent represents the services for a [user](../data/models/user.md). We hope to have customizable agent specs in the future but for now we have universal defaults. The [action agent](action.md) is currently the only agent started by main.
 
 ### Life
+
+``` c
  1. Start all default agents
  2. Wait for stop signal
+```
 
 ### Spawns
  * [Action Agent](action.md)
