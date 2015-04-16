@@ -12,7 +12,9 @@ Displays the elos registration page
 ![Image of Registration](/http/app/img/registration.png)
 
 ##### Action
+``` c
  1. Serve elos registration page
+```
 
 ##### Access
  * Open
@@ -23,6 +25,7 @@ Displays the elos registration page
 Register a user
 
 ##### Action
+``` c
  1. Obtain name form value
  2. If name good:
     1. Create user with name, generated id and key
@@ -30,6 +33,7 @@ Register a user
  3. Else:
     1. Redirect to [Register](/http/app/routes/register.md#get)
     2. Flash error message
+```
 
 ##### Access
  * Open
