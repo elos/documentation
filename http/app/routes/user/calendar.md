@@ -1,18 +1,20 @@
-### UserCalendar
+UserCalendar
+------------
 
 | Route          |
 | -------------- |
 | /user/calendar |
 
-#### GET
+### GET
 
-##### Description
+#### Description
 Main display of the user's calendar
 
-##### Action
-
+#### Action
+``` c
  1. Serve calendar template
+```
 
 
-##### Access
+#### Access
  * User, if not authenticated redirect to [SignIn](/http/app/routes/sign-in.md#get)
