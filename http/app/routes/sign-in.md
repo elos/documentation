@@ -1,31 +1,32 @@
-### SignIn
+SignIn
+------
 
 | Route    |
 | -------- |
 | /sign-in |
 
-#### GET
+### GET
 
-##### Description
+#### Description
 Displays the elos sign in page. Consists of id and key fields with submit button.
 
 ![Image of Authentication](/http/app/img/authentication.png)
 
 
-##### Action
+#### Action
 ``` c
  1. Serve the sign in page
 ```
 
-##### Access
+#### Access
  * Open
 
-#### POST
+### POST
 
-##### Description
+#### Description
 Authenticates a user
 
-##### Action
+#### Action
 ``` c
  1. Obtain id and key from form values
  2. Authenticate user
@@ -36,5 +37,5 @@ Authenticates a user
     2. Flash error message
 ```
 
-##### Access
+#### Access
 * Open
