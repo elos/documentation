@@ -1,13 +1,14 @@
-### Elos HTTP Web App
+Elos HTTP Web App
+-----------------
 
-#### Routes
+### Routes
 | Action      | Endpoint                          | Name                                                                               | Access                          |
 | ----------- | --------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------- |
 | GET         | /                                 | [Index](/http/app/routes/index.md)                                                 | Open                            |
-| GET         | /sign-in                          | [SignIn](/http/app/routes/sign-in.md#get)                                          | Open                            |
-| POST        | /sign-in                          | [SignIn](/http/app/routes/sign-in.md#post)                                         | Open                            |
-| GET         | /register                         | [Register](/http/app/routes/register.md#get)                                       | Open                            |
-| POST        | /register                         | [Register](/http/app/routes/register.md#post)                                      | Open                            |
+| GET         | /session/sign-in                          | [SignIn](/http/app/routes/sign-in.md#get)                                          | Open                            |
+| POST        | /session/sign-in                          | [SignIn](/http/app/routes/sign-in.md#post)                                         | Open                            |
+| GET         | /session/register                         | [Register](/http/app/routes/register.md#get)                                       | Open                            |
+| POST        | /session/register                         | [Register](/http/app/routes/register.md#post)                                      | Open                            |
 | GET         | /user/calendar                    | [UserCalendar](/http/app/routes/user/calendar.md)                                  | User                            |
 | GET         | /user/events                      | [UserEvents](/http/app/routes/user/events.md)                                      | User                            |
 | GET         | /user/tasks                       | [UserTasks](/http/app/routes/user/tasks.md)                                        | User                            |
