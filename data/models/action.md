@@ -17,34 +17,16 @@ An action is owned by a user, has a name, a start time and an end time, a boolea
 #### Structure
 | Attributes    | JSON Key      | Type          |
 | ------------- | ------------- | ------------- |
-
 | Completed | completed | 0 |
-
 | CreatedAt | created_at | 3 |
-
 | EndTime | end_time | 3 |
-
 | Id | id | 8 |
-
 | Name | name | 2 |
-
 | StartTime | start_time | 3 |
-
 | UpdatedAt | updated_at | 3 |
-
-
-
-    | ActionableID | actionable_id | id |
-
-
-
-    | TaskID | task_id | id |
-
-
-
-    | UserID | user_id | id |
-
-
+| ActionableID | actionable_id | id |
+| TaskID | task_id | id |
+| UserID | user_id | id |
 
 
 
