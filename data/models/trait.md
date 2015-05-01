@@ -2,15 +2,14 @@
 
 
 
-Task
+Trait
 ----------
 
- A task is the archetypal action.
 
 
 | Kind             | Concerns   |
 | ---------------- | ---------- |
-| task  |            |
+| trait  |            |
 
 #### Structure
 | Attributes    | JSON Key      | Type          |
@@ -18,23 +17,21 @@ Task
 
 | CreatedAt | created_at | 3 |
 
-| EndTime | end_time | 3 |
-
 | Id | id | 8 |
 
 | Name | name | 2 |
 
-| StartTime | start_time | 3 |
+| Type | type | 2 |
 
 | UpdatedAt | updated_at | 3 |
 
 
 
-    | TaskDependenciesIDs | task_dependencies_ids | []id |
+    | AttributesIDs | attributes_ids | []id |
 
 
 
-    | UserID | user_id | id |
+    | ClassID | class_id | id |
 
 
 

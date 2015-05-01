@@ -2,39 +2,40 @@
 
 
 
-Task
+Link
 ----------
 
- A task is the archetypal action.
 
 
 | Kind             | Concerns   |
 | ---------------- | ---------- |
-| task  |            |
+| link  |            |
 
 #### Structure
 | Attributes    | JSON Key      | Type          |
 | ------------- | ------------- | ------------- |
 
-| CreatedAt | created_at | 3 |
+| Codomain | codomain | 2 |
 
-| EndTime | end_time | 3 |
+| CreatedAt | created_at | 3 |
 
 | Id | id | 8 |
 
-| Name | name | 2 |
+| Inverse | inverse | 2 |
 
-| StartTime | start_time | 3 |
+| Multiplicity | multiplicity | 2 |
+
+| Name | name | 2 |
 
 | UpdatedAt | updated_at | 3 |
 
 
 
-    | TaskDependenciesIDs | task_dependencies_ids | []id |
+    | ClassID | class_id | id |
 
 
 
-    | UserID | user_id | id |
+    | RelationsIDs | relations_ids | []id |
 
 
 
