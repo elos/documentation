@@ -16,6 +16,8 @@ cd src/github.com/elos/server
 go run server.go
 ```
 
+BIND TO 0.0.0.0
+
 ##### Setup.sh
 
 1. Installs curl, git, mercurial, binutils, bison, gcc, and build-essential
