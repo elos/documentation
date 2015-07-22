@@ -45,7 +45,7 @@ let *D* be the set of all RFC3099 binary encoded dates.
     deleted_at(r) → d ∈ D
     
     New Axiom: created_at(r) = updated_at(r) ⇒ r is a 'new' record
-    Del Axiom: created_at(r) < deleted_at(r) ⇒ r is a 'tombstome' record
+    Del Axiom: created_at(r) < deleted_at(r) ⇒ r is a 'tombstone' record
     
 
 The *New* axiom can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc (all things we will get into later).
