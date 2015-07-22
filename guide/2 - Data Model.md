@@ -52,12 +52,25 @@ The *New* axiom can be used as an invariant for records which are determined to 
 
 #### Spaces
 
-So we know that an id and kind can uniquely identify a data record in elos. But what if we want to talk about all the users in elos, or all the credentials in elos. There are two disjoint sets, and though they are both subsets of all records, R, we may want to deal with them independently. Therefore we associate with each kind a "space." A space is a term we use to refer to the set of all instances of a record of kind k.
+So we know that a kind and an id can uniquely identify a record in the EDM. But consider the set of all "users" in elos, or all "credentials" in elos. These are two disjoint sets (by definition), though they are both subsets of *R*, all records in elos. We want to deal with the various sets of records which share a "kind" independently. 
 
-Formally:
-    for k in K, space(k) -> s in S, the set of all spaces
+To handle this, we associate with each kind a "space."
 
-Once again for our simple todo app example. If we had the kinds user, task, list, we would have the spaces users, tasks, lists. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the Elos data model in SQL would involve a users, tasks and lists table. EAch would contain _at least_ an id, created_at and updated_at field.
+     ∀ k ∈ K, ∃ s ∈ S : space(k) → s
+     
+     ∀ x, y ∈ K, space(x) = space(y) ⇒ x = y
+
+A space is the term we use to refer to the set of all instances of a record of kind k.
+
+Returning to our example of a todo app. If we had the kinds, { "user", "task", "list" }, we would have the following spaces:
+
+    U = { r ∈ R : kind(r) → "user" }
+    T = { r ∈ R : kind(r) → "task" }
+    L = { r ∈ R : kind(r) → "list" }
+    
+And our set of spaces, *S*, would be { *U*, *T*, *L* }
+
+We would refer to U, T, L as users, tasks, and lists respecitively. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the EDM in SQL would involve a users, tasks and lists table. Each would contain _at least_ an id, created_at, updated_at, and deleted_at field.
 
 #### Polymorphism (Domains)
 
