@@ -11,39 +11,44 @@ The first distinction to be made is between a class archetype of an elos model a
 
 #### Definitions
 
-Let Strings be the set of all string binary representations in UTF-8.
+Let *Strings* be the set of all string binary representations in UTF-8.
 
-Let K be the set of "kinds" of data models we want to represent. For a simple todo app, K might be { 'user', 'task', 'list'}. K is much larger for elos. Note: K ⊆ Strings.
+Let *K* be the set of "kinds" of data models we want to represent. For a simple todo app, *K* might be { 'user', 'task', 'list'}. *K* is much larger for elos. Note: *K* ⊂ *Strings*.
+
+Let *I* be the set of all ids in the system. *I* ⊂ *Strings*.
 
 
-Let R be the set of all records in the elos system:
+Let *R* be the set of all records in the elos system:
 
     ∀ r ∈ R:
       * Kind(r) → k ∈ K
       * ID(r) → s ∈ Strings
 
-    ∀ m, n ∈ R: Kind(m) = Kind(n) ⇒  ID(m) ≠ ID(n)
+    ∀ m, n ∈ R: Kind(m) = Kind(n) ⇒ ID(m) ≠ ID(n)
 
-So at the purest level, the elos data model uses a two-dimensional coordinate system to identify all records. You will note that we can now define the Find function on the elos data system to be the following:
-
-Let I be the set of all ids in the system. I ⊂ Strings.
+So at the purest level, the elos data model uses a two-dimensional coordinate system to identify all records. You will note that we can now define the *Find* function on the elos data system to be the following:
 
     ∀ k ∈ K, i ∈ I; ∃ r ∈ R : Find(k, i) → r
 
-Moreover, Find(k, s) is injective (one-to-one). We uniquely identify a record by its kind and id. Note, here, that some databases have unique ids for _every_ record. Some don't. SQL databases generally use incrementing ids for each table. To hel you grok this, if it's still unclear, is SQL, and elos kind would map toa  table and the id to the primary key field. There really aren't any new ideas here, just a slightly general formal statement of what we are working with.
+Moreover, *Find(k, s)* is injective (one-to-one). We uniquely identify a record by its kind and id. Note, here, that some databases have unique ids for _every_ record. Some don't. SQL databases generally use incrementing ids for each table. To hel you grok this, if it's still unclear, in SQL, an elos kind would map to   table and the id to the primary key field. There really aren't any new ideas here, just a slightly general formal statement of what we are working with.
 
 #### Validity
 
 To be a valid record in the elos data model a record must have an ID and an a kind. The kind is often represented implicitly through the user of database "collections" or "tables." Elos views this as mostly an optimization, you can think about it as if you had an index on the kind field and you had one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
 
-In elos we attach two additionaly pieces of information to each record. Created At and Updated At timestamps. So extending our axioms of r in R:
+In elos we attach three additional pieces of information to each record. *created_at*, *updated_at* and *deleted_at* timestamps. So extending our axioms of *r* ∈ *R*:
 
-let D be the set of all RFC3099 binary encoded dates.
+let *D* be the set of all RFC3099 binary encoded dates.
 
-    created_at(r) → d ∈ D
-    updated_at(r) → d ∈ D
+    created_at(r) → c ∈ D
+    updated_at(r) → u ∈ D
+    deleted_at(r) → d ∈ D
+    
+    New Axiom: created_at(r) = updated_at(r) ⇒ r is a 'new' record
+    Del Axiom: created_at(r) < deleted_at(r) ⇒ r is a 'tombstome' record
+    
 
-We can see that ∀ r ∈ R, created_at(r) = updated_at(r) ⇒  r has not mutated since creation. This can be used as an invariant for records that are determined to be immutable, such as credentials, security groups, etc (all things we will get into later).
+The *New* axiom can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc (all things we will get into later).
 
 #### Spaces
 
