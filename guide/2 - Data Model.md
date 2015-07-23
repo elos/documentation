@@ -13,14 +13,13 @@ The first distinction to be made is between a class archetype of an elos model a
 
 Let Strings be the set of all string binary representations in UTF-8.
 
-Let K be the set of "kinds" of data models we want to represent. For a simple todo app, K might be { 'user', 'task', 'list'}. K is much larger for elos. Note: K ⊆ Strings.
-
+Let K be the set of kinds of data models we want to represent. For a simple todo app, K might be { 'user', 'task', 'list'}. K is much larger for elos. Note: K ⊂ Strings.
 
 Let R be the set of all records in the elos system:
 
     ∀ r ∈ R:
-      * Kind(r) → k ∈ K
-      * ID(r) → s ∈ Strings
+     * Kind(r) → k ∈ K
+     * ID(r) → s ∈ Strings
 
     ∀ m, n ∈ R: Kind(m) = Kind(n) ⇒  ID(m) ≠ ID(n)
 
@@ -50,7 +49,8 @@ We can see that ∀ r ∈ R, created_at(r) = updated_at(r) ⇒  r has not mutate
 So we know that an id and kind can uniquely identify a data record in elos. But what if we want to talk about all the users in elos, or all the credentials in elos. There are two disjoint sets, and though they are both subsets of all records, R, we may want to deal with them independently. Therefore we associate with each kind a "space." A space is a term we use to refer to the set of all instances of a record of kind k.
 
 Formally:
-    for k in K, space(k) -> s in S, the set of all spaces
+
+    ∀ k ∈ K, space(k) → s ∈ S, the set of all spaces
 
 Once again for our simple todo app example. If we had the kinds user, task, list, we would have the spaces users, tasks, lists. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the Elos data model in SQL would involve a users, tasks and lists table. EAch would contain _at least_ an id, created_at and updated_at field.
 
