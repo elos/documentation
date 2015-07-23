@@ -15,25 +15,32 @@ Gödel postulated that no formal system can be both consistent and complete. Suc
 
 ##### User Data Model
 
-A user consists of a few traits:
+Recall that *R* is the set of all records in the EDM.
 
- * id
- * created_at
- * updated_at
- * password
+Let *U* be the set of all users.
 
-And a few links:
+    U ⊂ R
+    u ∈ U ⇒  u ∈ R
 
- * Multiple credentials
- * Multiple groups
- * Multiple authorizations (domain of groups)
- * Multiple sessions
+A user *u* is a record with one additional property. Recall *Strings* is the set of all strings. We didn't mention this yet, but Chars is the set of all characters. Think of a string, *s* ∈ Strings. s ≡ (c₁, c₂, ..., ck). An ordered set of characters.
+
+Let S₅₀⁺ be the set of strings composed of 50 or more characters.
+
+    password(u) → p ∈ S₅₀⁺
+
+note: the user inherits id, created_at, updated_at, and deleted_at properties by virtue of being a member of the set of Records
+
+Remember that the EDM is a directed graph. A user has four links (edges).
+
+    credentials(u) → C', where C' ⊂  C, the set of all credentials
+    groups(u) →  G', where G' ⊂ G, the set of all groups
+    authorizations(u) → A', where G' ⊂ G, the set of all groups
+    sessions(u) → S', where S' ⊂ S, the set of all sessions
+
+    Security Exclusion Principal: G' ∩ A' = ∅, namely G' and A' share no members
+    Credentialed Axiom: credentials(u) ≠ ∅
 
 Here we have introduced the 3 other data models which we will need to implement the EAC. Namely, credentials, groups, and sessions.
-
-##### Formal Rules
-
-A user is _valid_ so long as it has an id, created_at field, updated_at field, password and at least one credential.
 
 ###### Creation
 
