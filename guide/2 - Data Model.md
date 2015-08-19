@@ -65,13 +65,14 @@ Returning to our example of a todo app. If we had the kinds, { "user", "task", "
 Formally:
 
     ∀ k ∈ K, space(k) → s ∈ S, the set of all spaces
+
     U = { r ∈ R : kind(r) → "user" }
     T = { r ∈ R : kind(r) → "task" }
     L = { r ∈ R : kind(r) → "list" }
 
-And our set of spaces, *S*, would be { *U*, *T*, *L* }
+    ∴ S ≡ { U, T, L }
 
-We would refer to U, T, L as users, tasks, and lists respecitively. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the EDM in SQL would involve a users, tasks and lists table. Each would contain _at least_ an id, created_at, updated_at, and deleted_at field.
+We would refer to U, T, L as users, tasks, and lists, respecitively. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the EDM in SQL would involve a users, tasks and lists table. Each would contain _at least_ an id, created_at, updated_at, and deleted_at field.
 
 #### Polymorphism (Domains)
 
