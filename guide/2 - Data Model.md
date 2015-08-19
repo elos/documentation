@@ -74,6 +74,28 @@ Formally:
 
 We would refer to U, T, L as users, tasks, and lists, respecitively. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the EDM in SQL would involve a users, tasks and lists table. Each would contain _at least_ an id, created_at, updated_at, and deleted_at field.
 
+#### Traits
+
+Now that we have an idea of the abstract nature of elos records, we can discuss their individually defining features. A record's archetype is defined by the *Traits* which is has. Traits are key/value pairs from a String to a Primitive.
+
+#### Primitives
+
+All information can be encoded using a two digit alphabet. If this doesn't sound familiar and easy to you, please review information theory. We will use Binary for our two digit alphabet. One way to think about it:
+
+    Binary ≡ { B, ¬B }
+
+So we have presence and abscence, true and false, and we will use these bits to represent all information. But our definition of binary isn't so important to our own goal as it is to the justification of the following primitive types we will define. It is so as a chemist recognizes atoms and the constituencies they form before and in justification of her ability to talk instead of molecules.
+
+The EDM uses several primitive types. They are:
+
+    Boolean ≡ the set of all boolean values, true and false
+    Integer ≡ the set of all 64-bit integers, range -9223372036854775808 through 9223372036854775807
+    Float   ≡ the set of all IEEE-754 64-bit floating-point numbers
+    String  ≡ the set of all UTF-8 binary encoded strings
+    Date    ≡ the set of all RFC3099 binary encoded dates
+    List    ≡ the set of all sets of mappings from Integer to Primitives
+    Map     ≡ the set of all sets of mappings from { Integer, Float, String } to Primitive
+
 #### Polymorphism (Domains)
 
 But you may be thinking, what about polymorphism. I know we haven't yet talked about links between records but you can probably see that coming down the pike, and when it does we want to have some notion of how to deal with it in our type system. How can I make type information variable regarding the kind of a link. The answer is domains.
