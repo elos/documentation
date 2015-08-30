@@ -76,7 +76,7 @@ The EDM uses several primitive types. They are:
     String  ≡ the set of all UTF-8 binary encoded strings
     Date    ≡ the set of all RFC3099 binary encoded dates
     List    ≡ the set of all sets of mappings from Integer to Primitives
-    Map     ≡ the set of all
+    Map     ≡ the set of all sets of mappings from { Integer, Float, String } to Primitive
 
 #### Traits
 
@@ -106,7 +106,6 @@ let *D* be the set of all RFC3099 binary encoded dates.
 The *New* axiom can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc. (all things we will get into later). These, along with the implicit "id" trait, are collectively the known as "bookeeping" traits. Every record is for some sort of book keeping, but this is sort of meta book keeping.
 
 
- sets of mappings from { Integer, Float, String } to Primitive
 
 #### Polymorphism (Domains)
 
