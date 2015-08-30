@@ -90,7 +90,7 @@ Now that we have an idea of the abstract nature of elos records, we can discuss 
 
 #### Validity
 
-To be a valid record in the elos data model a record must have an ID and an a kind. The kind is often represented implicitly through the use of database "collections" or "tables." Elos views this as mostly an optimization. It can be thought of as if you had an index on the kind field and one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
+To be a valid record in the elos data model a record must have an ID and a kind. The kind is often represented implicitly through the use of database "collections" or "tables." Elos views this as mostly an optimization. It can be thought of as if you had an index on the kind field and one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
 
 In elos we attach three additional traits to each record. *created_at*, *updated_at* and *deleted_at* timestamps. So extending our axioms of *r* ∈ *R*:
 
@@ -105,7 +105,45 @@ let *D* be the set of all RFC3099 binary encoded dates.
 
 The *New* axiom can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc. (all things we will get into later). These, along with the implicit "id" trait, are collectively the known as "bookeeping" traits. Every record is for some sort of book keeping, but this is sort of meta book keeping.
 
+#### Relationships (Links)
 
+You may be thinking, "Aren't abstraction and encapsulation important ideas?" Ha! You are right, which is why we don't have one big record which we modify, we split the, up. This idea was kinda implicit in the fact we were talking about kinds and spaces but I guess we could have done that in the name of "generality." But as soon as you have multiple kinds of records, you want to be able to model their relations. Indeed, when graphs are beautiful data structure which appear everywhere. We have a graph here. The cool thing is that we can represent relationships with standardized trait definitions. So links are truly an abstraction. Let's see.
+
+Let's say we have records r and s. r wants to point to information encapsulated in s. So this is a directed graph indeed. Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. So you may be thinking easy, a trait with a name of "tasks." And yep, that's right, for starters.
+
+    L: Strings → r ∈ R
+    
+    ∀ r ∈ R, ∃ zero or more links which belong to that record.
+    
+There are three bits here. The name of the link, the kind of the other record and the id of the record. But wait a TaskList could have many Tasks. So in fact we want a set of record in R. So there's another bit, whether this arrow "splits," if you will. So a link is an abstraction. And we also have a multiple link.
+
+    M: Strings → {r, ...} ∈ R
+    
+    ∀ r ∈ R, ∃ zero or more multiple links which belong to that record.
+    
+So there are four bits: name, kind, id(s) of other record, and whether we expect it to be multiple.
+
+Let's extend our notion of a record:
+
+    ∀ r ∈ R:
+        * Traits(r) →  { t, ... ∈ Traits }
+        * Links(r) → ∅ ∨ { t, ... ∈ Traits } (a record need not have links)
+    
+    and remember 
+    
+    ∀ l ∈ Links, ∃ a function, Representation: Links → Traits
+    
+    Representation is isomorphic
+    
+    ∴  ∀ l ∈ Links, ∃ t ∈ Traits
+    
+Because of the book keeping traits, 
+
+    ∀ r ∈ R, |Traits(r)| ≥ 4
+
+Because all links are ultimately represented by traits
+
+    ∀ r ∈ R, |Traits(r)| - 4 ≥ |Links(r)|
 
 #### Polymorphism (Domains)
 
