@@ -107,7 +107,7 @@ The *New* axiom can be used as an invariant for records which are determined to 
 
 #### Relationships (Links)
 
-You may be thinking, "Aren't abstraction and encapsulation important ideas?" Ha! You are right, which is why we don't have one big record which we modify, we split the, up. This idea was kinda implicit in the fact we were talking about kinds and spaces but I guess we could have done that in the name of "generality." But as soon as you have multiple kinds of records, you want to be able to model their relations. Indeed, when graphs are beautiful data structure which appear everywhere. We have a graph here. The cool thing is that we can represent relationships with standardized trait definitions. So links are truly an abstraction. Let's see.
+You may be thinking, "Aren't abstraction and encapsulation important ideas?" Ha! You are right, which is why we don't have one big record which we modify, we split them up. This idea was, in a way, implicit in the fact we were talking about kinds and spaces but I guess we could have pursued such formality for the sake of of "generality." But as soon as you have multiple kinds of records, you want to be able to model their relations. Graphs are beautiful data structures which appear everywhere. We have a graph here. The cool thing is that we can represent relationships with standardized trait definitions. So links are truly an abstraction. Let's see.
 
 Let's say we have records r and s. r wants to point to information encapsulated in s. So this is a directed graph indeed. Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. So you may be thinking easy, a trait with a name of "tasks." And yep, that's right, for starters.
 
@@ -121,12 +121,12 @@ There are three bits here. The name of the link, the kind of the other record an
     
     ∀ r ∈ R, ∃ zero or more multiple links which belong to that record.
     
-So there are four bits: name, kind, id(s) of other record, and whether we expect it to be multiple.
+So there are four bits: name, kind, id(s) of the other record, and whether we expect it to be multiple link.
 
 Let's extend our notion of a record:
 
     ∀ r ∈ R:
-        * Traits(r) →  { t, ... ∈ Traits }
+        * Traits(r) →  { t, ... ∈ Traits } (we said a record must have at least an id, and book keep traits)
         * Links(r) → ∅ ∨ { t, ... ∈ Traits } (a record need not have links)
     
     and remember 
