@@ -20,15 +20,15 @@ Let *I* be the set of all ids in the system. *I* ⊂ *Strings*.
 Let *R* be the set of all records in the elos system:
 
     ∀ r ∈ R:
-     * Kind(r) → k ∈ K
-     * ID(r) → i ∈ I
+     * Kind: R → K
+     * ID: R → I
 
-    ∀ m, n ∈ R: Kind(m) = Kind(n) ⇒ ID(m) ≠ ID(n)
-    ∀ m, n ∈ R: Kind(m) = Kind(n) ^ ID(m) = ID(n) ⇒ m = n
+    ∀ m, n ∈ R: (Kind(m) = Kind(n)) ⇒ (ID(m) ≠ ID(n))
+    ∀ m, n ∈ R: (Kind(m) = Kind(n)) ^ (ID(m) = ID(n)) ⇒ m = n
 
 So at the purest level, the elos data model uses a two-dimensional coordinate system to identify all records. Namely, the kind and the id. You will note that we can now define the *Find* function on the elos data system to be the following:
 
-    ∀ k ∈ K, i ∈ I; ∃ r ∈ R : Find(k, i) → r
+    (∀ k ∈ K, i ∈ I)(∃ r ∈ R)(Find(k, i) → r)
 
 Moreover, *Find(k, s)* is injective (one-to-one). We uniquely identify a record by its kind and id. Note, here, that some databases have unique ids for _every_ record, r ∈ R. Some don't. SQL databases generally use incrementing ids for each table. In SQL, an elos kind would map to a table and the id to the primary key field. No new ideas here, just a slightly more general and formal statement of what we are working with.
 
@@ -155,7 +155,7 @@ The obvious question is, if a Link needs 4 "bits" of information to be fully und
 
 #### Polymorphism (Domains)
 
-But you may be thinking, what about polymorphism. How can I make type information variable regarding the kind of a link. The answer is domains. We defined a link to have a codomain, which thus far was always a kind. But now we introduce the notion domains an extend our idea of a record a bit further:
+But you may be thinking, what about polymorphism. How can I make type information variable regarding the kind of a link. The answer is domains. We defined a link to have a codomain, which thus far was always a kind. But now we introduce the notion of domains an extend our idea of a record a bit further:
 
     Let D be the set of domains for the entire ontology.
     
@@ -164,14 +164,16 @@ But you may be thinking, what about polymorphism. How can I make type informatio
      
     S, the set of all spaces, is a subset of D, the set of all domains
     
-Any domain that is not a physical space, itself defines a virtual space. Namely no individual record physically substantiates that space but rather records of many kinds do. The domain is a restriction on what you can put on the box, but we still need to retain the information on what is actually inside. So whenever you have a polymorphic link, when Codomain(l) is not in S, you must also record the kind.
+Any domain that is not a physical space, itself defines a virtual space. Namely no individual record physically substantiates that space but rather records of many kinds do. The domain is a restriction on what you can put in the box, but we still need to retain the information on what is actually inside. So whenever you have a polymorphic link, when Codomain(l) is not in S, you must also record the kind.
      
 Now for some axioms.
 
         (∀ r ∈ R)
          * |Domains(r)| > 0, because the record always implements its physical space
          * (Domains(r) = 1) ⇒ (r satisfies no virtual spaces)
-         
 
-    
+Finally we can generalize our definition of Codomain on a link:
 
+     Codomain: L -> D
+
+Which makes sense of why we call it a codomain.
