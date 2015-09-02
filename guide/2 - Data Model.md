@@ -155,5 +155,23 @@ The obvious question is, if a Link needs 4 "bits" of information to be fully und
 
 #### Polymorphism (Domains)
 
-But you may be thinking, what about polymorphism. I know we haven't yet talked about links between records but you can probably see that coming down the pike, and when it does we want to have some notion of how to deal with it in our type system. How can I make type information variable regarding the kind of a link. The answer is domains.
+But you may be thinking, what about polymorphism. How can I make type information variable regarding the kind of a link. The answer is domains. We defined a link to have a codomain, which thus far was always a kind. But now we introduce the notion domains an extend our idea of a record a bit further:
+
+    Let D be the set of domains for the entire ontology.
+    
+    ∀ r ∈ R:
+     * Domains(r) → {d ∈ D, such that the record satisfies the requirements of d}
+     
+    S, the set of all spaces, is a subset of D, the set of all domains
+    
+Any domain that is not a physical space, itself defines a virtual space. Namely no individual record physically substantiates that space but rather records of many kinds do. The domain is a restriction on what you can put on the box, but we still need to retain the information on what is actually inside. So whenever you have a polymorphic link, when Codomain(l) is not in S, you must also record the kind.
+     
+Now for some axioms.
+
+        (∀ r ∈ R)
+         * |Domains(r)| > 0, because the record always implements its physical space
+         * (Domains(r) = 1) ⇒ (r satisfies no virtual spaces)
+         
+
+    
 
