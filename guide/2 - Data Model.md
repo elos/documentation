@@ -126,7 +126,7 @@ So there are four bits: name, kind, id(s) of the other record, and whether we ex
 Let's extend our notion of a record:
 
     ∀ r ∈ R:
-        * Traits(r) →  { t, ... ∈ Traits } (we said a record must have at least an id, and book keep traits)
+        * Traits(r) → { t, ... ∈ Traits } (we said a record must have at least an id, and book keep traits)
         * Links(r) → ∅ ∨ { t, ... ∈ Traits } (a record need not have links)
     
     and remember 
@@ -177,3 +177,6 @@ Finally we can generalize our definition of Codomain on a link:
      Codomain: L -> D
 
 Which makes sense of why we call it a codomain.
+
+#### Meta (Dynamic) Base Models
+
