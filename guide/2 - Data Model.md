@@ -147,9 +147,9 @@ Because all links are ultimately represented by traits
     
 The obvious question is, if a Link needs 4 "bits" of information to be fully understood, then why doesn't one link abstraction yield four traits. And the answer is that at the static elos data model level, these bits of information can be encoded programmatically. For example, if you stored those 4 bits on the model you would still have to implement the manner in which you go about retrieving the corresponding records. This maneuver is just an algorithm, and so at the actual representation level, if we have the archetype abstraction of knowing that a TaskList's "tasks" trait is multiple, and that the codomain is "task," then need only store the trait "tasks" -> []id. We know to interpret these ids as tasks. And this is truly the relationship the LinkRepresentation function defines.
 
-    LinkRepresentation: L -> T, ∀ l ∈ L
-        iff l is singular: LinkRepresentation(l) -> t ∈ T, t: name(l) -> id
-        iff l is multiple: LinkRepresentation(l) -> t ∈ T, t: name(l) -> []id
+    LinkRepresentation: L → T, ∀ l ∈ L
+        iff l is singular: LinkRepresentation(l) → t ∈ T, t: name(l) → id
+        iff l is multiple: LinkRepresentation(l) → t ∈ T, t: name(l) → []id
         
     LinkRepresentation establishes a function if l is singular and a correspondance if l is multiple.
 
@@ -174,7 +174,7 @@ Now for some axioms.
 
 Finally we can generalize our definition of Codomain on a link:
 
-     Codomain: L -> D
+     Codomain: L → D
 
 Which makes sense of why we call it a codomain.
 
