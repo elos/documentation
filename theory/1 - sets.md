@@ -1,7 +1,6 @@
-Set Theory
-----------
+# Set Theory
 
-# Sets
+## Sets
 
 A *set* is a well-defined collection of objects. These objects are referred to as *elements* or *members* of the set. Elements of a set can be anything, including numbers, letters, people, cities, and even other sets. By convention, sets are usually denoted by capital letters and can be described or defined by listing its elements and surrounding the list by curly braces. For example, we can define the set A to be the first 5 prime numbers:
 
