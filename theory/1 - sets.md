@@ -68,9 +68,9 @@ Generally, we call A is a proper subset of B only if A ⊂ B and A ≠ ∅. If A
 
 Suppose that A, B and C are subsets of a set S. The subset relation is a partial order on the collection of subsets of S. That is, the subset operator is:
 
- a) Reflexive: A ⊆ A
- b) Anti-symmetric: If A ⊆ B and B ⊆ A then A = B
- c) Transitive: If A ⊆ B and B ⊆ C, then A ⊆ C
+ 1. Reflexive: A ⊆ A
+ 2. Anti-symmetric: If A ⊆ B and B ⊆ A then A = B
+ 3. Transitive: If A ⊆ B and B ⊆ C, then A ⊆ C
 
 #### Significant Sets
 
