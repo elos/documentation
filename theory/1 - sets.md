@@ -206,11 +206,11 @@ Takeaway: Distribute and flip
 
 The following statements are equivalent.
 
- 1. A ⊆ B       A is a subset of B. Every element in A is in B.
- 2. B^c ⊆ A^c   The set of elements A doesn't contain is bigger than those B doesn't contain. (B contains more)
- 3. A ∪ B = B   The union of A and B is just B, because A is _in_ B
- 4. A ∩ B = A   The intersect of A and B is just A, everything in A is in B.
- 5. A ∖ B = ∅   There are no elements in A that B doesn't contain
+ 1. A ⊆ B     |  A is a subset of B. Every element in A is in B.
+ 2. B^c ⊆ A^c |  The set of elements A doesn't contain is bigger than those B doesn't contain. (B contains more)
+ 3. A ∪ B = B |  The union of A and B is just B, because A is _in_ B
+ 4. A ∩ B = A |  The intersect of A and B is just A, everything in A is in B.
+ 5. A ∖ B = ∅ |  There are no elements in A that B doesn't contain
 
 ##### References
  - Strongly based on Berkeley CS 70 Note 0
