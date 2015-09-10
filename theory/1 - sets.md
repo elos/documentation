@@ -83,7 +83,134 @@ Suppose that A, B and C are subsets of a set S. The subset relation is a partial
 
 Note that ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ
 
+### Operations
 
+#### Union
+
+The union of the sets A and B is the set of all elements which are in either A or B or both.
+
+    A ∪ B = {x ∈ S:x ∈ A or x ∈ B}
+
+Note:
+ * A ∪ B = B ∪ A
+ * A ∪ ∅ = A.
+
+Example: union of the positive odd integers and the positive integers is the set of all positive integers (often denoted ℤ⁺)
+
+#### Intersection
+
+The intersection of the sets A and B is the set of all elements in both A and B.
+
+    A ∩ B = {x ∈ S:x ∈ A and x ∈ B}
+
+Two sets are said to be *disjoint* if A ∩ B = ∅.
+
+Note:
+ * A ∩ B = B ∩ A
+ * A ∩ ∅ = ∅
+
+Example: The intersection of the integers, ℤ, and the set {0}, is the set {0}. This illustrates the property that if A ⊆ B, then A ∩ B = A.
+
+#### Complement
+
+The complement of A is the set of elements that are not in A:
+
+    A^c ={x ∈ S: x ∉ A}
+
+#### Set Difference (Relative Complement)
+
+The set difference of B and A is the set of elements that are in B but not in A:
+
+    B ∖ A = {x ∈ S:x ∈ B and x ∉ A}
+
+Union, Intersection and Set Difference are binary operations. Complement is a unary operations.
+
+Note:
+ * A \ A = ∅
+ * A \ ∅ = A
+ * ∅ \ A = ∅
+
+Example: ℝ \ ℚ = set of irrational numbers. It can be useful to think of B \ A as B without A.
+
+#### Cartesian Product (Cross Product)
+
+The cartesian product of the sets A and B is the set of all pairs whose first component is an element of A and whose second component is an element of B. It is a binary operator.
+
+    A × B = = {(a,b) | a ∈ A,b ∈ B}
+
+
+Example: If A = {1,2,3} and B = {u, v}, then A × B = {(1,u),(1, v),(2,u),(2, v),(3,u),(3, v)}
+
+A deck of cards can be defined: D = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k} × {♣, ♢ , ♡, ♠}
+
+#### Power Set
+
+The power set of a A is the set of all subsets of A:
+
+    ℘(A) = {B| B ⊆ A}
+
+Example: if S = {1,2,3}, then the power set of S is: ℘(S) = {{},{1},{2},{3},{1,2},{1,3},{2,3},{1,2,3}}
+
+Note:
+ * If |A| = k, then |℘(A)| = 2^k
+
+### Laws
+
+ These are a collection of axiomatically verifiable statements, some of which we have already seen. All can be verified with ease and this should be treated more as a reference.
+
+A, B, and C are subsets of a universal set S
+
+#### Identity Laws
+
+ 1. A ∪ ∅ = A
+ 2. A ∩ S = A
+
+#### Idempotent Laws
+
+ 1. A ∪ A = A
+ 2. A ∩ A = A
+
+#### Complement Laws
+
+ 1. A ∪ A^c = S
+ 2. A ∩ A^c = ∅
+ 3. (A^c)^c = A
+
+#### Commutative Laws
+
+ 1. A ∪ B = B ∪ A
+ 2. A ∩ B = B ∩ A
+
+#### Associative Laws
+
+ 1. A ∪ (B ∪ C) = (A ∪ B) ∪ C
+ 2. A ∩ (B ∩ C) = (A ∩ B) ∩ C
+
+Thus, we can write A ∪ B ∪ C without ambiguity. Note that x is an element of this set if and only if x is an element of at least one of the three given sets. Similarly, we can write A ∩ B ∩ C without ambiguity. Note that x is an element of this set if and only if x is an element of all three of the given sets.
+
+#### Distributive Laws
+
+ 1. A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+ 2. A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
+
+Takeaway: You _can_ distribute.
+
+#### DeMorgan's Laws
+
+ 1. (A ∪ B)^c = A^c ∩ B^c
+ 2. (A ∩ B)^c = A^c ∪ B^c
+
+Takeaway: Distribute and flip
+
+##### Cool Equivalence
+
+The following statements are equivalent.
+
+ 1. A ⊆ B       A is a subset of B. Every element in A is in B.
+ 2. B^c ⊆ A^c   The set of elements A doesn't contain is bigger than those B doesn't contain. (B contains more)
+ 3. A ∪ B = B   The union of A and B is just B, because A is _in_ B
+ 4. A ∩ B = A   The intersect of A and B is just A, everything in A is in B.
+ 5. A ∖ B = ∅   There are no elements in A that B doesn't contain
 
 ##### References
  - Strongly based on Berkeley CS 70 Note 0
