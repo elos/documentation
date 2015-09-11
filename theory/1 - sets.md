@@ -2,13 +2,13 @@
 
 ### Sets
 
-A *set* is a well-defined collection of objects. These objects are referred to as *elements* or *members* of the set. Elements of a set can be anything, including numbers, letters, people, cities, and even other sets. By convention, sets are usually denoted by capital letters and can be described or defined by listing its elements and surrounding the list by curly braces. For example, we can define the set A to be the first 5 prime numbers:
+A *set* is a well-defined collection of objects. These objects are referred to as *elements* or *members* of the set. Elements of a set can be anything, including numbers, letters, people, cities, and even other sets. By convention, sets are usually denoted by capital letters and can be described or defined by listing its elements and surrounding the list by curly braces For example, we can define the set A to be the first 5 prime numbers:
 
     A = {2, 3, 5, 7, 11}
 
 If we want to indicate an object x is an element of the set A, we write x ∈ A. Conversely, the statement that x is not an element of A is written x ∉ A. By definition sets are completely defined by their elements. Therefore we can define the equivalence of two sets, written A = B, to be the case in which they have exactly the same elements. The order and repetition of elements does not matter.
 
-    (A = B) ≡ (∀x ∈ A)(x ∈ B)
+    (A = B) ≡ (∀a ∈ A)(a ∈ B) and (∀b ∈ B)(b ∈ A)
 
     {1, 2, 3} = {3, 2, 1} = {3, 3, 2, 1}
 
@@ -123,14 +123,14 @@ The set difference of B and A is the set of elements that are in B but not in A:
 
     B ∖ A = {x ∈ S:x ∈ B and x ∉ A}
 
-Union, Intersection and Set Difference are binary operations. Complement is a unary operations.
+Union, Intersection and Set Difference are binary operations. Complement is a unary operation.
 
 Note:
  * A \ A = ∅
  * A \ ∅ = A
  * ∅ \ A = ∅
 
-Example: ℝ \ ℚ = set of irrational numbers. It can be useful to think of B \ A as B without A.
+Example: ℝ \ ℚ = set of irrational numbers. It can be useful to think of B \ A as B without A. 
 
 #### Cartesian Product (Cross Product)
 
