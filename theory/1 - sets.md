@@ -214,3 +214,4 @@ The following statements are equivalent.
 
 ##### References
  - Strongly based on Berkeley CS 70 Note 0
+ - http://www.math.uah.edu/stat/foundations/Sets.html
