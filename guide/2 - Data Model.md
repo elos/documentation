@@ -99,9 +99,7 @@ Now that we have an idea of the abstract nature of elos records, we can discuss 
     
     Let Traits: K → (Strings, Primitives)
     
-Here it is useful to think of the function *Traits* as a set of ordered pairs. As we will refer to the *Traits* of a model regularly. So a trait could be ('completed', Booleans) or ('created_at', Dates). But recall the 'Ontic' distinction. We have the framework of traits, but each individual record will have a different value associated with each trait. We call this value the records 'attribute.' This is implicit in our above formal definition because T is a function from Strings, a simple set, to Primitives a set of sets.
-
-An individual record may then have the attribute, ('completed', True) and ('created_at', '2009-11-10 23:00:00 +0000 UTC'). We define attributes on the set of records (recall the Ontic distinction):
+Here it is useful to think of the function *Traits* as a set of ordered pairs. As we will refer to the *Traits* of a model regularly. So a trait could be ('completed', Booleans) or ('created_at', Dates). But recall the 'Ontic' distinction. We have the framework of traits, but each individual record will have a different value associated with each trait. We call this value the records 'attribute.' This is implicit in our above formal definition because T is a function from Strings, a simple set, to Primitives, a set of sets.
 
     A: Traits → (P ∈ Primitives)
     
