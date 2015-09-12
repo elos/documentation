@@ -3,7 +3,15 @@ Data Model
 
 The Metis Data Model (MDM) is a theoretical framework for defining a system of data records and their relationships. It can describe the fundamental building blocks of the elos core ontology, and even - as we will see - provides the building blocks for dynamic ontologies built on top of elos.
 
-### The Paradigm of Set Theory
+#### Motivation
+
+We need to be able to persist and store structured data. If this is not something that intuitively sounds useful, think about your brain. Your brain persists information all the time, and some researchers would argue that it is in fact the brain's ability to do so which permits consciousness.
+
+A system must maintain state, which represents the things it wants to remember or needs to rememeber in order to continue functioning. This can be everything from user information like email and password, to a history of orders and payments, to the current list of tasks on a todo list. We must be able to store this data in a structured way, and be able to retrieve it and reason about it.
+
+We talk here about the fundamentals of persisted data structures, which we call *records* and their cookie-cutter archetypes, which we call *models*. These models compose the ontology of our system, namely the structured data which we need in order to operate. Hopefully this provides some motivation to the novice for working through the slightly abstract document which follows.
+
+#### The Paradigm of Set Theory
 
 It is easiest to think about metis data records as you would imagine algebraic objects. Much like in mathematics, we will define these objects and their formal properties and behaviors axiomatically. We will use the lexicon of [set theory](../theory/1 - sets.md) to talk about their relationships.
 
