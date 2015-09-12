@@ -91,9 +91,9 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Links: { ('contexts', Contexts) ('owner', Users), ('grantees', Users) }
     
 Access:
-    * 0 := none
-    * 1 := read
-    * 2 := write
+ * 0 := none
+ * 1 := read
+ * 2 := write
 
 The initial value of 'access' is 0. So unless a user gives explicity permissions, _after_ creating the group, the group's effect is nil. This group is known as an impotent group.
     
