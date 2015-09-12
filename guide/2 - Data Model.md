@@ -50,7 +50,7 @@ We will now introduce a third distinction:
 
 We define *I* to be the set of all ids in the system. As with *K*, *I* ⊂ *Strings*. *I* is definitely countable, in fact its cardinality is the number of records in the system.
 
-#### Formal Definitions
+#### Definition
 
 So at the purest level, the metis data model uses a two-dimensional coordinate system to identify all records. Namely, the kind and id. We can partition the set of all records based on their kind, and we can identifiy a record within the space of its kind by it's id. Formally, we define these two property functions for each record:
 
@@ -66,7 +66,7 @@ We now define the function *Find: (K, I) → R*. We can say:
 
 Moreover, *Find* is a bijection. It's inverse is given by the tuple of the *Kind* and *ID* property functions we defined earlier. We note, here, that some databases have unique ids for _every_ record, r ∈ R. Some don't -- namely SQL. SQL databases generally use incrementing ids for each table. In SQL, a metis kind would map to a table and the id to the primary key field. This illustrates a general point, you can probably follow along with the metis system and see the connections to SQL as we go. Indeed SQL is a working implementation. We formally define these concepts here so that we can further reason and abstract them.
 
-#### Spaces
+##### Spaces
 
 We established that we can retrieve (*Find*) any record based on the two coordinates of a it's kind and id. Now consider the physical data records which constitute the collection instances of a particular model. We alluded earlier to our interest in partitioning these sets and reasoning about them independenty. For example, consider an ontology with *K* := { 'user', 'credential' }. Then we would want to think about the set of all "users" or "credentials" in our system. These are two disjoint sets (by definition), though they are both subsets of *R*. We want to handle various sets of records which share a "kind" independently and conveniently.
 
@@ -101,7 +101,7 @@ Now that we have an idea of the abstract nature of elos records, we can discuss 
     
 Here it is useful to think of the function *Traits* as a set of ordered pairs. As we will refer to the *Traits* of a model regularly. So a trait could be ('completed', Booleans) or ('created_at', Dates). But recall the 'Ontic' distinction. 
 
-#### Attributes
+##### Attributes
 
 We have the framework of traits, but each individual record will have a different value associated with each trait. We call this value the records 'attribute.' This is implicit in our above formal definition because T is a function from Strings, a simple set, to Primitives, a set of sets.
 
@@ -138,7 +138,7 @@ We call *K'* the codomain the of the relation. The domain of the relation is *K*
 
 Now recall the ontic distinction. With traits we defined the concept of an attribute as their physical manifestion. The physical manifestation of a relation is a link. We stated earlier that we need two-coordinates to identify all records in the system. The kind and id. We have only captured the kind. But we have associated each kind with a space. As we had *Primitives* as a set of sets,  K can likewise be thought of as a set of a sets.
 
-#### Links
+##### Links
 
     L: Relations → I or []I
     
