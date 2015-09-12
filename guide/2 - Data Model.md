@@ -260,11 +260,11 @@ We claim that these models are structurally sufficient structures to implement t
 
 To be a valid record in the metis data model a record must have an ID and a kind. The kind is often represented implicitly through the use of database "collections" or "tables." We view this as an optimization. It can be thought of as if you had an index on the kind field and one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
 
-    { ('id', String) } ⊂ |(Traits ○ Kind)(r)| 
+    { ('id', String) } ⊂ (Traits ○ Kind)(r) 
 
 Kind can be implicit, or, possibly:
 
-    { ('kind', String) } ⊂ |(Traits ○ Kind)(r)| 
+    { ('kind', String) } ⊂ (Traits ○ Kind)(r)
 
 #### Effective Bookkeeping
 
@@ -273,7 +273,7 @@ We attach three additional traits to each record for effectively tracking their 
     (∀ r ∈ R)
     { 
         ('created_at', Dates), 
-        ('updated_at', Dates),           ⊂ |(Traits ○ Kind)(r)| 
+        ('updated_at', Dates),           ⊂ (Traits ○ Kind)(r)
         ('deleted_at', Dates)
      } 
 
