@@ -254,22 +254,33 @@ A lot of the formalities we have established so far are relatively well understo
     
 We claim that these models are structurally sufficient structures to implement the aforedeveloped metis data model. Therefore, we can build an ontology, that allows for dynamic ontologies.
 
-#### Validity
+### Extension for Practical Implementation
 
-To be a valid record in the elos data model a record must have an ID and a kind. The kind is often represented implicitly through the use of database "collections" or "tables." Elos views this as mostly an optimization. It can be thought of as if you had an index on the kind field and one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
+#### Kind & ID Coordinates
 
-In elos we attach three additional traits to each record. *created_at*, *updated_at* and *deleted_at* timestamps. So extending our axioms of *r* ∈ *R*:
+To be a valid record in the metis data model a record must have an ID and a kind. The kind is often represented implicitly through the use of database "collections" or "tables." We view this as an optimization. It can be thought of as if you had an index on the kind field and one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
 
-let *D* be the set of all RFC3099 binary encoded dates.
+    { ('id', String) } ⊂ |(Traits ○ Kind)(r)| 
 
-    created_at(r) → c ∈ D
-    updated_at(r) → u ∈ D
-    deleted_at(r) → d ∈ D
+Kind can be implicit, or, possibly:
 
-    New Axiom: created_at(r) = updated_at(r) ⇒ r is a 'new' record
-    Del Axiom: created_at(r) < deleted_at(r) ⇒ r is a 'tombstone' record
+    { ('kind', String) } ⊂ |(Traits ○ Kind)(r)| 
 
-The *New* axiom can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc. (all things we will get into later). These, along with the implicit "id" trait, are collectively the known as "bookeeping" traits. Every record is for some sort of book keeping, but this is sort of meta book keeping.
+#### Effective Bookkeeping
 
-#### Meta (Dynamic) Base Models
+We attach three additional traits to each record for effectively tracking their lifecycle int he system. These are *created_at*, *updated_at* and *deleted_at* timestamps.
 
+    (∀ r ∈ R)
+    { 
+        ('created_at', Dates), 
+        ('updated_at', Dates),           ⊂ |(Traits ○ Kind)(r)| 
+        ('deleted_at', Dates)
+     } 
+
+###### New Theorem
+ * If created_at(r) = updated_at(r) then r is a 'new' record, and has not been changed since creation
+
+###### Deleted Theorem
+ * If created_at(r) < deleted_at(r) then r is a 'tombstone' record, and exists for historical purposes only
+
+The *New* theorm can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc. (all things we will get into later)
