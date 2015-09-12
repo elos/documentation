@@ -5,9 +5,13 @@ The Elos Data Model (EDM) is the underlying system defining all object models in
 
 ### Records
 
-It is easiest to think about elos data records (same thing as objects) as you would imagine algebraic objects. Much like in mathematics, we will define these objects and their formal properties and behaviors axiomatically. We will use the terminology of sets, domains, codomains and spaces with similar intent to their algebraic counterparts.
+It is easiest to think about elos data records as you would imagine algebraic objects. Much like in mathematics, we will define these objects and their formal properties and behaviors axiomatically. We will use the lexicon of [set theory](../theory/1 - sets.md) to talk about their relationships.
 
-The first distinction to be made is between a class archetype of an elos model and instances of that definition. We will deal with the general case always, as we will define what determines validity for a base model. We classify differnt "types" of models by their "kind," which you will see is a formal construct in the elos data model.
+The universal set while discussing the EDM is the set of all data records, *R*. But we must now make our first distinction, that between the archtype of a record and instances of that record. You can imagine the object-oriented equivalents of a class and instance respectively. We will state axioms about record archetypes, which we will henceforth refer to as models, but we will generally state theorems about our universe of records. We call these theorems because they are implications of our axioms.
+
+The second distinction to be made is between different types of models. Intuitively, and formally, there is a difference between the data record which represents a task and that which represents the task list. Data records often break into discrete structures much as you define them as you implemented them in a programming language. 
+
+We refer to the different types of models by their _kind_, which we make a formal construct in the EDM.
 
 #### Definitions
 
