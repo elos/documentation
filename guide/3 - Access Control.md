@@ -90,6 +90,13 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Traits: { ('name', Strings), ('access', Integers) }
     Links: { ('contexts', Contexts) ('owner', Users), ('grantees', Users) }
     
+Access:
+    * 0 := none
+    * 1 := read
+    * 2 := write
+
+The initial value of 'access' is 0. So unless a user gives explicity permissions, _after_ creating the group, the group's effect is nil. This group is known as an impotent group.
+    
 #### Context
 
     Kind: 'context'
@@ -102,4 +109,24 @@ You may have noticed that each of the models except for the user has an 'owner' 
 
 ### Actions
 
-Every mutation of data is taken on behalf of either the system or a user. Generally speaking, the system can do whatever it wants. We obviously will establish formal rules to be reasonable. But otherwise, actions are on behalf of the user. There are four actions that a user can take: create a record, read a record, write a record and delete a record.
+Every mutation of data is taken on behalf of either the system or a user. Generally speaking, the system can do whatever it wants. We obviously will establish formal rules to be reasonable. But otherwise, actions are taken on behalf of the user. There are four actions that a user can take: create a record, read a record, write a record and delete a record.
+
+#### Creating
+
+A user can create any record of any kind k, *except* for another user. Another way of stating this rule is that a user can create any ownable record. Every record in the system is ownable except for a user record.
+
+#### Reading
+
+A user can read their own record, and the records which they own. Additionally a user can read any records which are enumerated in the contexts of any groups which access level > 0 of which the user is a a 'grantee'.
+
+Another way of stating this is that if a user is 'authorized' to read or write to a record, they may read or write. Sounds tautological but it is this is the nature of proofs by definition.
+
+#### Writing
+
+A user can write their own record, and the records which they own. Additionally a user can write to any records which are enumerated in the contexts of any groups with access level > 1 of which the user is a 'grantee.'
+
+As with reading, they can write if authorized by definition of the groups they are a part of.
+
+#### Deleting
+
+A user can only delete records which they own.
