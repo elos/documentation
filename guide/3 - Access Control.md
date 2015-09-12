@@ -147,7 +147,7 @@ System looks for a credential with that public key (Identification)
  * UA attempts to front the challenge, and sends decrypted message
 
 System verifies decrypted challenge (Authentication)
- 1. Correct: The user as authorized, as the user who owns the given credential, UA --> IA.
+ 1. Correct: The user as authorized, as the user who owns the given credential, UA --> IA. At this point the system creates a session on behalf of the user, and allocates a unique token and appropriate expiration time.
  2. Incorrect: Now the action fails, and this counts towards the UA's failed action count
 
 #### Credential
