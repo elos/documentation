@@ -3,7 +3,7 @@ Data Model
 
 The Elos Data Model (EDM) is the underlying system defining all object models in the elos universe. It describes the fundamental building blocks of the elos core ontology, and even - as we will see - provides the building blocks for dynamic ontologies built on top of elos.
 
-### Records
+### The Pardigm of Set Theory
 
 It is easiest to think about elos data records as you would imagine algebraic objects. Much like in mathematics, we will define these objects and their formal properties and behaviors axiomatically. We will use the lexicon of [set theory](../theory/1 - sets.md) to talk about their relationships.
 
@@ -13,13 +13,39 @@ The second distinction to be made is between different types of models. Intuitiv
 
 We refer to the different types of models by their _kind_, which we make a formal construct in the EDM.
 
-#### Definitions
+#### Primitives vs. Structures
 
-Let *Strings* be the set of all string binary representations in UTF-8.
+We need to speak at least quickly regarding the theory of information. All information can be encoded using a two digit alphabet. If this doesn't sound familiar, you can check out information theory. We will use Binary for our two digit alphabet. One way to think about it:
 
-Let *K* be the set of "kinds" of data models we want to represent. For a simple todo app, *K* might be { 'user', 'task', 'list'}. *K* is much larger for elos. Note: *K* ⊂ *Strings*.
+    Binary ≡ { B, ¬B }
 
-Let *I* be the set of all ids in the system. *I* ⊂ *Strings*.
+So we have presence and abscence, true and false, and we will use these bits to represent all information. But our definition of binary isn't so important to our own goal as it is to the justification of the following primitive set we will define. It is so as a chemist recognizes atoms and the constituencies they form before and in justification of her ability to talk instead of molecules. Indeed we want to talk about data records, the structures (molecules) which are composed of these primitives (atoms).
+
+The EDM uses several "primitive," data structures, and assumes these are available to the system implementation. They are:
+
+    Booleans ≡ the set of all boolean values, {True , False}
+    Integers ≡ the set of all 64-bit integers, {x ∈ ℤ |  -9223372036854775808 ≤ x ≤ 9223372036854775807}
+    Floats   ≡ the set of all IEEE-754 64-bit floating-point numbers
+    Strings  ≡ the set of all UTF-8 binary encoded strings
+    Dates    ≡ the set of all RFC3099 binary encoded dates
+    Lists    ≡ the set of all sets of mappings from Integer to Primitives
+    Maps     ≡ the set of all sets of mappings from { Integer, Float, String } to Primitive
+    
+Note that the above used language of mapping, is equivalent to function. We avoid using function here because the term is often conflated with a physical function implementation. It is fair that indexing into an array or an array by an integer or hashable value, respectively, is equivalent to calling a function. (Spoiler Alert: everything is  function).
+
+### Records
+
+We defined the set of all records to be *R*. We now define the *K* to be the set of the kinds of data models we want to represent. For a simple todo app, *K* might be { 'user', 'task', 'list' }. *K* is much larger for elos, I think the cardinality now hovers around 20 -- but there is work being done to bring that number down. Note that *K* ⊂ *Strings*. It is, indeed, a proper subset. As we have defined *Strings* here, the set is infinite (uncountable).
+
+We have made two distinctions thus far. We will now introduce a third distinction:
+
+ 1. The 'Ontic' Distinction: That between the ontology and the ontic, between the class and the instance, the model and the record, the phenomenal as opposed to the physical
+ 2. The 'Kind' Distinction: That we want different structures of data records
+ 3. The 'ID' Distinction: We must be able to identify and retrieve different instances of the same model kind, we will do so with a unique independently assigned identifier
+
+We define *I* to be the set of all ids in the system. As with *K*, *I* ⊂ *Strings*. *I* is definitely countable, in fact its cardinality is the number of records in the system.
+
+#### Formal Definitions
 
 Let *R* be the set of all records in the elos system:
 
@@ -62,26 +88,6 @@ Formally:
 
 We would refer to U, T, L as users, tasks, and lists, respecitively. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the EDM in SQL would involve a users, tasks and lists table. 
 
-#### Primitives
-
-Before we continue we need to speak at least quickly regarding the theory of information.
-
-All information can be encoded using a two digit alphabet. If this doesn't sound familiar, you can check out information theory. We will use Binary for our two digit alphabet. One way to think about it:
-
-    Binary ≡ { B, ¬B }
-
-So we have presence and abscence, true and false, and we will use these bits to represent all information. But our definition of binary isn't so important to our own goal as it is to the justification of the following primitive types we will define. It is so as a chemist recognizes atoms and the constituencies they form before and in justification of her ability to talk instead of molecules.
-
-The EDM uses several primitive types. They are:
-
-    Boolean ≡ the set of all boolean values, true and false
-    Integer ≡ the set of all 64-bit integers, range -9223372036854775808 through 9223372036854775807
-    Float   ≡ the set of all IEEE-754 64-bit floating-point numbers
-    String  ≡ the set of all UTF-8 binary encoded strings
-    Date    ≡ the set of all RFC3099 binary encoded dates
-    List    ≡ the set of all sets of mappings from Integer to Primitives
-    Map     ≡ the set of all sets of mappings from { Integer, Float, String } to Primitive
-
 #### Traits
 
 Now that we have an idea of the abstract nature of elos records, we can discuss their individually defining features. A record's archetype is defined by the *Traits* which is has. Traits are key/value pairs from a String to a Primitive.
@@ -91,6 +97,7 @@ Now that we have an idea of the abstract nature of elos records, we can discuss 
     ∀ r ∈ R, ∃ several traits which belong to that record.
 
  A primitive is anything which can be encoded in binary -- which is everything -- but can be something like a date, for example.
+
 
 #### Validity
 
