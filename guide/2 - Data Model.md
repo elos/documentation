@@ -1,17 +1,17 @@
 Data Model
 ----------
 
-The Elos Data Model (EDM) is the underlying system defining all object models in the elos universe. It describes the fundamental building blocks of the elos core ontology, and even - as we will see - provides the building blocks for dynamic ontologies built on top of elos.
+The Metis Data Model (MDM) is a theoretical framework for defining a system of data records and their relationships. It can describe the fundamental building blocks of the elos core ontology, and even - as we will see - provides the building blocks for dynamic ontologies built on top of elos.
 
 ### The Pardigm of Set Theory
 
-It is easiest to think about elos data records as you would imagine algebraic objects. Much like in mathematics, we will define these objects and their formal properties and behaviors axiomatically. We will use the lexicon of [set theory](../theory/1 - sets.md) to talk about their relationships.
+It is easiest to think about metis data records as you would imagine algebraic objects. Much like in mathematics, we will define these objects and their formal properties and behaviors axiomatically. We will use the lexicon of [set theory](../theory/1 - sets.md) to talk about their relationships.
 
-The universal set while discussing the EDM is the set of all data records, *R*. But we must now make our first distinction, that between the archtype of a record and instances of that record. You can imagine the object-oriented equivalents of a class and instance respectively. We will state axioms about record archetypes, which we will henceforth refer to as models, but we will generally state theorems about our universe of records. We call these theorems because they are implications of our axioms.
+The universal set while discussing the MDM is the set of all data records, *R*. But we must now make our first distinction, that between the archtype of a record and instances of that record. You can imagine the object-oriented equivalents of a class and instance respectively. We will state axioms about record archetypes, which we will henceforth refer to as models, but we will generally state theorems about our universe of record instances. We use the terminology "theorems" because these statements are implications of our axioms.
 
-The second distinction to be made is between different types of models. Intuitively, and formally, there is a difference between the data record which represents a task and that which represents the task list. Data records often break into discrete structures much as you define them as you implemented them in a programming language. 
+The second distinction to be made is between different types of models. Intuitively, and formally, there is a difference between the data record which represents a task and that which represents the task list. Data records often break into discrete structures much as you define them and implemented them in a programming language. 
 
-We refer to the different types of models by their _kind_, which we make a formal construct in the EDM.
+We refer to the different types of models by their _kind_, which we make a formal construct in the MDM.
 
 #### Primitives vs. Structures
 
@@ -21,7 +21,7 @@ We need to speak at least quickly regarding the theory of information. All infor
 
 So we have presence and abscence, true and false, and we will use these bits to represent all information. But our definition of binary isn't so important to our own goal as it is to the justification of the following primitive set we will define. It is so as a chemist recognizes atoms and the constituencies they form before and in justification of her ability to talk instead of molecules. Indeed we want to talk about data records, the structures (molecules) which are composed of these primitives (atoms).
 
-The EDM uses several "primitive," data structures, and assumes these are available to the system implementation. They are:
+The EDM uses several "primitive," data structures, and assumes they are available to the system implementation.
 
     Booleans ≡ the set of all boolean values, {True , False}
     Integers ≡ the set of all 64-bit integers, {x ∈ ℤ |  -9223372036854775808 ≤ x ≤ 9223372036854775807}
@@ -31,54 +31,55 @@ The EDM uses several "primitive," data structures, and assumes these are availab
     Lists    ≡ the set of all sets of mappings from Integer to Primitives
     Maps     ≡ the set of all sets of mappings from { Integer, Float, String } to Primitive
     
-Note that the above used language of mapping, is equivalent to function. We avoid using function here because the term is often conflated with a physical function implementation. It is fair that indexing into an array or an array by an integer or hashable value, respectively, is equivalent to calling a function. (Spoiler Alert: everything is  function).
+    and Primitives := { Booleans, Integers, Floats, Strings, Dates, Lists, Maps }
+    
+Note that "a set of mappings" can be thought of as a function. We avoid using the explicity term function here because it is often conflated with a physical function implementation. It is fair that indexing into an array or a map by an integer or hashable value, respectively, is equivalent to calling a function. Indeed, everything is a function.
 
 ### Records
 
-We defined the set of all records to be *R*. We now define the *K* to be the set of the kinds of data models we want to represent. For a simple todo app, *K* might be { 'user', 'task', 'list' }. *K* is much larger for elos, I think the cardinality now hovers around 20 -- but there is work being done to bring that number down. Note that *K* ⊂ *Strings*. It is, indeed, a proper subset. As we have defined *Strings* here, the set is infinite (uncountable).
+We defined the set of all records to be *R*. We now define the *K* to be the set of the kinds of data models we want to represent. For a simple todo app, *K* might be { 'user', 'task', 'list' }. *K* is much larger for elos, I think the cardinality now hovers around 20 -- but there is work being done to bring that number down. Note that *K* ⊂ *Strings*. It is, indeed, a proper subset. As we have defined the set *Strings* here, it is infinite (uncountable).
 
-We have made two distinctions thus far. We will now introduce a third distinction:
+We have made two distinctions thus far:
 
- 1. The 'Ontic' Distinction: That between the ontology and the ontic, between the class and the instance, the model and the record, the phenomenal as opposed to the physical
- 2. The 'Kind' Distinction: That we want different structures of data records
- 3. The 'ID' Distinction: We must be able to identify and retrieve different instances of the same model kind, we will do so with a unique independently assigned identifier
+ * The 'Ontic' Distinction: That between the ontology and the ontic, between the class and the instance, the model and the record, the phenomenal as opposed to the physical
+ * The 'Kind' Distinction: That we want different structures of data records
+
+We will now introduce a third distinction:
+
+ * The 'ID' Distinction: We must be able to identify and retrieve different instances of the same model kind, we will do so with a unique independently assigned identifier
 
 We define *I* to be the set of all ids in the system. As with *K*, *I* ⊂ *Strings*. *I* is definitely countable, in fact its cardinality is the number of records in the system.
 
 #### Formal Definitions
 
-Let *R* be the set of all records in the elos system:
+So at the purest level, the metis data model uses a two-dimensional coordinate system to identify all records. Namely, the kind and id. We can partition the set of all records based on their kind, and we can identifiy a record within the space of its kind by it's id. Formally, we define these two property functions for each record:
 
-    ∀ r ∈ R:
      * Kind: R → K
-     * ID: R → I
+     * ID:   R → I
 
     ∀ m, n ∈ R: (Kind(m) = Kind(n)) ⇒ (ID(m) ≠ ID(n))
     ∀ m, n ∈ R: (Kind(m) = Kind(n)) ^ (ID(m) = ID(n)) ⇒ m = n
 
-So at the purest level, the elos data model uses a two-dimensional coordinate system to identify all records. Namely, the kind and the id. You will note that we can now define the *Find* function on the elos data system to be the following:
+We now define the function *Find: (K, I) → R*. We can say:
 
-    (∀ k ∈ K, i ∈ I)(∃ r ∈ R)(Find(k, i) → r)
+    (∀ k ∈ K, i ∈ I)(∃ r ∈ R) Find(k, i) ↦ r
 
-Moreover, *Find(k, s)* is injective (one-to-one). We uniquely identify a record by its kind and id. Note, here, that some databases have unique ids for _every_ record, r ∈ R. Some don't. SQL databases generally use incrementing ids for each table. In SQL, an elos kind would map to a table and the id to the primary key field. No new ideas here, just a slightly more general and formal statement of what we are working with.
+Moreover, *Find* is a bijection. It's inverse is given by the tuple of the *Kind* and *ID* property functions we defined earlier. We note, here, that some databases have unique ids for _every_ record, r ∈ R. Some don't -- namely SQL. SQL databases generally use incrementing ids for each table. In SQL, a metis kind would map to a table and the id to the primary key field. This illustrates a general point, you can probably follow along with the metis system and see the connections to SQL as we go. Indeed SQL is a working implementation. We formally define these concepts here so that we can further reason and abstract them.
 
 #### Spaces
 
-So we know that a kind and an id can uniquely identify a record in the EDM. But consider the set of all "users" in elos, or all "credentials" in elos. These are two disjoint sets (by definition), though they are both subsets of *R*, all records in elos. We want to handle various sets of records which share a "kind" independently and conveniently.
+We established that we can retrieve (*Find*) any record based on the two coordinates of a it's kind and id. Now consider the physical data records which constitute the collection instances of a particular model. We alluded earlier to our interest in partitioning these sets and reasoning about them independenty. For example, consider an ontology with *K* := { 'user', 'credential' }. Then we would want to think about the set of all "users" or "credentials" in our system. These are two disjoint sets (by definition), though they are both subsets of *R*. We want to handle various sets of records which share a "kind" independently and conveniently.
 
-To achieve this goal, we associate with each kind a "space."
+To achieve this goal, we associate with each kind a space. We define *S* to be the set of all spaces of an ontology.
 
-     ∀ k ∈ K, ∃ s ∈ S : space(k) → s
+    Space: K → S
 
-     ∀ x, y ∈ K, space(x) = space(y) ⇒ x = y (injective)
+    (∀ k ∈ K)(∃ s ∈ S) Space(k) → s          (surjective)
+    (∀ i, j ∈ K) Space(i) = Space(j) ⇒ i = j (injective)
 
-A space is the term we use to refer to the set of all instances of a record of kind k. And *S* is the set of all spaces.
+*Space* is another property function, but we also use the term space to refer to the set of all instances of a record of kind k. Space is also a bijection.
 
-Returning to our example of a todo app. If we had the kinds, { "user", "task", "list" }, we would have the following spaces:
-
-Formally:
-
-    ∀ k ∈ K, space(k) → s ∈ S, the set of all spaces
+To further illustrate this, we can return to our example of a todo app. If we had the K := { "user", "task", "list" }, we would have the following spaces:
 
     U = { r ∈ R : kind(r) → "user" }
     T = { r ∈ R : kind(r) → "task" }
@@ -86,18 +87,35 @@ Formally:
 
     ∴ S ≡ { U, T, L }
 
-We would refer to U, T, L as users, tasks, and lists, respecitively. Yes, the space name, because of how english works, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the EDM in SQL would involve a users, tasks and lists table. 
+We would refer to U, T, L as users, tasks, and lists, respectively. The space name, because of english, is generically the plural of the kind. Ahah! Now you see the connection to database tables or collections if you didn't see it before! Or perhaps you see it more clearly. Indeed, the implementation of a todo app using the metis logical core in SQL involves a users, tasks and lists table. 
 
 #### Traits
 
-Now that we have an idea of the abstract nature of elos records, we can discuss their individually defining features. A record's archetype is defined by the *Traits* which is has. Traits are key/value pairs from a String to a Primitive.
+Now that we have an idea of the abstract nature of elos records, we can discuss their individually defining features; the primitives of which they are composed. A record's archetype is defined by the *Traits* which is has. Traits are String to Primitive key/value pairs.
 
     T: Strings → Primitives
     
-    ∀ r ∈ R, ∃ several traits which belong to that record.
+    ∀ k ∈ K, ∃ several traits which belong to that kind
+    
+    Let Traits: K → (Strings, Primitives)
+    
+Here it is useful to think of the function *Traits* as a set of ordered pairs. As we will refer to the *Traits* of a model regularly. So a trait could be ('completed', Booleans) or ('created_at', Dates). But recall the 'Ontic' distinction. We have the framework of traits, but each individual record will have a different value associated with each trait. We call this value the records 'attribute.' This is implicit in our above formal definition because T is a function from Strings, a simple set, to Primitives a set of sets.
 
- A primitive is anything which can be encoded in binary -- which is everything -- but can be something like a date, for example.
+An individual record may then have the attribute, ('completed', True) and ('created_at', '2009-11-10 23:00:00 +0000 UTC'). We define attributes on the set of records (recall the Ontic distinction):
 
+    A: Traits → (P ∈ Primitives)
+    
+    ∀ r ∈ R, ∃ several attributes which belong to that record
+    
+    Let Attributes: R  → (Traits, P ∈ Primitives)
+
+Continuing our task list example.
+
+    Traits('task') := { ('created_at', Dates), ('completed_at', Dates), ('name', Strings) } ≡ { t₁, t₂, t₃ }
+    
+    (Attributes ○ Find)('task', 1) = Attributes(Find('task', 1)) = { (t₁, '2009-11-10 23:00:00 +0000 UTC'), (t₂, '2009-11-10 23:00:00 +0000 UTC'), (t₃, 'Take out the trash')}
+    
+It can be nice to think of the attributes of a record as just the string to their value, and then the primitive type is implicit is that it is the superset (universe) of whichever value is given. We prefer to be explicit here.
 
 #### Validity
 
