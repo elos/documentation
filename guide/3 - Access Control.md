@@ -1,7 +1,7 @@
 Access Control
 --------------
 
-Formal systems that maintain a collection of resources need a notion of access control. This is a foundational concept in operating systems, database systems, and also organizational systems. Elos is no different, and the elos ontology (including the dynamic ontology) are governed by the Elos Access Control (EAC) model.
+Formal systems that maintain a collection of resources need a notion of access control. This is a foundational concept in operating systems, database systems, and also organizational systems. Elos is no different, and the elos ontology is governed by the Elos Access Control (EAC) model.
 
 ### Overview
 
@@ -99,3 +99,7 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Links: { ('owner', Users) }
     
 You may have noticed that each of the models except for the user has an 'owner' relation. Indeed every model in the system must have a owner. 
+
+### Actions
+
+Every mutation of data is taken on behalf of either the system or a user. Generally speaking, the system can do whatever it wants. We obviously will establish formal rules to be reasonable. But otherwise, actions are on behalf of the user. There are four actions that a user can take: create a record, read a record, write a record and delete a record.
