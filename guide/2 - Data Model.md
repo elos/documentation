@@ -120,59 +120,39 @@ Continuing our task list example.
     
 It can be nice to think of the attributes of a record as just the string to their value, and then the primitive type is implicit is that it is the superset (universe) of whichever value is given. We prefer to be explicit here.
 
-#### Links
+#### Relations
 
 At this point you may be thinking, we know about definining records as compositions of primitives, but what about relations between records. "Aren't abstraction and encapsulation important ideas?" Ha! You are right, which is why we don't have one big record which we modify, we split them up. This idea was, in a way, implicit in the fact we were talking about kinds and spaces. As soon as you have multiple kinds of records, you want to be able to model their relations. 
 
 Graphs are beautiful data structures which appear everywhere, and indeed we have a graph. We will first formally define links and how they connect records. Then we will show that we can represent these relationships with standardized trait definitions. So links are truly an abstraction. Let's see.
 
-Let's say we have r, s  ∈ R, and r wants to point to information encapsulated in s (So this is a directed graph indeed). Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. So you may be thinking easy, a trait with a name of "tasks." And yep, that's right, for starters.
+Let's say we have r, s  ∈ R, and r wants to point to information encapsulated in s (So this is a directed graph indeed). Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. We have _named_ our link "tasks," and have said that it points to records in the space of Tasks. Suppose though that we want to have the currently active task on the task list. We want to say that a TaskLisk has one current task. Is this fundamentally different than saying that TaskList has many tasks? Indeed it is. Because appending to a set is a fundamentally different operation than replacing a task. We introduced the latter with the implicity constraint that you could only have _one_ "current task." Formally, we can generalize our: notion of a one-link and multi-link to
 
-    L: Strings → K
+    R: Strings → K'
     
-    Links: K → (Strings, K)
+    Relations: K → (Strings, K')
     
-    ∀ k ∈ K, |Links(k)| ≥ 0
+    ∀ k ∈ K, |Relations(k)| ≥ 0
 
-But remember the ontic distinction. As with traits we defined attributes as their physical manifestion. Links have physical manifestations in relations. We stated earlier that we need two-coordinates to identify all records in the system. The kind and id. We have only captured the kind. But we have associated each kind with a space. So in way, our definition of link above going from a set of objects to a kind, if you think of a kind as a space, as we had primitives a set of sets, likewise K can be thought of as a set of a sets.
+We call *K'* the codomain the of the relation. The domain of the relation is *K*. Note that it is entirely possible that *K = K'*. That would be a recursive data structure.
 
-#### Relations
+Now recall the ontic distinction. With traits we defined the concept of an attribute as their physical manifestion. The physical manifestation of a relation is a link. We stated earlier that we need two-coordinates to identify all records in the system. The kind and id. We have only captured the kind. But we have associated each kind with a space. As we had *Primitives* as a set of sets,  K can likewise be thought of as a set of a sets.
 
-    R_r: Links → (K, I)
+#### Links
+
+    L: Relations → I or []I
     
-    Relations: R → (Links, (K, I))
+    Links: R → (Relations,  I or []I))
     
-    ∀ r ∈ R, |Relations(r)| = |Links(Kind(r))|
+    ∀ r ∈ R, |Links(r)| = |Relations(Kind(r))|
     
-There are three bits here. The name of the link, the kind of the other record and the id of the record. We are still missing one aspect. The cardinality of the link itself. A TaskList could have many Tasks. So in fact we want a set of record in R. So there's another bit, whether this arrow "splits," if you will. So far we have only pointed a link to one other record, but the truth is it points to a set of other records.
+There are three bits here. The name of the link, the kind of the other record and the id of the record. We are still missing one aspect. The cardinality of the link itself. We must handle the case that we have multiple links and singular links, and that these are fundamentally different things. We note that *I ⊂ Strings* and therefore *[]I* is eqivalent to an array of *Strings* which is another primitive.  A TaskList could have many Tasks. So in fact we want a set of record in R. So there's another bit, whether this arrow "splits," if you will. So far we have only pointed a link to one other record, but the truth is it points to a set of other records.
 
     A Multi-Link defines a multi-relation which from Links → {(k, i) ∈ (K, I)}
     
 So there are four bits: name, kind, id(s) of the other record, and whether we expect it to be multi-link.
-
-Let's extend our notion of a record:
-
-    ∀ r ∈ R:
-        * Traits(r) → { t, ... ∈ Traits } (we said a record must have at least an id, and book keep traits)
-        * Links(r) → ∅ ∨ { t, ... ∈ Traits } (a record need not have links)
     
-    and remember 
-    
-    ∀ l ∈ Links, ∃ a function or correspondence, LinkRepresentation: Links → Traits
-    
-    Representation is isomorphic
-    
-    ∴  ∀ l ∈ Links, ∃ t ∈ Traits
-    
-Because of the book keeping traits, 
-
-    ∀ r ∈ R, |Traits(r)| ≥ 4
-
-Because all links are ultimately represented by traits
-
-    ∀ r ∈ R, |Traits(r)| - 4 ≥ |Links(r)|
-    
-The obvious question is, if a Link needs 4 "bits" of information to be fully understood, then why doesn't one link abstraction yield four traits. And the answer is that at the static elos data model level, these bits of information can be encoded programmatically. For example, if you stored those 4 bits on the model you would still have to implement the manner in which you go about retrieving the corresponding records. This maneuver is just an algorithm, and so at the actual representation level, if we have the archetype abstraction of knowing that a TaskList's "tasks" trait is multiple, and that the codomain is "task," then need only store the trait "tasks" -> []id. We know to interpret these ids as tasks. And this is truly the relationship the LinkRepresentation function defines.
+The obvious question is, if a Link needs 4 "bits" of information to be fully understood, then why doesn't one link abstraction yield four traits. And the answer is that at the static elos data model level, these bits of information can be encoded programmatically. They are constant and therefore can be thought of as immediates -- known at the time of writing. For example, if you stored those 4 bits on the model you would still have to implement the manner in which you go about retrieving the corresponding records. This maneuver is just an algorithm, and so at the actual representation level, if we have the archetype abstraction of knowing that a TaskList's "tasks" trait is multiple, and that the codomain is "task," then need only store the trait "tasks" -> []id. We know to interpret these ids as tasks. And this is truly the relationship the LinkRepresentation function defines.
 
     LinkRepresentation: L → T, ∀ l ∈ L
         iff l is singular: LinkRepresentation(l) → t ∈ T, t: name(l) → id
