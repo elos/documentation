@@ -56,7 +56,7 @@ the universe assigns the user's id, created_at, updated_at, and password fields.
 
 ### Models
 
-All models have an id and the (bookkeeping traits)(./2 - Data Model.md#effective-bookkeeping).
+All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective-bookkeeping).
 
 #### User
 
