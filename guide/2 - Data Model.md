@@ -254,7 +254,7 @@ A lot of the formalities we have established so far are relatively well understo
     
 We claim that these models are structurally sufficient structures to implement the aforedeveloped metis data model. Therefore, we can build an ontology, that allows for dynamic ontologies.
 
-### Extension for Practical Implementation
+### Traits for Practical Implementation
 
 #### Kind & ID Coordinates
 
