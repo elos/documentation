@@ -210,7 +210,7 @@ A lot of the formalities we have established so far are relatively well understo
     Space: Models
     Domains: { 'models' }
     Traits: { ('name', Strings) }
-    Relations: { ('traits', Traits), ('relations', Relations), ('ontology', Ontologies)
+    Relations: { ('traits', Traits), ('relations', Relations), ('ontology', Ontologies) }
     
 #### Trait
 
@@ -218,7 +218,7 @@ A lot of the formalities we have established so far are relatively well understo
     Space: Traits
     Domains: { 'traits' }
     Traits: { ('name', Strings), ('primitive', Strings) }
-    Relations: { ('model', Models), (attributes, Attributes)
+    Relations: { ('model', Models), (attributes, Attributes) }
     
 #### Relation
 
