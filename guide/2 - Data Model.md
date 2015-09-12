@@ -31,6 +31,7 @@ So we have presence and abscence, true and false, and we will use these bits to 
 
 The EDM uses several "primitive," data structures, and assumes they are available to the system implementation.
 
+    Bytes    ≡ the set of all binary strings
     Booleans ≡ the set of all boolean values, {True , False}
     Integers ≡ the set of all 64-bit integers, {x ∈ ℤ |  -9223372036854775808 ≤ x ≤ 9223372036854775807}
     Floats   ≡ the set of all IEEE-754 64-bit floating-point numbers
@@ -190,6 +191,68 @@ Any domain d, which is not a kind k, is not connected to a physical space and th
 If ou are familiar with the notions of interfaces or protocols, a virtual domain is like an interface because it implicitly represents the variability of type information. But we need to know that kind somehow, since we stated that in order to retrieve a record, we need the kind-id tuple. So any polymorphic link reduces to two traits. One associated with the variable kind(s) and one associated with the variable id(s). We generalize our relation R:
 
     R: Strings → D
+    
+### Meta-Models: Toward a Dynamic Ontology
+
+A lot of the formalities we have established so far are relatively well understood in the computer systems community. We have SQL databases and a plethora of ORM libraries which allow us to interface with these data stores. One of the motivations though for formally defining all the structures needed to represent a robust ontology, is the possibility that we can use that system in order to define a dynamic ontology. We can use metis in order to implement metis for a novice user. Indeed we claim that using the theory we have established above, this is possible using a finite set of meta-models. We will define these here:
+
+#### Ontology
+
+    Kind: 'ontology'
+    Space: Ontologies
+    Domains: { 'ontologies' }
+    Traits: {}
+    Relations: { ('models', Models), ('ontics', Ontics) }
+
+#### Model
+
+    Kind: 'model'
+    Space: Models
+    Domains: { 'models' }
+    Traits: { ('name', Strings) }
+    Relations: { ('traits', Traits), ('relations', Relations), ('ontology', Ontologies)
+    
+#### Trait
+
+    Kind: 'trait'
+    Space: Traits
+    Domains: { 'traits' }
+    Traits: { ('name', Strings), ('primitive', Strings) }
+    Relations: { ('model', Models), (attributes, Attributes)
+    
+#### Relation
+
+    Kind: 'relation'
+    Space: Relations
+    Domains: { 'relations' }
+    Traits: { ('name', Strings), ('multiplicity', Strings), ('codomain', Strings), ('inverse', Strings) }
+    Relations: { ('model', Models), ('links', Links) }
+    
+#### Ontic
+
+    Kind: 'ontic'
+    Space: Ontics
+    Domains: { 'ontics' }
+    Traits: {}
+    Relations: { ('attributes', Attributes), ('links', Links), ('model', Model), ('ontology', Ontologies) }
+
+#### Attribute
+
+    Kind: 'attribute'
+    Space: Attributes
+    Domains: { 'attributes' }
+    Traits: { ('value', Bytes) }
+    Relations: { ('ontic', Ontics), ('trait', Traits) }
+
+#### Link
+
+    Kind: 'link'
+    Space: Links
+    Domains: { 'links' }
+    Traits: { (ids, Lists) }
+    Relations: { ('ontic', Ontics), ('relation', Relations) }
+    
+We claim that these models are structurally sufficient structures to implement the aforedeveloped metis data model. Therefore, we can build an ontology, that allows for dynamic ontologies.
 
 #### Validity
 
