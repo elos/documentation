@@ -53,3 +53,40 @@ then C = function(public, private) => User
 the universe assigns the user's id, created_at, updated_at, and password fields. The universe creates a valid credential and assigns it to the user.
 
 #### Interaction (Property)
+
+### Models
+
+All models have an id and the (bookkeeping traits)(./2 - Data Model.md#effective-bookkeeping).
+
+#### User
+
+    Kind: 'user'
+    Space: Users
+    Domains: { 'users' }
+    Traits: { (password, Strings) }
+    Links: { ('credentials', Credentials), ('groups', Groups), ('authorizations', Groups), ('sessions', Sessions) }
+    
+#### Credential
+
+    Kind: 'credential'
+    Space: Credentials
+    Domains: { 'credentials' }
+    Traits: { ('public', Strings), ('private', Strings), ('spec', Strings), ('name', Strings) }
+    Links: { ('owner', Users), ('sessions', Sessions) }
+    
+#### Session
+
+    Kind: 'session'
+    Space: Sessions
+    Domains: { 'sessions' }
+    Traits: { ('token', Strings), ('expires_after', Integers)
+    Links: { ('owner', Users), ('credential', Credentials) }
+    
+#### Group
+
+    Kind: 'group'
+    Space: Groups
+    Domains: { 'groups' }
+    Traits: { ('name', Strings), ('access', Strings), ('domain', Strings), ('ids', Strings) }
+    Links: { ('owner', Users), ('grantees', Users)
+    
