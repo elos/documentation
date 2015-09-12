@@ -33,7 +33,7 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Traits: { ('public', Strings), ('private', Strings), ('spec', Strings), ('name', Strings) }
     Links: { ('owner', Users), ('sessions', Sessions) }
     
-Credentials are immutable.
+Credentials are immutable. The public part of a credential is unique in the space of Credentials.
     
 #### Session
 
@@ -134,9 +134,21 @@ In order to delete their account, a user must provide their 50 character passwor
 
 A user can personally change their 50 character password string, as an IA. Once an IA, they can also create any other ownable records. For example, create a credential and add it to their record.
 
-##### Authorization (Indentification + Authentication)
+##### Authorization (Identification + Authentication)
 
-We've talked already about the distinction between an IA and UA. So how does a user become an identified agent, and what explicitly is associated with being an IA?
+We've talked already about the distinction between an IA and UA. So how does a user become an identified agent, and what explicitly is associated with being an IA? An agent starts as an UA:
+
+* UA attempts the Authorize Action, provides public key
+
+System looks for a credential with that public key (Identification)
+ 1. Credential found: in which case the system issues a challenge based on the private key
+ 2. Credential not found: in which case the action fails (this counts towards the UA's failed action count
+
+ * UA attempts to front the challenge, and sends decrypted message
+
+System verifies decrypted challenge (Authentication)
+ 1. Correct: The user as authorized, as the user who owns the given credential, UA --> IA.
+ 2. Incorrect: Now the action fails, and this counts towards the UA's failed action count
 
 #### Credential
 
