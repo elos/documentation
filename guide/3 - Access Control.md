@@ -123,7 +123,7 @@ Another way of stating this is that if a user is 'authorized' to read or write t
 
 #### Writing
 
-A user can write their own record, and the records which they own. Additionally a user can write to any records which are enumerated in the contexts of any groups with access level > 1 of which the user is a 'grantee.'
+A user can write to their own record, and the records which they own. Additionally a user can write to any records which are enumerated in the contexts of any groups with access level > 1 of which the user is a 'grantee.'
 
 As with reading, they can write if authorized by definition of the groups they are a part of.
 
