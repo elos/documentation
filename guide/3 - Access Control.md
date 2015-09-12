@@ -98,4 +98,4 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Traits: { ('domain', Strings), ('ids', Lists<String>)
     Links: { ('owner', Users) }
     
-You may have noticed that each of the models except for the user has an 'owner' relation. Indeed every model in the system must have a user. 
+You may have noticed that each of the models except for the user has an 'owner' relation. Indeed every model in the system must have a owner. 
