@@ -22,7 +22,7 @@ We can notice that range(f) ⊆ T. If range(f) = T, then f is said to map S *ont
 
 ##### Injective Functions
 
-A function f: S → T is said to be one-to-one, or injective, if distinct elements in the domain are mapped to distinct elements in the range. That is, That is, if u,v ∈ S and u ≠ v then f(u) ≠ f(v). Equivalently, if f(u) = f(v) then u = v.
+A function f: S → T is said to be one-to-one, or injective, if distinct elements in the domain are mapped to distinct elements in the range. That is, if u, v ∈ S and u ≠ v then f(u) ≠ f(v). Equivalently, if f(u) = f(v) then u = v.
 
 ##### Bijections
 
@@ -36,26 +36,26 @@ If f is a one-to-one function from S onto T, we can define inverse of f as the f
 
 If we take the paradigm of the function as a set of ordered pairs, then:
 
-    f^{−1} = {(y,x) ∈ T × S : (x,y) ∈ f}.
+    f^{−1} = {(y,x) ∈ T × S : (x,y) ∈ f}
 
-Note that the facts that f is onto and one-to-one ensure that f is a valid function from T onto S. We can say that the sets S and T are in one-to-one correspondence if there exists an injective function from S onto T.  We can also state the following theorem:
+Note that the facts that f is onto and one-to-one ensure that f^{-1} is a valid function from T onto S. We can say that the sets S and T are in one-to-one correspondence if there exists an injective function from S onto T.  We can also state the following theorem:
 
-    f: A → A is a bijection ⇔  ∃ an inverse function g: A → A such that g(f(x)) = x and f(g(y)) = y ∀ x,y ∈ A
+    f: A → A is a bijection ⇔ ∃ an inverse function g: A → A such that 
+    g(f(x)) = x and f(g(y)) = y, ∀x, y ∈ A
 
 ##### Restrictions
 
-Suppose that f: S → T and that A ⊆ S. The function f_A: A → T defined by the rule f_A(x) = f(x) ∀x ∈ A is called, appropriately enough,the restriction of f to A. As a set of ordered pairs, note that f_A = {(x,y) ∈ f: x ∈ A}. The notion of a function as a set of ordered pairs is formally quite handy.
+Suppose that f: S → T and that A ⊆ S. The function f_A: A → T defined by the rule f_A(x) = f(x) ∀x ∈ A is called, appropriately enough, the restriction of f to A. As a set of ordered pairs, note that f_A = {(x,y) ∈ f: x ∈ A}. The notion of a function as a set of ordered pairs is formally quite handy.
 
 ##### Identity
 
-The identity function on a set S is the function IS from S onto S defined by I_S(x) = x ∀x ∈ S
+The identity function on a set S is the function from S onto S defined by I_S(x) = x ∀x ∈ S
 
 #### Composition
 
 We wrote earlier, f(g(x)). This is in fact a function composition. Suppose that g: R → S and f: S → T. The composition of f with g is the function f ∘ g: R → T defined by:
 
     (f ∘ g)(x) = f(g(x)), ∀ x ∈ R
-
 
 ##### Associativity of Composition
 
@@ -98,7 +98,7 @@ The inverse of a function is really the inverse with respect to composition. Sup
 
 Suppose that g is a one-to-one function from R onto S and that f is a one-to-one function from S onto T. Then:
 
-    (f ∘ g)^{−1} =g^{−1} ∘ f^{−1}
+    (f ∘ g)^{−1} = g^{−1} ∘ f^{−1}
 
 
 
