@@ -117,7 +117,7 @@ A user can create any record of any kind k, *except* for another user. Another w
 
 #### Reading
 
-A user can read their own record, and the records which they own. Additionally a user can read any records which are enumerated in the contexts of any groups which access level > 0 of which the user is a a 'grantee'.
+A user can read their own record, and the records which they own. Additionally a user can read any records which are enumerated in the contexts of any groups with access level > 0 of which the user is a a 'grantee'.
 
 Another way of stating this is that if a user is 'authorized' to read or write to a record, they may read or write. Sounds tautological but it is this is the nature of proofs by definition.
 
