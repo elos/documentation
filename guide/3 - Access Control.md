@@ -60,7 +60,7 @@ Access:
  * 1 := read
  * 2 := write
 
-The initial value of 'access' is 0. So unless a user gives explicity permissions, _after_ creating the group, the group's effect is nil. This group is known as an impotent group.
+The initial value of 'access' is 0. So unless a user gives explicity permissions, _after_ creating the group, the group's effect is nil. This group is known as an impotent group. An impotent record is generally a record which is invalid without any negative side effects, or a record which has no effect on the system.
     
 #### Context
 
@@ -73,7 +73,6 @@ The initial value of 'access' is 0. So unless a user gives explicity permissions
 Contexts are immutable.
 
 You may have noticed that each of the models except for the user has an 'owner' relation. Indeed every model in the system must have a owner. 
-
 
 ### Actions
 
@@ -98,3 +97,63 @@ As with reading, they can write if authorized by definition of the groups they a
 #### Deleting
 
 A user can only delete records which they own.
+
+### Functionality
+
+As a quick aside, whenever a external agent is communicating with the elos system we can classify them into 1 of three categories
+
+###### Identified-Agent (IA)
+
+An identified agen is any external agent communicating with the elos system whom ee have authorized. That is to say, there exists a user whom we have associated with this agent.
+
+As a rule, elos serves the IA.
+
+###### Unidentified-Agent (UA)
+
+An unindentified agent is any external agent communicating with the elos system. They are not any user in particular, although they may be, and may eventually be authorized as such subsequently. The UA represents an unmalicious entity though that the system is willing to communicate with. Willing is key here.
+
+As a rule, elos acknowledges a UA.
+
+##### Malicious-Agent (MA)
+
+A malicious agent is any external agent communicating with the elos system, whom the elos system has deemed as not fit to communicate with. Hopefully that decision would not have been made arbitrarily, but rather on a collection of intel regarding number of requests, number of failed actions, etc. 
+
+As a rule, elos does not acknowledge a MA.
+
+#### User
+
+##### Creation
+
+Any UA can attempt to create a user. When they do so, the user is assigned a 50 character password string, the user must create a credential also. A user without a credential is known as impotent. 
+
+##### Deletion
+
+In order to delete their account, a user must provide their 50 character password string, as an IA.
+
+##### Modification
+
+A user can personally change their 50 character password string, as an IA. Once an IA, they can also create any other ownable records. For example, create a credential and add it to their record.
+
+##### Authorization (Indentification + Authentication)
+
+We've talked already about the distinction between an IA and UA. So how does a user become an identified agent, and what explicitly is associated with being an IA?
+
+#### Credential
+
+##### Creation
+
+Any user u, can a credential, c. The credential must have a public and private componenent, as well a spec, which is a member of the set of explicitly supported authentication specifications, X.
+
+    X := { 'password' } 
+
+Currently a credential is just a id and password. So the private part would actually be an encrypted hash
+
+##### Deletion
+
+Only a user can delete it's credentials. A user can not delete a credential if this will leave it without a credential. This is called the ensurance of access principal, given by the invariant:
+
+    for u in User, |credentials(u)| > 0
+    
+##### Modification
+
+Credentials are immutable.
