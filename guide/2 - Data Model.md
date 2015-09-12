@@ -42,7 +42,7 @@ The EDM uses several "primitive," data structures, and assumes they are availabl
     
     and Primitives := { Booleans, Integers, Floats, Strings, Dates, Lists, Maps }
     
-Note that "a set of mappings" can be thought of as a function. We avoid using the explicity term function here because it is often conflated with a physical function implementation. It is fair that indexing into an array or a map by an integer or hashable value, respectively, is equivalent to calling a function. Indeed, everything is a function.
+Note that "a set of mappings" can be thought of as a function. We avoid using the explicity term function here because it is often conflated with a physical function implementation. It is fair that indexing into an array or a map by an integer or hashable value, respectively, is equivalent to calling a function. Indeed, everything is a function. Note also that *Bytes* is isomorphic to all other primitive sets.
 
 ### Records
 
