@@ -102,13 +102,13 @@ A user can only delete records which they own.
 
 As a quick aside, whenever a external agent is communicating with the elos system we can classify them into 1 of three categories
 
-###### Identified-Agent (IA)
+##### Identified-Agent (IA)
 
 An identified agen is any external agent communicating with the elos system whom ee have authorized. That is to say, there exists a user whom we have associated with this agent.
 
 As a rule, elos serves the IA.
 
-###### Unidentified-Agent (UA)
+##### Unidentified-Agent (UA)
 
 An unindentified agent is any external agent communicating with the elos system. They are not any user in particular, although they may be, and may eventually be authorized as such subsequently. The UA represents an unmalicious entity though that the system is willing to communicate with. Willing is key here.
 
@@ -150,7 +150,7 @@ Currently a credential is just a id and password. So the private part would actu
 
 ##### Deletion
 
-Only a user can delete it's credentials. A user can not delete a credential if this will leave it without a credential. This is called the ensurance of access principal, given by the invariant:
+Only a user can delete its credentials. A user can not delete a credential if this will leave it without a credential. This is called the ensurance of access principal, given by the invariant:
 
     for u in User, |credentials(u)| > 0
     
