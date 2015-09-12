@@ -150,40 +150,38 @@ The component which varied when we discussed traits was the value within the tra
     
 #### Relation-Trait & Link-Attribute Isomorphism 
 
-We mentioned earlier that a link has several components, it's size, it's codomain, it's name and it's actual value, but that it could still be treated as a trait. The obvious question is, if a Link needs 4 "bits" of information to be fully understood, then why doesn't one link abstraction yield four traits. Well, at the static elos data model level, these bits of information can be encoded programmatically. They are immediates. Because the name of a link, it's size and it's codomain are known and are invariant, we need not make them a part of our dynamic record. They are constant. We sort of implied the names of traits.
+We mentioned earlier that a link has several components, it's size, it's codomain, it's name and it's actual value, but that it could still be treated as a trait. The obvious question is, if a Link needs 4 "bits" of information to be fully understood, then why doesn't one link abstraction yield four traits. Well, at the static elos data model level, these bits of information can be encoded programmatically. They are immediates. Because the name of a link, it's size and it's codomain are known and are invariant, we need not make them a part of our dynamic record. They are constant.
 
 If you stored those 4 pieces of information on the model you would still have to implement the procedure in which you go about retrieving the corresponding records. This routine effectively reduces an algorithm, and so at the actual representation level, if we have the archetype abstraction of knowing that a TaskList's "tasks" trait is multiple, and that the codomain is "task," then we need only store the trait "tasks" -> []id. We know to interpret these ids as tasks.
 
-To further our point, ee note that *I ⊂ Strings* and therefore *[]I* is eqivalent to an *[]Strings*. Therefore *I* and *[]I* are actually just primitive sets. The link multiplicity and codomain are immediates, so we need only the name of the link and it's primitive value. Indeed this is a trait! 
+To prove our point, note that *I ⊂ Strings* and therefore *[]I* is eqivalent to an *[]Strings*. Therefore *I* and *[]I* are actually just primitive sets. The link multiplicity and codomain are immediates, so we need only the name of the link and it's primitive value. Indeed this is a trait! 
 
-    RelationRepresentation: R → T, ∀ r ∈ Relations(k), ∀ k ∈ K
-        iff r is singular: RR(r) → t, t := (name(r), Strings)
-        iff r is multiple: RR(r) → t, t := (name(r), []Strings)
+    (∀ k ∈ K)(∀ r ∈ Relations(k)) let t be the corresponding Trait which isomorphically represent this link.
+        (r is singular): t := (name(r), Strings)
+        (r is multiple): t := (name(r), []Strings)
+    
+This may seem at first to be just a technicality. But in fact this equivalence is what allows us to state that in order to implement the metis data model, we need only a data store which can hold structures composed of primitive tuples. Still don't see it? Well we picked string "names" for our traits and links because that is the most sensible way to understand them. But a string is just a primitive. Therefore a trait is a (Primitive, Primitive) tuple. And a link is a trait. Therefore records are truly just sets of primitive-primitive tuples. Every other construction we have introduced so far is just a logical abstraction.
 
 #### Polymorphism (Domains)
 
-But you may be thinking, what about polymorphism. How can I make type information variable regarding the kind of a link. The answer is domains. We defined a link to have a codomain, which thus far was always a kind. But now we introduce the notion of domains an extend our idea of a record a bit further:
+But you may be thinking, what about polymorphism. How can I make type information variable regarding the kind of a relation. We have so far ignored this point. We defined a link to have a codomain, which thus far was always a kind, and that kind was backed by a physical space of records -- which knew to exist. But now we introduce the notion of domains an extend our ideas a bit further:
 
     Let D be the set of domains for the entire ontology.
     
-    ∀ r ∈ R:
-     * Domains(r) → {d ∈ D, such that the record satisfies the requirements of d}
+    ∀ k ∈ K:
+     * Domains(k) → {d ∈ D, such that the record satisfies the requirements of d}
      
-    S, the set of all spaces, is a subset of D, the set of all domains
+    K ⊆ D
     
-Any domain that is not a physical space, itself defines a virtual space. Namely no individual record physically substantiates that space but rather records of many kinds do. The domain is a restriction on what you can put in the box, but we still need to retain the information on what is actually inside. So whenever you have a polymorphic link, when Codomain(l) is not in S, you must also record the kind.
-     
-Now for some axioms.
+Any domain d, which is not a kind k, is not connected to a physical space and therefore itself defines a virtual space. That is to say no single kind physically substantiates that virtual space but rather records of many kinds do, perhaps only one kind. The domain is a restriction on what you can put in the relation.
 
-        (∀ r ∈ R)
-         * |Domains(r)| > 0, because the record always implements its physical space
-         * (Domains(r) = 1) ⇒ (r satisfies no virtual spaces)
+        (∀ k ∈ K)
+         * |Domains(k)| > 0, because Domains(k) is at least {k}
+         * |Domains(r)| = 1 ⇒ r is purely physical (substantiates no virtual spaces)
+         
+If ou are familiar with the notions of interfaces or protocols, a virtual domain is like an interface because it implicitly represents the variability of type information. But we need to know that kind somehow, since we stated that in order to retrieve a record, we need the kind-id tuple. So any polymorphic link reduces to two traits. One associated with the variable kind(s) and one associated with the variable id(s). We generalize our relation R:
 
-Finally we can generalize our definition of Codomain on a link:
-
-     Codomain: L → D
-
-Which makes sense of why we call it a codomain.
+    R: Strings → D
 
 #### Validity
 
