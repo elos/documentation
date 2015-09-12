@@ -105,11 +105,12 @@ Here it is useful to think of the function *Traits* as a set of ordered pairs. A
 
 We have the framework of traits, but each individual record will have a different value associated with each trait. We call this value the records 'attribute.' This is implicit in our above formal definition because T is a function from Strings, a simple set, to Primitives, a set of sets.
 
-    A: Traits → (P ∈ Primitives)
+    A_r: Traits → (P ∈ Primitives) for some r ∈ R
     
-    ∀ r ∈ R, ∃ several attributes which belong to that record
+    Attributes: R  → (Traits, P ∈ Primitives)
     
-    Let Attributes: R  → (Traits, P ∈ Primitives)
+    ∀ r ∈ R, |Attributes(r)| = |Links(Kind(r))|
+
 
 Continuing our task list example.
 
@@ -119,40 +120,35 @@ Continuing our task list example.
     
 It can be nice to think of the attributes of a record as just the string to their value, and then the primitive type is implicit is that it is the superset (universe) of whichever value is given. We prefer to be explicit here.
 
-#### Validity
+#### Links
 
-To be a valid record in the elos data model a record must have an ID and a kind. The kind is often represented implicitly through the use of database "collections" or "tables." Elos views this as mostly an optimization. It can be thought of as if you had an index on the kind field and one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
+At this point you may be thinking, we know about definining records as compositions of primitives, but what about relations between records. "Aren't abstraction and encapsulation important ideas?" Ha! You are right, which is why we don't have one big record which we modify, we split them up. This idea was, in a way, implicit in the fact we were talking about kinds and spaces. As soon as you have multiple kinds of records, you want to be able to model their relations. 
 
-In elos we attach three additional traits to each record. *created_at*, *updated_at* and *deleted_at* timestamps. So extending our axioms of *r* ∈ *R*:
+Graphs are beautiful data structures which appear everywhere, and indeed we have a graph. We will first formally define links and how they connect records. Then we will show that we can represent these relationships with standardized trait definitions. So links are truly an abstraction. Let's see.
 
-let *D* be the set of all RFC3099 binary encoded dates.
+Let's say we have r, s  ∈ R, and r wants to point to information encapsulated in s (So this is a directed graph indeed). Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. So you may be thinking easy, a trait with a name of "tasks." And yep, that's right, for starters.
 
-    created_at(r) → c ∈ D
-    updated_at(r) → u ∈ D
-    deleted_at(r) → d ∈ D
-
-    New Axiom: created_at(r) = updated_at(r) ⇒ r is a 'new' record
-    Del Axiom: created_at(r) < deleted_at(r) ⇒ r is a 'tombstone' record
-
-The *New* axiom can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc. (all things we will get into later). These, along with the implicit "id" trait, are collectively the known as "bookeeping" traits. Every record is for some sort of book keeping, but this is sort of meta book keeping.
-
-#### Relationships (Links)
-
-You may be thinking, "Aren't abstraction and encapsulation important ideas?" Ha! You are right, which is why we don't have one big record which we modify, we split them up. This idea was, in a way, implicit in the fact we were talking about kinds and spaces but I guess we could have pursued such formality for the sake of of "generality." But as soon as you have multiple kinds of records, you want to be able to model their relations. Graphs are beautiful data structures which appear everywhere. We have a graph here. The cool thing is that we can represent relationships with standardized trait definitions. So links are truly an abstraction. Let's see.
-
-Let's say we have records r and s. r wants to point to information encapsulated in s. So this is a directed graph indeed. Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. So you may be thinking easy, a trait with a name of "tasks." And yep, that's right, for starters.
-
-    L: Strings → r ∈ R
+    L: Strings → K
     
-    ∀ r ∈ R, ∃ zero or more links which belong to that record.
+    Links: K → (Strings, K)
     
-There are three bits here. The name of the link, the kind of the other record and the id of the record. But wait a TaskList could have many Tasks. So in fact we want a set of record in R. So there's another bit, whether this arrow "splits," if you will. So a link is an abstraction. And we also have a multiple link.
+    ∀ k ∈ K, |Links(k)| ≥ 0
 
-    M: Strings → {r, ...} ∈ R
+But remember the ontic distinction. As with traits we defined attributes as their physical manifestion. Links have physical manifestations in relations. We stated earlier that we need two-coordinates to identify all records in the system. The kind and id. We have only captured the kind. But we have associated each kind with a space. So in way, our definition of link above going from a set of objects to a kind, if you think of a kind as a space, as we had primitives a set of sets, likewise K can be thought of as a set of a sets.
+
+#### Relations
+
+    R_r: Links → (K, I)
     
-    ∀ r ∈ R, ∃ zero or more multiple links which belong to that record.
+    Relations: R → (Links, (K, I))
     
-So there are four bits: name, kind, id(s) of the other record, and whether we expect it to be multiple link.
+    ∀ r ∈ R, |Relations(r)| = |Links(Kind(r))|
+    
+There are three bits here. The name of the link, the kind of the other record and the id of the record. We are still missing one aspect. The cardinality of the link itself. A TaskList could have many Tasks. So in fact we want a set of record in R. So there's another bit, whether this arrow "splits," if you will. So far we have only pointed a link to one other record, but the truth is it points to a set of other records.
+
+    A Multi-Link defines a multi-relation which from Links → {(k, i) ∈ (K, I)}
+    
+So there are four bits: name, kind, id(s) of the other record, and whether we expect it to be multi-link.
 
 Let's extend our notion of a record:
 
@@ -208,6 +204,23 @@ Finally we can generalize our definition of Codomain on a link:
      Codomain: L → D
 
 Which makes sense of why we call it a codomain.
+
+#### Validity
+
+To be a valid record in the elos data model a record must have an ID and a kind. The kind is often represented implicitly through the use of database "collections" or "tables." Elos views this as mostly an optimization. It can be thought of as if you had an index on the kind field and one big table of 'records.' Obviously this isn't as tenable if you know up front you are going to have that kind field, which is why databases are built the way they are.
+
+In elos we attach three additional traits to each record. *created_at*, *updated_at* and *deleted_at* timestamps. So extending our axioms of *r* ∈ *R*:
+
+let *D* be the set of all RFC3099 binary encoded dates.
+
+    created_at(r) → c ∈ D
+    updated_at(r) → u ∈ D
+    deleted_at(r) → d ∈ D
+
+    New Axiom: created_at(r) = updated_at(r) ⇒ r is a 'new' record
+    Del Axiom: created_at(r) < deleted_at(r) ⇒ r is a 'tombstone' record
+
+The *New* axiom can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc. (all things we will get into later). These, along with the implicit "id" trait, are collectively the known as "bookeeping" traits. Every record is for some sort of book keeping, but this is sort of meta book keeping.
 
 #### Meta (Dynamic) Base Models
 
