@@ -87,6 +87,14 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Kind: 'group'
     Space: Groups
     Domains: { 'groups' }
-    Traits: { ('name', Strings), ('access', Strings), ('domain', Strings), ('ids', Strings) }
-    Links: { ('owner', Users), ('grantees', Users)
+    Traits: { ('name', Strings), ('access', Integers) }
+    Links: { ('contexts', Contexts) ('owner', Users), ('grantees', Users) }
+    
+#### Context
+
+    Kind: 'context'
+    Space: Contexts
+    Domains: { 'contexts' }
+    Traits: { ('domain', Strings), ('ids', Lists<String>)
+    Links: { ('owner', Users) }
     
