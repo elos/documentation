@@ -40,7 +40,7 @@ If we take the paradigm of the function as a set of ordered pairs, then:
 
 Note that the facts that f is onto and one-to-one ensure that f^{-1} is a valid function from T onto S. We can say that the sets S and T are in one-to-one correspondence if there exists an injective function from S onto T.  We can also state the following theorem:
 
-    f: A → A is a bijection ⇔ ∃ an inverse function g: A → A such that 
+    f: A → A is a bijection ⇔ ∃ an inverse function g: A → A such that
     g(f(x)) = x and f(g(y)) = y, ∀x, y ∈ A
 
 ##### Restrictions
@@ -53,21 +53,21 @@ The identity function on a set S is the function from S onto S defined by I_S(x)
 
 #### Composition
 
-We wrote earlier, f(g(x)). This is in fact a function composition. Suppose that g: R → S and f: S → T. The composition of f with g is the function f ∘ g: R → T defined by:
+We wrote earlier, f(g(x)). This is in fact a function composition. Suppose that g: R → S and f: S → T. The composition of f with g is the function f ○ g: R → T defined by:
 
-    (f ∘ g)(x) = f(g(x)), ∀ x ∈ R
+    (f ○ g)(x) = f(g(x)), ∀ x ∈ R
 
 ##### Associativity of Composition
 
 Suppose that h: R → S, g: S → T, and f: T → U. Then:
 
-    f ∘ (g ∘ h) = (f ∘ g) ∘ h
+    f ○ (g ○ h) = (f ∘ g) ∘ h
 
-Therefore we can write f ∘ g ∘ h without any ambiguity. Recall that we apply from right to left, f(g(h(x))). Apply h first, then g and then f.
+Therefore we can write f ○ g ○ h without any ambiguity. Recall that we apply from right to left, f(g(h(x))). Apply h first, then g and then f.
 
 ##### Commuativity of Composition
 
-On the other hand, composition is not commutitive. Depending on the domain and range of f and g, f ∘ g might be defined and g ∘ f might not. Even when both are defined, they may have different domains and co-domains, and so of course cannot be the same function. Even when both are defined and have the same domains and co-domains, the two compositions will not be the same in general.
+On the other hand, composition is not commutitive. Depending on the domain and range of f and g, f ○ g might be defined and g ○ f might not. Even when both are defined, they may have different domains and co-domains, and so of course cannot be the same function. Even when both are defined and have the same domains and co-domains, the two compositions will not be the same in general.
 
 ##### Theorems
 
@@ -75,8 +75,8 @@ On the other hand, composition is not commutitive. Depending on the domain and r
 
 Suppose that g: R → S and f: S → T.
 
- * If f and g are injective, then f ∘ g is injective
- * If f and g are surjective then f ∘ g is surjective
+ * If f and g are injective, then f ○ g is injective
+ * If f and g are surjective then f ○ g is surjective
 
 ###### Identity Compositions
 
@@ -84,21 +84,21 @@ The identity function acts like an identity with respect to the operation of com
 
 Suppose f: S → T:
 
- * f ∘ I_S = f
- * I_T ∘ f = f
+ * f ○ I_S = f
+ * I_T ○ f = f
 
 ###### Extendting Inverse
 
 The inverse of a function is really the inverse with respect to composition. Suppose f is a bijection from S onto T. Then
 
- * f^{-1} ∘ f = I_S
- * f ∘ f^{-1} = I_T
+ * f^{-1} ○ f = I_S
+ * f ○ f^{-1} = I_T
 
 ###### Inverse of Composition
 
 Suppose that g is a one-to-one function from R onto S and that f is a one-to-one function from S onto T. Then:
 
-    (f ∘ g)^{−1} = g^{−1} ∘ f^{−1}
+    (f ○ g)^{−1} = g^{−1} ○ f^{−1}
 
 
 
