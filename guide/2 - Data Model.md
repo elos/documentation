@@ -103,13 +103,13 @@ Here it is useful to think of the function *Traits* as a set of ordered pairs. A
 
 ##### Attributes
 
-We have the framework of traits, but each individual record will have a different value associated with each trait. We call this value the records 'attribute.' This is implicit in our above formal definition because T is a function from Strings, a simple set, to Primitives, a set of sets.
+We have the framework of traits, but each individual record will have a different value associated with each trait. We call this value the record's 'attribute.' This is implicit in our above definition because *T* is a function from *Strings*, a simple set, to *Primitives*, a set of sets.
 
     A_r: Traits → (P ∈ Primitives) for some r ∈ R
     
     Attributes: R  → (Traits, P ∈ Primitives)
     
-    ∀ r ∈ R, |Attributes(r)| = |Links(Kind(r))|
+    ∀ r ∈ R, |Attributes(r)| = |(Links ○ Kind)(r)|
 
 
 Continuing our task list example.
@@ -140,25 +140,25 @@ Now recall the ontic distinction. With traits we defined the concept of an attri
 
 ##### Links
 
+The component which varied when we discussed traits was the value within the trait's domain that varied. What date was the record created, is the task completed? The component which varies with links is the id of the other records. Indeed we could also carry dynamically the kind of the other record, but since we define that along with the record, and since it is invariant, it can be thought of as an immediate and therefore a component of the implementation -- not of the dynamic storage itself. We have a second variation, that of a one-link vs. a mul-link. A one-link maps to a single id whereas a multi-link maps to a list of ids. We require this distinction because replacement is not fundamentally equivalent to concatenation. We define a link, L:
+
     L: Relations → I or []I
     
     Links: R → (Relations,  I or []I))
     
-    ∀ r ∈ R, |Links(r)| = |Relations(Kind(r))|
+    ∀ r ∈ R, |Links(r)| = |(Relations ○ Kind)(r)|
     
-There are three bits here. The name of the link, the kind of the other record and the id of the record. We are still missing one aspect. The cardinality of the link itself. We must handle the case that we have multiple links and singular links, and that these are fundamentally different things. We note that *I ⊂ Strings* and therefore *[]I* is eqivalent to an array of *Strings* which is another primitive.  A TaskList could have many Tasks. So in fact we want a set of record in R. So there's another bit, whether this arrow "splits," if you will. So far we have only pointed a link to one other record, but the truth is it points to a set of other records.
+#### Relation-Trait & Link-Attribute Isomorphism 
 
-    A Multi-Link defines a multi-relation which from Links → {(k, i) ∈ (K, I)}
-    
-So there are four bits: name, kind, id(s) of the other record, and whether we expect it to be multi-link.
-    
-The obvious question is, if a Link needs 4 "bits" of information to be fully understood, then why doesn't one link abstraction yield four traits. And the answer is that at the static elos data model level, these bits of information can be encoded programmatically. They are constant and therefore can be thought of as immediates -- known at the time of writing. For example, if you stored those 4 bits on the model you would still have to implement the manner in which you go about retrieving the corresponding records. This maneuver is just an algorithm, and so at the actual representation level, if we have the archetype abstraction of knowing that a TaskList's "tasks" trait is multiple, and that the codomain is "task," then need only store the trait "tasks" -> []id. We know to interpret these ids as tasks. And this is truly the relationship the LinkRepresentation function defines.
+We mentioned earlier that a link has several components, it's size, it's codomain, it's name and it's actual value, but that it could still be treated as a trait. The obvious question is, if a Link needs 4 "bits" of information to be fully understood, then why doesn't one link abstraction yield four traits. Well, at the static elos data model level, these bits of information can be encoded programmatically. They are immediates. Because the name of a link, it's size and it's codomain are known and are invariant, we need not make them a part of our dynamic record. They are constant. We sort of implied the names of traits.
 
-    LinkRepresentation: L → T, ∀ l ∈ L
-        iff l is singular: LinkRepresentation(l) → t ∈ T, t: name(l) → id
-        iff l is multiple: LinkRepresentation(l) → t ∈ T, t: name(l) → []id
-        
-    LinkRepresentation establishes a function if l is singular and a correspondance if l is multiple.
+If you stored those 4 pieces of information on the model you would still have to implement the procedure in which you go about retrieving the corresponding records. This routine effectively reduces an algorithm, and so at the actual representation level, if we have the archetype abstraction of knowing that a TaskList's "tasks" trait is multiple, and that the codomain is "task," then we need only store the trait "tasks" -> []id. We know to interpret these ids as tasks.
+
+To further our point, ee note that *I ⊂ Strings* and therefore *[]I* is eqivalent to an *[]Strings*. Therefore *I* and *[]I* are actually just primitive sets. The link multiplicity and codomain are immediates, so we need only the name of the link and it's primitive value. Indeed this is a trait! 
+
+    RelationRepresentation: R → T, ∀ r ∈ Relations(k), ∀ k ∈ K
+        iff r is singular: RR(r) → t, t := (name(r), Strings)
+        iff r is multiple: RR(r) → t, t := (name(r), []Strings)
 
 #### Polymorphism (Domains)
 
