@@ -100,31 +100,19 @@ Suppose that g is a one-to-one function from R onto S and that f is a one-to-one
 
     (f ○ g)^{−1} = g^{−1} ○ f^{−1}
 
+#### Images
 
+##### Inverse Images
 
+##### Forward Images
 
+#### Specific Function Classes
 
+##### Spaces of Real Functions
+##### Indicator Functions
+##### Functions into Produce Spaces
+##### Operators
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### The Axiom of Choice (Controversial)
 
 
