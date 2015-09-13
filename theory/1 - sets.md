@@ -47,22 +47,24 @@ We can also talk about the size of a set, or its *cardinality*. Suppose A = {1, 
 
 A set can also have infinite size, if it has an infinite number of elements. The set of integers, ℤ, is one example.
 
+    |ℤ| = ∞
+
 ### Subsets and Proper Subsets
 
-If every element in A is an element in B, then we say A is a *subset* of B, denoted A ⊆ B. Equivalently, we can write B ⊇ A, B is a superset of A. If B contains an elements not in A, we say that A is *proper subset* of B, written A ⊂ B.
+If every element in A is an element in B, then we say A is a *subset* of B, denoted A ⊆ B. Equivalently, we can write B ⊇ A, B is a superset of A. If B contains any elements not in A, we say that A is *proper subset* of B, written A ⊂ B.
 
     A = {1, 2, 3}
     B = C = {1, 2, 3, 4, 5}
 
-    A ⊂ B and A ⊆ B
+    A ⊂ B (which does imply that A ⊆ B)
 
-    but C ⊆ B, not a proper subset.
+    C ⊆ B (not a proper subset)
 
-Generally, we call A is a proper subset of B only if A ⊂ B and A ≠ ∅. If A can be the empty set, then we say strict subset.
+Generally, we call A a proper subset of B only if A ⊂ B and A ≠ ∅. If A can be the empty set, then we use the term *strict* subset. That is to say, proper subset implies A ≠ ∅. This is a fuzzy convention, though. Generally, defer to the context of the matter at hand.
 
 #### Basic Properties
 
- * The empty set, denoted by {} or ∅, is a _proper subset_ of any non-empty set A: ∅ ⊂ A
+ * The empty set, denoted by {} or ∅, is a _strict subset_ of any non-empty set A: ∅ ⊂ A, A ≠ ∅
  * The empty set is a _subset_ of every set B: ∅ ⊆ B
  * Every set A is a subset of itself: A ⊆ A
 
@@ -91,19 +93,19 @@ Note that ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ
 
 The union of the sets A and B is the set of all elements which are in either A or B or both.
 
-    A ∪ B = {x ∈ S:x ∈ A or x ∈ B}
+    A ∪ B = {x ∈ S : x ∈ A or x ∈ B}
 
 Note:
  * A ∪ B = B ∪ A
- * A ∪ ∅ = A.
+ * A ∪ ∅ = A
 
-Example: union of the positive odd integers and the positive integers is the set of all positive integers (often denoted ℤ⁺)
+Example: The union of the positive odd integers and the positive integers is the set of all positive integers (often denoted ℤ⁺).
 
 #### Intersection
 
 The intersection of the sets A and B is the set of all elements in both A and B.
 
-    A ∩ B = {x ∈ S:x ∈ A and x ∈ B}
+    A ∩ B = {x ∈ S : x ∈ A and x ∈ B}
 
 Two sets are said to be *disjoint* if A ∩ B = ∅.
 
@@ -115,17 +117,17 @@ Example: The intersection of the integers, ℤ, and the set {0}, is the set {0}.
 
 #### Complement
 
-The complement of A is the set of elements that are not in A:
+The complement of A is the set of elements that are not in A, relative to the universal set S:
 
-    A^c = {x ∈ S: x ∉ A}
+    A^c = {x ∈ S : x ∉ A}
 
 #### Set Difference (Relative Complement)
 
-The set difference of B and A is the set of elements that are in B but not in A:
+The set difference of B and A is the set of elements that are in B but not in A. The set is a generalization of the complement.
 
-    B ∖ A = {x ∈ S:x ∈ B and x ∉ A}
+    B ∖ A = {x ∈ S : x ∈ B and x ∉ A}
 
-Union, Intersection and Set Difference are binary operations. Complement is a unary operation.
+Union, intersection and set difference are binary operations. Complement is a unary operation -- assuming a well-defined universal set.
 
 Note:
  * A \ A = ∅
@@ -138,8 +140,7 @@ Example: ℝ \ ℚ  = set of irrational numbers. It can be useful to think of B 
 
 The cartesian product of the sets A and B is the set of all pairs whose first component is an element of A and whose second component is an element of B. It is a binary operator.
 
-    A × B = = {(a,b) | a ∈ A,b ∈ B}
-
+    A × B = = {(a,b) : a ∈ A , b ∈ B}
 
 Example: If A = {1,2,3} and B = {u, v}, then A × B = {(1,u),(1, v),(2,u),(2, v),(3,u),(3, v)}
 
@@ -158,7 +159,7 @@ Note:
 
 ### Laws
 
- These are a collection of axiomatically verifiable statements, some of which we have already seen. All can be verified with ease and this should be treated more as a reference.
+These are a collection of statements which follow directly from our axioms. All can be verified with ease and this should be treated more as a reference.
 
 A, B, and C are subsets of a universal set S
 
@@ -216,11 +217,11 @@ The following statements are equivalent.
 
 #### Generalzing Union and Intersection
 
-The operations of union and intersection can be extended to a finite or even an infite collection of sets.
+The operations of union and intersection can be extended to a finite or even an infinite collection of sets.
 
 ##### Definitions
 
-Suppose that 𝒜 is a nonempty collection of subsets of a universal set S. In some cases, the subsets in 𝒜 may be naturally indexed by a nonempty index set I, so that 𝒜 = {A_i : i ∈ I}. The union of the collection of sets 𝒜 is the set obtained by combining the elemts of the sets in 𝒜:
+Suppose that 𝒜 is a nonempty collection of subsets of a universal set S. In some cases, the subsets in 𝒜 may be naturally indexed by a nonempty index set I, so that 𝒜 = {A_i : i ∈ I}. The union of the collection of sets 𝒜 is the set obtained by combining the elements of the sets in 𝒜. We define the union over the sets of 𝒜:
 
     ⋃ 𝒜 = { x ∈ S : x ∈ A for some A ∈ 𝒜  }
 
@@ -240,15 +241,17 @@ Often the index set is a subset of ℕ. In this case it may make most sense to w
 
 #### Pairwise Disjoint
 
-A collection of sets 𝒜 is pairwise disjoint if the intersection of any tow sets in the collection is empty: A ∩ B = ∅ ∀ A, B ∈ 𝒜 , A ≠ B.
+A collection of sets 𝒜 is pairwise disjoint if the intersection of any two sets in the collection is empty:
 
-The collection of sets 𝒜 is said to *parition* a set B if the collection 𝒜 is pairwise disjoint and the union over all the sets in 𝒜  is B.
+    (A ∩ B = ∅)  ∀A, B ∈ 𝒜, A ≠ B.
+
+The collection of sets 𝒜 is said to *parition* a set B if the collection 𝒜 is pairwise disjoint and the union over all the sets in 𝒜 is B.
 
 ### Relations
 
 #### Definitions
 
-Suppose that S and T are sets. A *relation* from S to T is a subset of the product set S × T. As the name suggests, a relation R from S into T is supposed to define a relationship between the elements of S and the elements of T. Therefore we use a more suggestive notation of *xRy*, when (x, y) ∈ R, R ∈ S × T.
+Suppose that S and T are sets. A *relation* from S to T is a subset of the product set S × T. As the name suggests, a relation R from S into T is supposed to define a relationship between the elements of S and the elements of T. Therefore we use a more suggestive notation of *x R y*, when (x, y) ∈ R, R ∈ S × T.
 
 We define the domain of R as the set of first coordinates and the range of R as the set of second coordinates:
 
