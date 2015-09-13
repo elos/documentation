@@ -212,6 +212,47 @@ The following statements are equivalent.
  4. A ∩ B = A |  The intersect of A and B is just A, everything in A is in B.
  5. A ∖ B = ∅ |  There are no elements in A that B doesn't contain
 
+#### Generalzing Union and Intersection
+
+The operations of union and intersection can be extended to a finite or even an infite collection of sets.
+
+##### Definitions
+
+Suppose that 𝒜 is a nonempty collection of subsets of a universal set S. In some cases, the subsets in 𝒜 may be naturally indexed by a nonempty index set I, so that 𝒜 = {A_i : i ∈ I}. The union of the collection of sets 𝒜 is the set obtained by combining the elemts of the sets in 𝒜:
+
+    ⋃ 𝒜 = { x ∈ S : x ∈ A for some A ∈ 𝒜  }
+
+If 𝒜  = {A_i : i ∈ I}, so that the collection of sets in indexed, we can use the notation:
+
+   ∪_{i ∈ I} A_i = { x ∈ S : x ∈ A_i for some i ∈ I}
+
+Likewise the interesection of the collection of sets 𝒜 is the set of elements common to all of the sets in 𝒜:
+
+    ∩ 𝒜 = { x ∈ S : x ∈ A for all A ∈ 𝒜  }
+
+If 𝒜  = {A_i : i ∈ I}, so that the collection of sets in indexed, we can use the notation:
+
+    ∩_{i ∈ I} A_i = {x ∈ S : x ∈ A_i for all i ∈ I}
+
+Often the index set is a subset of ℕ. In this case it may make most sense to write lower and upper bounds on the union, as in the case of summation.
+
+#### Pairwise Disjoint
+
+A collection of sets 𝒜 is pairwise disjoint if the intersection of any tow sets in the collection is empty: A ∩ B = ∅ ∀ A, B ∈ 𝒜 , A ≠ B.
+
+The collection of sets 𝒜 is said to *parition* a set B if the collection 𝒜 is pairwise disjoint and the union over all the sets in 𝒜  is B.
+
+### Relations
+
+#### Definitions
+
+Suppose that S and T are sets. A *relation* from S to T is a subset of the product set S × T. As the name suggests, a relation R from S into T is supposed to define a relationship between the elements of S and the elements of T. Therefore we use a more suggestive notation of *xRy*, when (x, y) ∈ R, R ∈ S × T.
+
+We define the domain of R as the set of first coordinates and the range of R as the set of second coordinates:
+
+    domain(R) = {x ∈ S : (x, y) ∈ R for some y ∈ T}
+     range(R) = {y ∈ T : (x, y) ∈ R for some x ∈ S}
+
 ##### References
  - Strongly based on Berkeley CS 70 Note 0
  - http://www.math.uah.edu/stat/foundations/Sets.html
