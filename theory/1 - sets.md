@@ -2,7 +2,7 @@
 
 ### Sets
 
-A *set* is a well-defined collection of objects. These objects are referred to as *elements* or *members* of the set. Elements of a set can be anything, including numbers, letters, people, cities, and even other sets. By convention, sets are usually denoted by capital letters and can be described or defined by listing its elements and surrounding the list by curly braces For example, we can define the set A to be the first 5 prime numbers:
+A *set* is a well-defined collection of objects. These objects are referred to as *elements* or *members* of the set. Elements of a set can be anything, including numbers, letters, people, cities, and even other sets. By convention, sets are usually denoted by capital letters and can be described or defined by listing their elements and surrounding the list by curly braces For example, we can define the set A to be the first 5 prime numbers:
 
     A = {2, 3, 5, 7, 11}
 
@@ -24,18 +24,20 @@ In English this is read as "The set of all fractions such that the numerator is 
 
 #### Russell's Paradox
 
-Our present definition of membership is a bit primitive. It's frailty can be demonstrated by Russell's Paradox, a construction first intruduced by the mathematician and philosopher Bertrand Russel.  It follows:
+Our present definition of membership is a bit primitive. It's frailty can be demonstrated by Russell's Paradox, a construction first introducted by the mathematician and philosopher Bertrand Russel.  It follows:
 
     Let R be the set of all sets A such that A ∉ R. Then R ∈ R if and only if R ∉ R.
 
-    We can prove this by demonstrating a contradiction which follows from the definition of our set, R.
+We can prove this by demonstrating a contradiction which follows from the definition of our set, R.
 
         (i) if R ∈ R, then by definition of R, R ∉ R
         (ii) if R ∉ R, then by definition R ∈ R
 
-    The result, clearly, is that R is _not_ a well-defined set.
+The result, clearly, is that R is _not_ a well-defined set.
 
-We can't be too cavaliering with our notion of membership. Under normal circumstances, the sets we are discussing are subsets of a well-defined, specified set S, known as a *universal set*. The use of a universal set precludes Russell's Paradox. Given a universal set S, and a predicate p(x) defined on S ∀x, then {x ∈ S: p(x)} is a valid subset of x. Defining a set in this way, as we did with the rational numbers, ℚ, is known as _predicate form_. Listing the elements is known, unsurprisingly as _list form_.
+We can not be too cavaliering with our notion of membership. Under normal circumstances, the sets we are discussing are subsets of a well-defined, specified set S, known as a *universal set*. The use of a universal set precludes Russell's Paradox. Given a universal set S, and a *predicate* p(x) defined on S, then {x ∈ S: p(x)} is a valid subset of x.
+
+Defining a set in this way, as we did with the rational numbers, ℚ, is known as _predicate form_. Defining a set by listing the elements is known, unsurprisingly, as _list form_.
 
 ### Cardinality
 
