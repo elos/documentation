@@ -115,7 +115,7 @@ Example: The intersection of the integers, ℤ, and the set {0}, is the set {0}.
 
 The complement of A is the set of elements that are not in A:
 
-    A^c ={x ∈ S: x ∉ A}
+    A^c = {x ∈ S: x ∉ A}
 
 #### Set Difference (Relative Complement)
 
@@ -130,7 +130,7 @@ Note:
  * A \ ∅ = A
  * ∅ \ A = ∅
 
-Example: ℝ \ ℚ = set of irrational numbers. It can be useful to think of B \ A as B without A. 
+Example: ℝ \ ℚ  = set of irrational numbers. It can be useful to think of B \ A as B without A.
 
 #### Cartesian Product (Cross Product)
 
