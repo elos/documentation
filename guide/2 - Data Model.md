@@ -285,7 +285,7 @@ The *New* theorm can be used as an invariant for records which are determined to
 
 Now that we have established a vocabulary for talking about data records, we should define the the requirements for an effective persistent storage system. We already established that records are collections of string-primitive tuples. So any storage system must be able to accomodate this. Next let us introduce three operations which we claim are necessary for the effective interaction with a data store containing records.
 
- 1. Query:  (K, T ⊆ Traits(K)) → 𝒫(Space(K))
+ 1. Query:  (K, P(r)) → 𝒫(Space(K))
  2. Upsert: (K, T ⊆ Traits(K)) → r ∈ Space(K)
  2. Delete:             (K, I) → r ∈ Space(K)
 
@@ -297,16 +297,23 @@ Querying data objects amounts to defining a predicate p(r) over the set of all r
 
 We define the "." operation such that:
 
-    r.s ∀ r ∈ R, s ∈ Strings := Value of the attribute on r, matching trait with name s.
+    r.s ∀ r ∈ R, s ∈ Strings := Value of the attribute on r, matching trait with name s
     
-Suppose we want to query for all users whose first name is "nick." 
+Suppose we want to query for all people whose first name is "nick." 
 
-    P(r) := (r.first_name == "nick")
+    P(p) := (p.first_name == "nick")
 
-Suppose we only want all the users with first name "nick" **and** last name "landolfi."
+Suppose we only want all the people with first name "nick" **and** last name "landolfi."
 
-    P(r) := (r.first_name == "nick") ∧ (r.last_name == "landolfi")
+    P(p) := (p.first_name == "nick") ∧ (p.last_name == "landolfi")
 
-Notice we added an implicity additional bit of information here, we said the *users* with first name "nick." We implicitly paritioned the record set R, into the spaces. We are familiar with this idea though. We can define our match set, M, to be:
+Notice we implicitly added an additional bit of information here. We said the *users* with first name "nick." We subtely paritioned the record set R, into spaces. We are familiar with this idea though. We can define our match set, M, to be:
 
-    M = { u ∈ Users : P(u) }
+    M = { p ∈ People : P(p) }
+    
+Notice that P(r) would not make sense for a record without the *first_name* and *last_name* traits defined. Therefore we always define queries over well-defined spaces, so that we can statically verify their validity.
+
+##### Ordering
+
+
+##### Parameterization
