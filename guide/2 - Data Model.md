@@ -210,7 +210,7 @@ A lot of the formalities we have established so far are relatively well understo
     Space: Models
     Domains: { 'models' }
     Traits: { ('name', Strings) }
-    Relations: { ('traits', Traits), ('relations', Relations), ('ontology', Ontologies) }
+    Relations: { ('traits', Traits), ('relations', Relations), ('ontology', Ontologies), ('objects', Objects) }
     
 #### Trait
 
@@ -228,11 +228,11 @@ A lot of the formalities we have established so far are relatively well understo
     Traits: { ('name', Strings), ('multiplicity', Strings), ('codomain', Strings), ('inverse', Strings) }
     Relations: { ('model', Models), ('links', Links) }
     
-#### Ontic
+#### Object
 
-    Kind: 'ontic'
-    Space: Ontics
-    Domains: { 'ontics' }
+    Kind: 'object'
+    Space: Objects
+    Domains: { 'objects' }
     Traits: {}
     Relations: { ('attributes', Attributes), ('links', Links), ('model', Model), ('ontology', Ontologies) }
 
