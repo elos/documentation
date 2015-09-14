@@ -268,14 +268,10 @@ Kind can be implicit, or, possibly:
 
 #### Effective Bookkeeping
 
-We attach three additional traits to each record for effectively tracking their lifecycle int he system. These are *created_at*, *updated_at* and *deleted_at* timestamps.
+We attach three additional traits to each record for effectively tracking their lifecycle in the system. These are *created_at*, *updated_at* and *deleted_at* timestamps.
 
     (∀ r ∈ R)
-    { 
-        ('created_at', Dates), 
-        ('updated_at', Dates),           ⊂ (Traits ○ Kind)(r)
-        ('deleted_at', Dates)
-     } 
+    { ('created_at', Dates), ('updated_at', Dates), ('deleted_at', Dates) }  ⊂ (Traits ○ Kind)(r)
 
 ###### New Theorem
  * If created_at(r) = updated_at(r) then r is a 'new' record, and has not been changed since creation
