@@ -280,3 +280,29 @@ We attach three additional traits to each record for effectively tracking their 
  * If created_at(r) < deleted_at(r) then r is a 'tombstone' record, and exists for historical purposes only
 
 The *New* theorm can be used as an invariant for records which are determined to be immutable, such as credentials, security groups, etc. (all things we will get into later)
+
+### An Interface for Data Stores
+
+Now that we have established a vocabulary for talking about data records, we should define the the requirements for an effective persistent storage system. We already established that records are collections of string-primitive tuples. So any storage system must be able to accomodate this. Next let us introduce three operations which we claim are necessary for the effective interaction with a data store containing records.
+
+ 1. Query:  (K, T ⊆ Traits(K)) → 𝒫(Space(K))
+ 2. Upsert: (K, T ⊆ Traits(K)) → r ∈ Space(K)
+ 2. Delete:             (K, I) → r ∈ Space(K)
+
+We claim that we want to be able to create records of certain kinds based on arbitrary traits, retrieve records based on arbitrary traits, change arbitrary traits, and remove records. Remember that a record is simply a collection of traits.  Query, upsert and delete allow us to find what's there and change what's there.
+
+#### Query
+
+Querying data objects amounts to defining a predicate p(r) over the set of all records, R, and requesting the set of matches, M, such that { r ∈ R | p(r) }. A well-formed predicate consists of one or more propositions composed with logical connectives. If this does not sound too familiar, you can check out propositional logic (link soon, this article actually doesn't exist quite yet). We will define our propositions as functions of an arbitrary record r.
+
+Suppose we want to query for all users whose first name is "nick."
+
+    P(r) := (r.first_name = "nick")
+
+Suppose we only want all the users with first name "nick" **and** last name "landolfi."
+
+    P(r) := (r.first_name = "nick") ∧ (r.last_name = "landolfi")
+
+Notice we added an implicity additional bit of information here, we said the *users* with first name "nick." We implicitly paritioned the record set R, into the spaces. We are familiar with this idea though. We can define our match set, M, to be:
+
+    M = { u ∈ Users : P(u) }
