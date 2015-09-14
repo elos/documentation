@@ -295,7 +295,11 @@ We claim that we want to be able to create records of certain kinds based on arb
 
 Querying data objects amounts to defining a predicate p(r) over the set of all records, R, and requesting the set of matches, M, such that { r ∈ R | p(r) }. A well-formed predicate consists of one or more propositions composed with logical connectives. If this does not sound too familiar, you can check out propositional logic (link soon, this article actually doesn't exist quite yet). We will define our propositions as functions of an arbitrary record r.
 
-Suppose we want to query for all users whose first name is "nick."
+We define the "." operation such that:
+
+    r.s ∀ r ∈ R, s ∈ Strings := Value of the attribute on r, matching trait with name s.
+    
+Suppose we want to query for all users whose first name is "nick." 
 
     P(r) := (r.first_name = "nick")
 
