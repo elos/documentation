@@ -301,11 +301,11 @@ We define the "." operation such that:
     
 Suppose we want to query for all users whose first name is "nick." 
 
-    P(r) := (r.first_name = "nick")
+    P(r) := (r.first_name == "nick")
 
 Suppose we only want all the users with first name "nick" **and** last name "landolfi."
 
-    P(r) := (r.first_name = "nick") ∧ (r.last_name = "landolfi")
+    P(r) := (r.first_name == "nick") ∧ (r.last_name == "landolfi")
 
 Notice we added an implicity additional bit of information here, we said the *users* with first name "nick." We implicitly paritioned the record set R, into the spaces. We are familiar with this idea though. We can define our match set, M, to be:
 
