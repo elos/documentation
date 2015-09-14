@@ -24,7 +24,7 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Domains: { 'users' }
     Traits: { (password, Strings) }
     Relations: { ('credentials', Credentials), ('groups', Groups), ('authorizations', Groups), ('sessions', Sessions) }
-    
+
 #### Credential
 
     Kind: 'credential'
@@ -32,9 +32,9 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Domains: { 'credentials' }
     Traits: { ('public', Strings), ('private', Strings), ('spec', Strings), ('name', Strings) }
     Relations: { ('owner', Users), ('sessions', Sessions) }
-    
+
 Credentials are immutable. The public part of a credential is unique in the space of Credentials.
-    
+
 #### Session
 
     Kind: 'session'
@@ -44,7 +44,7 @@ Credentials are immutable. The public part of a credential is unique in the spac
     Relations: { ('owner', Users), ('credential', Credentials) }
 
 Sessions are immutable.
-    
+
 #### Group
 
     Kind: 'group'
@@ -52,16 +52,16 @@ Sessions are immutable.
     Domains: { 'groups' }
     Traits: { ('name', Strings), ('access', Integers) }
     Relations: { ('contexts', Contexts) ('owner', Users), ('grantees', Users) }
-    
+
 Groups are immutable.
-    
+
 Access:
  * 0 := none
  * 1 := read
  * 2 := write
 
 The initial value of 'access' is 0. So unless a user gives explicity permissions, _after_ creating the group, the group's effect is nil. This group is known as an impotent group. An impotent record is generally a record which is invalid without any negative side effects, or a record which has no effect on the system.
-    
+
 #### Context
 
     Kind: 'context'
@@ -69,10 +69,10 @@ The initial value of 'access' is 0. So unless a user gives explicity permissions
     Domains: { 'contexts' }
     Traits: { ('domain', Strings), ('ids', Lists<String>)
     Relations: { ('owner', Users) }
-    
+
 Contexts are immutable.
 
-Again, notice that each of the models except for the user has an 'owner' relation. Indeed every model in the system must have a owner. 
+Again, notice that each of the models except for the user has an 'owner' relation. Indeed every model in the system must have a owner.
 
 ### Actions
 
@@ -116,7 +116,7 @@ As a rule, elos acknowledges an UA.
 
 ##### Malicious-Agent (MA)
 
-A malicious agent is any external agent communicating with the elos system, whom the elos system has deemed as not fit to communicate with. Hopefully that decision would not have been made arbitrarily, but rather be based off a collection of intel regarding a number of requests, number of failed actions, etc. 
+A malicious agent is any external agent communicating with the elos system, whom the elos system has deemed as not fit to communicate with. Hopefully that decision would not have been made arbitrarily, but rather be based off a collection of intel regarding a number of requests, number of failed actions, etc.
 
 As a rule, elos does not acknowledge a MA.
 
@@ -124,7 +124,7 @@ As a rule, elos does not acknowledge a MA.
 
 ##### Creation
 
-Any UA can attempt to create a user. When they do so, the user is assigned a 50 character password string, the user must create a credential also. A user without a credential is impotent. 
+Any UA can attempt to create a user. When they do so, the user is assigned a 50 character password string, the user must create a credential also. A user without a credential is impotent.
 
 ##### Deletion
 
@@ -156,7 +156,7 @@ System verifies decrypted challenge (Authentication)
 
 Any user u, can create a credential, c. The credential must have a public and private componenent, as well a spec, which is a member of the set of explicitly supported authentication specifications, X.
 
-    X := { 'password' } 
+    X := { 'password' }
 
 Currently a credential is just a id and password. So the private part would actually be an encrypted hash
 
@@ -165,7 +165,7 @@ Currently a credential is just a id and password. So the private part would actu
 Only a user can delete its credentials. A user can not delete a credential if this will leave it without a credential. This is called the insurance of access principal, given by the invariant:
 
     for u in User, |credentials(u)| > 0
-    
+
 ##### Modification
 
 Credentials are immutable.
