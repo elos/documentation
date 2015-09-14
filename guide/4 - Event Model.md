@@ -55,4 +55,5 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Space: Events
     Domains: { 'events' }
     Traits: { ('time', Dates) }
-    Relations: { ('owner', Users), ('prior', Events), ('quantity', Quantities), ('note', Notes), ('location', Location), ('tags', Tags), ('media', Medias) }
+    Relations: { ('owner', Users), ('prior', Events), ('quantity', Quantities), ('note', Notes),
+                 ('location', Location), ('tags', Tags), ('media', Medias) }
