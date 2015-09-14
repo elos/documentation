@@ -242,7 +242,7 @@ A lot of the formalities we have established so far are relatively well understo
     Space: Attributes
     Domains: { 'attributes' }
     Traits: { ('value', Bytes) }
-    Relations: { ('ontic', Ontics), ('trait', Traits) }
+    Relations: { ('object', Objects), ('trait', Traits) }
 
 #### Link
 
@@ -250,7 +250,7 @@ A lot of the formalities we have established so far are relatively well understo
     Space: Links
     Domains: { 'links' }
     Traits: { (ids, Lists) }
-    Relations: { ('ontic', Ontics), ('relation', Relations) }
+    Relations: { ('object', Objects), ('relation', Relations) }
     
 We claim that these models are structurally sufficient structures to implement the aforedeveloped metis data model. Therefore, we can build an ontology, that allows for dynamic ontologies.
 
