@@ -54,6 +54,6 @@ These definitions are via the [metis data model](./2 - Data Model.md). All model
     Kind: 'event'
     Space: Events
     Domains: { 'events' }
-    Traits: { ('time', Dates) }
+    Traits: { ('name', Strings), ('time', Dates) }
     Relations: { ('owner', Users), ('prior', Events), ('quantity', Quantities), ('note', Notes),
                  ('location', Location), ('tags', Tags), ('media', Medias) }
