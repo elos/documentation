@@ -23,7 +23,7 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Space: Users
     Domains: { 'users' }
     Traits: { (password, Strings) }
-    Links: { ('credentials', Credentials), ('groups', Groups), ('authorizations', Groups), ('sessions', Sessions) }
+    Relations: { ('credentials', Credentials), ('groups', Groups), ('authorizations', Groups), ('sessions', Sessions) }
     
 #### Credential
 
@@ -31,7 +31,7 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Space: Credentials
     Domains: { 'credentials' }
     Traits: { ('public', Strings), ('private', Strings), ('spec', Strings), ('name', Strings) }
-    Links: { ('owner', Users), ('sessions', Sessions) }
+    Relations: { ('owner', Users), ('sessions', Sessions) }
     
 Credentials are immutable. The public part of a credential is unique in the space of Credentials.
     
@@ -41,7 +41,7 @@ Credentials are immutable. The public part of a credential is unique in the spac
     Space: Sessions
     Domains: { 'sessions' }
     Traits: { ('token', Strings), ('expires_after', Integers)
-    Links: { ('owner', Users), ('credential', Credentials) }
+    Relations: { ('owner', Users), ('credential', Credentials) }
 
 Sessions are immutable.
     
@@ -51,7 +51,7 @@ Sessions are immutable.
     Space: Groups
     Domains: { 'groups' }
     Traits: { ('name', Strings), ('access', Integers) }
-    Links: { ('contexts', Contexts) ('owner', Users), ('grantees', Users) }
+    Relations: { ('contexts', Contexts) ('owner', Users), ('grantees', Users) }
     
 Groups are immutable.
     
@@ -68,7 +68,7 @@ The initial value of 'access' is 0. So unless a user gives explicity permissions
     Space: Contexts
     Domains: { 'contexts' }
     Traits: { ('domain', Strings), ('ids', Lists<String>)
-    Links: { ('owner', Users) }
+    Relations: { ('owner', Users) }
     
 Contexts are immutable.
 
