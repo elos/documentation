@@ -150,12 +150,12 @@ A deck of cards can be defined: D = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k} × 
 
 The power set of a A is the set of all subsets of A:
 
-    ℘(A) = {B| B ⊆ A}
+    𝒫(A) = {B| B ⊆ A}
 
-Example: if S = {1,2,3}, then the power set of S is: ℘(S) = {{},{1},{2},{3},{1,2},{1,3},{2,3},{1,2,3}}
+Example: if S = {1,2,3}, then the power set of S is: 𝒫(S) = {{},{1},{2},{3},{1,2},{1,3},{2,3},{1,2,3}}
 
 Note:
- * If |A| = k, then |℘(A)| = 2^k
+ * If |A| = k, then |𝒫(A)| = 2^k
 
 ### Laws
 
@@ -262,15 +262,15 @@ Recall that these are projections (which I have to write about somewhere earlier
 
 #### Basic Examples
 
-Suppose that S is a set and recall that ℘(S) denotes the power set of S, the collection of all subsets of S.
+Suppose that S is a set and recall that 𝒫(S) denotes the power set of S, the collection of all subsets of S.
 
-the membership relation ∈ from S to ℘(S) is perhaps the most important and basic relationship in mathematics. Indeed, for us, it's a primitive (undefined) relationship -- given x and A, we assume we understand the meaning of the statement x ∈ A.
+the membership relation ∈ from S to 𝒫(S) is perhaps the most important and basic relationship in mathematics. Indeed, for us, it's a primitive (undefined) relationship -- given x and A, we assume we understand the meaning of the statement x ∈ A.
 
 Another basic primitive relation is the equality relation = on a given set of objects S. That is, given two objects x and y, we assume that we understand the meaning of the statement x = y.
 
 Other basic relations we have almost certainly encountered:
 
- 1. The subset relation ⊆ on ℘(S)
+ 1. The subset relation ⊆ on 𝒫(S)
  2. The order relation ≤ on ℝ
 
 In fact these two relations belong to a special class of relations known as partial orders, which we cover later on.Note that a function f from S into T is a special type of relation. to compare the two types of notation (relation and function), note that xfy means that y = f(x).
