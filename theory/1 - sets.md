@@ -258,6 +258,23 @@ We define the domain of R as the set of first coordinates and the range of R as 
     domain(R) = {x ∈ S : (x, y) ∈ R for some y ∈ T}
      range(R) = {y ∈ T : (x, y) ∈ R for some x ∈ S}
 
+Recall that these are projections (which I have to write about somewhere earlier in this document ;); the domain of R is the projection of R onto S and the range of R is the projection of R onto T. A relation froma set S to itself is said to b a erlation *on* S. Ergo, it would be defined as a subset of S × S.
+
+#### Basic Examples
+
+Suppose that S is a set and recall that ℘(S) denotes the power set of S, the collection of all subsets of S.
+
+the membership relation ∈ from S to ℘(S) is perhaps the most important and basic relationship in mathematics. Indeed, for us, it's a primitive (undefined) relationship -- given x and A, we assume we understand the meaning of the statement x ∈ A.
+
+Another basic primitive relation is the equality relation = on a given set of objects S. That is, given two objects x and y, we assume that we understand the meaning of the statement x = y.
+
+Other basic relations we have almost certainly encountered:
+
+ 1. The subset relation ⊆ on ℘(S)
+ 2. The order relation ≤ on ℝ
+
+In fact these two relations belong to a special class of relations known as partial orders, which we cover later on.Note that a function f from S into T is a special type of relation. to compare the two types of notation (relation and function), note that xfy means that y = f(x).
+
 ##### References
- - Strongly based on Berkeley CS 70 Note 0
+ - https://inst.eecs.berkeley.edu/~cs70/fa15/notes/n0.pdf
  - http://www.math.uah.edu/stat/foundations/Sets.html
