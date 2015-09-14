@@ -7,7 +7,7 @@ One of the pillars of elos is that is establishes streams of events (data) that 
 
 #### The Models
 
-All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective-bookkeeping).
+These definitions are via the [metis data model](./2 - Data Model.md). All models are assumed to have an id and the [bookkeeping traits](./2 - Data Model.md#effective-bookkeeping). Note that all models are also [property](3 - Access Control.md), via their respective owner relation definitions.
 
 ##### Quantity
 
