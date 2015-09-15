@@ -23,7 +23,7 @@ Of course, there are in fact infinite primes. But here we claim only that there 
 
     (∃n ∈ ℕ)(n is prime)
 
-Again, simply in search of a more compact and clear expression. There is no disputing what we mean here. ∃ is the existential quantifier.
+Again, simply in search of a more compact and clear expression. There is no disputing what we mean here. ∃ quantifies existence.
 
 ### Duality
 
