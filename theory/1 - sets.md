@@ -6,9 +6,9 @@ A *set* is a well-defined collection of objects. These objects are referred to a
 
     A = {2, 3, 5, 7, 11}
 
-If we want to indicate an object x is an element of the set A, we write x ∈ A. Conversely, the statement that x is not an element of A is written x ∉ A.
-
 #### Notation
+
+If we want to indicate an object x is an element of the set A, we write x ∈ A. Conversely, the statement that x is not an element of A is written x ∉ A.
 
 ##### Universal Quantifier
 
