@@ -135,7 +135,7 @@ At this point you may be thinking, we know about definining records as compositi
 
 Graphs are beautiful data structures which appear everywhere, and indeed we have a graph. We will first formally define links and how they connect records. Then we will show that we can represent these relationships with standardized trait definitions. So links are truly an abstraction. Let's see.
 
-Let's say we have r, s  ∈ R, and r wants to point to information encapsulated in s (So this is a directed graph indeed). Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. We have _named_ our link "tasks," and have said that it points to records in the space of Tasks. Suppose though that we want to have the currently active task on the task list. We want to say that a TaskLisk has one current task. Is this fundamentally different than saying that TaskList has many tasks? Indeed it is. Because appending to a set is a fundamentally different operation than replacing a task. We introduced the latter with the implicity constraint that you could only have _one_ "current task." Formally, we can generalize our: notion of a one-link and multi-link to
+Let's say we have r, s  ∈ R, and r wants to point to information encapsulated in s (So this is a directed graph indeed). Say r is a task list and s is a task. We want the task list to _have_ the task. So a nice way of thinking of it is to say that the a TaskLisk has many tasks. We have _named_ our link "tasks," and have said that it points to records in the space of Tasks. Suppose though that we want to have the currently active task on the task list. We want to say that a TaskLisk has one current task. Is this fundamentally different than saying that TaskList has many tasks? Indeed it is. Because appending to a set is a fundamentally different operation than replacing a task. We introduced the latter with the implicit constraint that you could only have _one_ "current task." Formally, we can generalize our: notion of a one-link and multi-link to
 
     R: Strings → K'
     
@@ -188,7 +188,7 @@ Any domain d, which is not a kind k, is not connected to a physical space and th
          * |Domains(k)| > 0, because Domains(k) is at least {k}
          * |Domains(r)| = 1 ⇒ r is purely physical (substantiates no virtual spaces)
          
-If ou are familiar with the notions of interfaces or protocols, a virtual domain is like an interface because it implicitly represents the variability of type information. But we need to know that kind somehow, since we stated that in order to retrieve a record, we need the kind-id tuple. So any polymorphic link reduces to two traits. One associated with the variable kind(s) and one associated with the variable id(s). We generalize our relation R:
+If you are familiar with the notions of interfaces or protocols, a virtual domain is like an interface because it implicitly represents the variability of type information. But we need to know that kind somehow, since we stated that in order to retrieve a record, we need the kind-id tuple. So any polymorphic link reduces to two traits. One associated with the variable kind(s) and one associated with the variable id(s). We generalize our relation R:
 
     R: Strings → D
     
