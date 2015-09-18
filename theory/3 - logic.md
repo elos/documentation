@@ -210,11 +210,11 @@ For more information, see the [notation](./1 - Set Theory.md#notation] section o
 
 ---
 Based almost exclusively on https://inst.eecs.berkeley.edu/~cs70/fa15/notes/n1.pdf.
----
+
 
 ### Proofs
 
-A mathematical proof provides a means for _guarenteeing that a statement is true. Proofs are very powerful and are in some ways like computer programs. Often they have nested structures and use similar forms to accomplish their goals. Indeed there is a deep historic link between these two concepts -- the invention of computers is intimately tied to the exploration of the idea of a mathematical proof.
+A mathematical proof provides a means for _guaranteeing_ that a statement is true. Proofs are very powerful and are in some ways like computer programs. Often they have nested structures and use similar forms to accomplish their goals. Indeed there is a deep historic link between these two concepts -- the invention of computers is intimately tied to the exploration of the idea of a mathematical proof.
 
 Suppose we wanted to show that a program P(x) computed the correct value for every value of x. We could, perhaps, test P on several values of x, and slowly accumulate evidence that may increase our certainty that P was true. But we would never be _sure_. Every additional input we tested could still fail. Unfortuantely, the process of collecting evidence does not guarantee that the statement holds for the inifinitely many values of x that we did not test! To be certain that the program (or statement, nodding back to propositional logic) is correct (or true), we must provide a rigours _proof_.
 
@@ -278,7 +278,7 @@ Easy as pie, right? Now that we have proven our conjecture, we call it a theorem
 
 ###### Sketch
 |-----------------------------------------------------|
-| **Proof by Contadiction**                         |
+| **Proof by Contadiction**                           |
 |    _Goal_: To prove *P*                             |
 |    _Approach_: Assume ¬*P*                          |
 |                ...                                  |
