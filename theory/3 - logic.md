@@ -73,9 +73,9 @@ So far we have introduced the connectives, AND, OR, and NOT. Now that we're warm
 
 Intuitively, an implication is only false when *P* is true and *Q* is false. Which is what we want. Let P denote the proposition "chemical waste is dumped into the river" and D denote the proposition "fish die".
 
-If P, then Q says If *chemical waste is dumped into the river*, then *fish die*. Recall our truth table. There are four possible combinations for the truthiness of this statement. If P, is false, then the implication is vaccuously true. Our statement says nothing about scenario in which there is no chemical waste! 
+If P, then Q says If *chemical waste is dumped into the river*, then *fish die*. Recall our truth table. There are four possible combinations for the truthiness of this statement. If P, is false, then the implication is vaccuously true. Our statement says nothing about scenario in which there is no chemical waste!
 
-If P is true, and D is true, then our implication holds! Of course, this is not equivalent to the statement "The chemical waste is the factor killing fish," but still does hold; chemical waste is sufficient for fish to be dying, even if it is just a correlation. 
+If P is true, and D is true, then our implication holds! Of course, this is not equivalent to the statement "The chemical waste is the factor killing fish," but still does hold; chemical waste is sufficient for fish to be dying, even if it is just a correlation.
 
 If, however, P is true and Q is false, our implication fails. This is the _only_ scenario in which it fails. Naturally, if P is occuring (true) and we do not see D, then clearly P's existence (truthiness) does not force D into being. The equivalent truth table confirms this intuition:
 
@@ -134,3 +134,6 @@ The converse on the other hand, is _not_ in general equivalent to P ⇒ Q. Rathe
     P ⇔ Q ≡ (P ⇒ Q) ∧ (Q ⇒ P)
 
 The verification of this fact is left to the reader. But this identity says that if you wish to prove the equivalence of two statements, proceed by showing the implication in each direction.
+
+------
+Based exclusively on https://inst.eecs.berkeley.edu/~cs70/fa15/notes/n1.pdf
