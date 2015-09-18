@@ -57,7 +57,7 @@ We will now introduce a third distinction:
 
  * The 'ID' Distinction: We must be able to identify and retrieve different instances of the same model kind, we will do so with a unique independently assigned identifier
 
-We define *I* to be the set of all ids in the system. As with *K*, *I* ⊂ *Strings*. *I* is definitely countable, in fact its cardinality is the number of records in the system.
+We define *I* to be the set of all ids in the system. As with *K*, *I* ⊂ *Strings*. *I* is definitely countable, in fact its cardinality is the number of records in the system. It can also be seen that *I* is countable because it is a subset of *Strings*.
 
 #### Definition
 
