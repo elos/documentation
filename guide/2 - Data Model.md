@@ -90,9 +90,9 @@ To achieve this goal, we associate with each kind a space. We define *S* to be t
 
 To further illustrate this, we can return to our example of a todo app. If we had the K := { "user", "task", "list" }, we would have the following spaces:
 
-    U = { r ∈ R : kind(r) → "user" }
-    T = { r ∈ R : kind(r) → "task" }
-    L = { r ∈ R : kind(r) → "list" }
+    U = { r ∈ R : Kind(r) → "user" }
+    T = { r ∈ R : Kind(r) → "task" }
+    L = { r ∈ R : Kind(r) → "list" }
 
     ∴ S ≡ { U, T, L }
 
