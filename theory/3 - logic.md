@@ -144,5 +144,70 @@ The converse on the other hand, is _not_ in general equivalent to P ⇒ Q. Rathe
 
 The verification of this fact is left to the reader. But this identity says that if you wish to prove the equivalence of two statements, proceed by showing the implication in each direction.
 
+#### Quantifiers
+
+##### Motivation
+
+Part of the magic of the formal proof systems we will develop is the fact that one can prove statements about _infinite_ sets of objects with just _finite_ size proof. But wait a second, have we even learned how to forally write down a statement about infinitely many objects yet? (Do you recall ['quantifiers'](./1 - Set Theory.md#universal-quantifier) from [set theory](./1 - Set Theory.md)?). How might we use propositions to express the statement "For all integers x, x is either even or odd"?
+
+Here's one approach: Let *P(x)* denote "x is even" and *Q(x)* denote "x is odd", and consider the propositional form *P(x)* ∨ *Q(x)*. Does this capture the statement we wished to make? _No._ In particular, we've lost something in the translation -- the phrase "for all x". Thus, what we need next is a language for dealing with such phrases, these tools we'll call quantifier.
+
+##### Universal and Existential Quantifiers
+
+Here are our two quantifiers of interes:
+
+ 1. **Universal Quantifier**: Denoted ∀, read "for all"
+ 2. **Existential Quantifier**: Denoted ∃, read "there exists"
+
+Note that the universal uanitifer ∀ is precislely what we needed above. We can now write "for all integers x, x is either even or odd" as (∀x ∈ ℤ)(P(x) ∨ Q(x)).
+
+The existential operator works similarly. The statement "there is a prime integer" can be denoted as (∃x ∈ ℤ)(x is prime).
+
+Both quantifiers implicitly create a notion of a "universe" *U* over which the statement is made. In both of the examples above, this universe *U* was the set of integers, ℤ.
+
+For more information, see the [notation](./1 - Set Theory.md#notation] section of the [Set Theory](./1 - Set Theory.md) document.
+
+#### Laws
+
+##### DeMorgan's Laws
+
+    ¬(P ∧ Q) ≡ ¬P ∨ ¬Q
+    ¬(P ∨ Q) ≡ ¬P ∧ ¬Q
+
+##### Commutative Laws
+
+    P ∧ Q ≡ Q ∧ P
+    P ∨ Q ≡ R ∨ P
+
+##### Associative Laws
+
+    P ∧ (Q ∧ R) ≡ (P ∧ Q) ∧ R
+    P ∨ (Q ∨ R) ≡ (P ∨ Q) ∨ R
+
+##### Idempotent Laws
+
+    P ∧ P ≡ P
+    P ∨ P ≡ P
+
+##### Distributive Laws
+
+    P ∧ (Q ∨ R) ≡ (P ∧ Q) ∨ (P ∧ R)
+    P ∨ (Q ∧ R) ≡ (P ∨ Q) ∧ (P ∨ R)
+
+##### Absorption Laws
+
+    P ∨ (P ∧ Q) ≡ P
+    P ∧ (P ∨ Q) ≡ P
+
+##### Double Negation Law
+
+    ¬¬P ≡ P
+
+##### Quanitifier Negation Laws
+
+    ¬∃xP(x) ≡ ∀x¬P(x)
+    ¬∀xP(x) ≡ ∃x¬P(x)
+
+
 ------
 Based exclusively on https://inst.eecs.berkeley.edu/~cs70/fa15/notes/n1.pdf
