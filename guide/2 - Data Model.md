@@ -37,7 +37,7 @@ The EDM uses several "primitive," data structures, and assumes they are availabl
     Floats   ≡ the set of all IEEE-754 64-bit floating-point numbers
     Strings  ≡ the set of all UTF-8 binary encoded strings
     Dates    ≡ the set of all RFC3099 binary encoded dates
-    Lists    ≡ the set of all sets of mappings from Integer to Primitives
+    Lists    ≡ the set of all sets of mappings from a contiguous block of Naturals, starting at 0, to Primitives
     Maps     ≡ the set of all sets of mappings from { Integer, Float, String } to Primitive
     
     and Primitives := { Booleans, Integers, Floats, Strings, Dates, Lists, Maps }
