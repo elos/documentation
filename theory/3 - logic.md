@@ -208,6 +208,90 @@ For more information, see the [notation](./1 - Set Theory.md#notation] section o
     ¬∃xP(x) ≡ ∀x¬P(x)
     ¬∀xP(x) ≡ ∃x¬P(x)
 
+---
+Based almost exclusively on https://inst.eecs.berkeley.edu/~cs70/fa15/notes/n1.pdf.
+---
 
-------
-Based exclusively on https://inst.eecs.berkeley.edu/~cs70/fa15/notes/n1.pdf
+### Proofs
+
+A mathematical proof provides a means for _guarenteeing that a statement is true. Proofs are very powerful and are in some ways like computer programs. Often they have nested structures and use similar forms to accomplish their goals. Indeed there is a deep historic link between these two concepts -- the invention of computers is intimately tied to the exploration of the idea of a mathematical proof.
+
+Suppose we wanted to show that a program P(x) computed the correct value for every value of x. We could, perhaps, test P on several values of x, and slowly accumulate evidence that may increase our certainty that P was true. But we would never be _sure_. Every additional input we tested could still fail. Unfortuantely, the process of collecting evidence does not guarantee that the statement holds for the inifinitely many values of x that we did not test! To be certain that the program (or statement, nodding back to propositional logic) is correct (or true), we must provide a rigours _proof_.
+
+#### What is a Proof?
+
+A proof is a finite sequence of steps, called logical deductions, which establishes the truth of a desired statement. In particular, the power of proof lies in the fact that using _finite_ means, we can guarantee the truth of a statement with _infinitely_ many cases.
+
+A proof is typically structured as folles. [Recall that there are certain statements, called axios or posutlates, that we accept without proof. We have to start somewhere! -- for a more in depth discussion see Gödel's incompleteness theory).
+
+Starting from axioms a proof consists of a sequence of logical deuctions: simple steps that apply the rules of logic, as we have discussed them, and the definitions of our axioms, as we have postulated them. This results in a sequence of statements where each successive statement is necessarily true if the previoous statements we true. This property is _enforced_ by the rules of logic.
+
+#### Proof Techniques
+
+##### Direct Proof
+
+With the language of _propositional logic_ we can now discuss proof techniques! The first is direct proof. At a high level direct proof proceeds as follows: For each x, the proposition we are trying to prove is of the form P(x) ⇒ Q(x). A direct proof of this starts by assuming PX() for a generic value of x and eventually concludes Q(x) through a chain of implications.
+
+###### Sketch
+|---------------------------------|
+| **Direct Proof**                |
+|    _Goal_: To prove *P* ⇒ *Q*   |
+|    _Approach_: Assume *P*       |
+|                ...              |
+|                ...              |
+|                ...              |
+|                Therefore *Q*    |
+|---------------------------------|
+
+###### Example
+
+**Conjecture:** _For any a, b, c, ∈ ℤ, if a|b and a|c then a|(b + c)_
+
+**Proof:**
+
+    a|b ⇒ ∃n∈ℤ, b = na
+    a|c ⇒ ∃m∈ℤ, c = ma
+    therefore, b + c = na + ma = a(n + m)
+    ℤ is closed under addition, therefore (n + m) ∈ ℤ
+    ⇒ ∃ o = n + m, b+c = oa ⇒  a|(b+c)
+
+**Discussion:**
+
+Easy as pie, right? Now that we have proven our conjecture, we call it a theorem. Our theorem says that (∀a,b,c ∈ ℤ)((a|b) ∧ (a|c) ⇒ a|(b+c)). But wait, where in the proof above did we encounter the ∀ quantifier? Where did we deal with infinitiy? The key insight is that the proof did not assume any +specific+ values for a, b, and c; indeed, our proof hods for arbitrary a, b, c, ∈ ℤ! These we have proven the desired claim!
+
+##### Proof by Contraposition
+
+###### Sketch
+|---------------------------------------------------|
+| **Proof by Contraposition**                       |
+|    _Goal_: To prove *P* ⇒ *Q*                     |
+|    _Approach_: Assume ¬*Q*                        |
+|                ...                                |
+|                ...                                |
+|                ...                                |
+|                Therefore ¬*P*                     |
+|    _Conclusion:_ –*Q* ⇒ ¬*P*,                     |
+                   which is equivalent to *P* ⇒ *Q* |
+|---------------------------------------------------|
+
+##### Proof by Contradiction
+
+###### Sketch
+|-----------------------------------------------------|
+| **Proof by Contadiction**                         |
+|    _Goal_: To prove *P*                             |
+|    _Approach_: Assume ¬*P*                          |
+|                ...                                  |
+|                ...                                  |
+|                 R                                   |
+|                ...                                  |
+|                ...                                  |
+|                 ¬R                                  |
+|                Therefore ¬*P*                       |
+|    _Conclusion:_ –*P* ⇒ ¬*R* ∧ *R*                  |
+                   which is a contradiction, thus *P* |
+|-----------------------------------------------------|
+
+##### Proof by Cases
+
+###### Sketch
