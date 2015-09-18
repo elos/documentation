@@ -49,19 +49,19 @@ However, such statements quickly become difficult to digest. Thankfully, there i
 
 ###### Negation:
 
-| P | ¬P |
-| - | -- |
-| T | F  |
-| F | T  |
+|  P  |  ¬P |
+| --- | --- |
+|  T  |  F  |
+|  F  |  T  |
 
 ###### Conjunction:
 
-| P | Q | P ∧ Q |
-| - | - | ----- |
-| T | T |   T   |
-| T | F |   F   |
-| F | T |   F   |
-| F | F |   F   |
+|  P  |  Q  | P ∧ Q |
+| --- | --- | ----- |
+|  T  |  T  |   T   |
+|  T  |  F  |   F   |
+|  F  |  T  |   F   |
+|  F  |  F  |   F   |
 
 These tables likely confirm our intuition for these two connectives. Can you write the truth table for disjunction (OR)?
 
@@ -79,21 +79,21 @@ If P is true, and D is true, then our implication holds! Of course, this is not 
 
 If, however, P is true and Q is false, our implication fails. This is the _only_ scenario in which it fails. Naturally, if P is occuring (true) and we do not see D, then clearly P's existence (truthiness) does not force D into being. The equivalent truth table confirms this intuition:
 
-| P | Q | P ⇒  Q |
-| - | - | ------ |
-| T | T |   T    |
-| T | F |   F    |
-| F | T |   T    |
-| F | F |   F    |
+|  P  |  Q  |  P ⇒ Q  |
+| --- | --- | ------- |
+|  T  |  T  |    T    |
+|  T  |  F  |    F    |
+|  F  |  T  |    T    |
+|  F  |  F  |    F    |
 
 A useful fact to keep in mind for the simplication of certain statements is that *P* ⇒ *Q* is equivalent to the statement ¬*P* ∨ *Q*. If you think about this for long enough it makes sense. We can also verify it with a truth table:
 
-| P | Q | ¬P ∨ Q |
-| - | - | ------ |
-| T | T |    T   |
-| T | F |    F   |
-| F | T |    T   |
-| F | T |    T   |
+|  P  |  Q  |  ¬P ∨ Q  |
+| --- | --- | -------- |
+|  T  |  T  |     T    |
+|  T  |  F  |     F    |
+|  F  |  T  |     T    |
+|  F  |  T  |     T    |
 
 We write, P ⇒ Q is equivalent to ('≡') ¬P ∨ Q:
 
@@ -118,12 +118,12 @@ Two fundamentail statements which are closely related to *P* ⇒ *Q* are its con
 
 One of these is equivalent to P ⇒  Q, the other is not. Can you tell which is which? How would you formally _check_ your guess. One way is to write down the truth tables and compare them:
 
-| P | Q | ¬P | ¬Q | P ⇒  Q | Q ⇒  P | ¬Q ⇒  ¬P |
-| - | - | -- | -- | ------ | ------ | -------- |
-| T | T |  F |  F |   T    |   T    |     T    |
-| T | F |  F |  T |   F    |   T    |     F    |
-| F | T |  T |  F |   T    |   F    |     T    |
-| F | F |  T |  T |   T    |   T    |     T    |
+|  P  |  Q  |  ¬P  |  ¬Q  |  P ⇒ Q  |  Q ⇒ P  |  ¬Q ⇒ ¬P  |
+| --- | --- | ---- | ---- | ------- | ------- | --------- |
+|  T  |  T  |   F  |   F  |    T    |    T    |     T     |
+|  T  |  F  |   F  |   T  |    F    |    T    |     F     |
+|  F  |  T  |  T   |   F  |    T    |    F    |     T     |
+|  F  |  F  |  T   |   T  |    T    |    T    |     T     |
 
 Note that the columns for P ⇒ Q and ¬Q ⇒ ¬P match, whereas Q ⇒ P differes; thus, we say P ⇒ Q is _logically equivalent_ to ¬Q ⇒  ¬P (its contrapositive). In general, to denote tht statements R and S are equivalent we use notation R ⇔ S, or in English, "R if and only S" (informally abbreviated as R iff S). (Alternative, one can use the notation R ≡ S, which is useful especially for noting equivalence _by defintion_)
 
