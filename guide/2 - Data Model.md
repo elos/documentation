@@ -46,7 +46,7 @@ Note that "a set of mappings" can be thought of as a function. We avoid using th
 
 ### Records
 
-We defined the set of all records to be *R*. We now define the *K* to be the set of the kinds of data models we want to represent. For a simple todo app, *K* might be { 'user', 'task', 'list' }. *K* is much larger for elos, I think the cardinality now hovers around 20 -- but there is work being done to bring that number down. Note that *K* ⊂ *Strings*. It is, indeed, a proper subset. As we have defined the set *Strings* here, it is infinite (uncountable).
+We defined the set of all records to be *R*. We now define the *K* to be the set of the kinds of data models we want to represent. For a simple todo app, *K* might be { 'user', 'task', 'list' }. *K* is much larger for elos, I think the cardinality now hovers around 20 -- but there is work being done to bring that number down. Note that *K* ⊂ *Strings*. It is, indeed, a proper subset. As we have defined the set *Strings* here, it is countably infinite.
 
 We have made two distinctions thus far:
 
