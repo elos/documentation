@@ -63,6 +63,15 @@ However, such statements quickly become difficult to digest. Thankfully, there i
 |  F  |  T  |   F   |
 |  F  |  F  |   F   |
 
+###### Disjunction:
+
+|  P  |  Q  | P ∨ Q |
+| --- | --- | ----- |
+|  T  |  T  |   T   |
+|  T  |  F  |   T   |
+|  F  |  T  |   T   |
+|  F  |  F  |   F   |
+
 These tables likely confirm our intuition for these two connectives. Can you write the truth table for disjunction (OR)?
 
 #### Implication
@@ -84,7 +93,7 @@ If, however, P is true and Q is false, our implication fails. This is the _only_
 |  T  |  T  |    T    |
 |  T  |  F  |    F    |
 |  F  |  T  |    T    |
-|  F  |  F  |    F    |
+|  F  |  F  |    T    |
 
 A useful fact to keep in mind for the simplication of certain statements is that *P* ⇒ *Q* is equivalent to the statement ¬*P* ∨ *Q*. If you think about this for long enough it makes sense. We can also verify it with a truth table:
 
