@@ -129,7 +129,7 @@ Note that the columns for P ⇒ Q and ¬Q ⇒ ¬P match, whereas Q ⇒ P differe
 
 The contrapositive is important because sometimes it is easier to prove than the original statement. But it is _equivalent_ to the original statment. So proving ¬Q ⇒ ¬P proves P ⇒ Q!
 
-The converse on the other hand, is _not_ in general equivalent to P ⇒ Q. Rathey, the converse plays a very important role in proving the equivalence of two statements:
+The converse on the other hand, is _not_ in general equivalent to P ⇒ Q. Rather, the converse plays a very important role in proving the equivalence of two statements:
 
     P ⇔ Q ≡ (P ⇒ Q) ∧ (Q ⇒ P)
 
