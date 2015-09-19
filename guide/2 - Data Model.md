@@ -73,7 +73,7 @@ We now define the function *Find: (K, I) → R*. We can say:
 
     (∀ k ∈ K, i ∈ I)(∃ r ∈ R) Find(k, i) ↦ r
 
-This implies that there exists an r for every k and i. Moreover, *Find* is a bijection. It's inverse is given by the tuple of the *Kind* and *ID* property functions we defined earlier. We note, here, that some databases have unique ids for _every_ record, r ∈ R. Some don't -- namely SQL. SQL databases generally use incrementing ids for each table. In SQL, a metis kind would map to a table and the id to the primary key field. This illustrates a general point, you can probably follow along with the metis system and see the connections to SQL as we go. Indeed SQL is a working implementation. We formally define these concepts here so that we can further reason and abstract them.
+We note, here, that some databases have unique ids for _every_ record, r ∈ R. Some don't -- namely SQL. SQL databases generally use incrementing ids for each table. In SQL, a metis kind would map to a table and the id to the primary key field. This illustrates a general point, you can probably follow along with the metis system and see the connections to SQL as we go. Indeed SQL is a working implementation. We formally define these concepts here so that we can further reason and abstract them.
 
 ##### Spaces
 
