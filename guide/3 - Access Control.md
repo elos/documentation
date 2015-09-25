@@ -60,7 +60,7 @@ Access:
  * 1 := read
  * 2 := write
 
-The initial value of 'access' is 0. So unless a user gives explicity permissions, _after_ creating the group, the group's effect is nil. This group is known as an impotent group. An impotent record is generally a record which is invalid without any negative side effects, or a record which has no effect on the system.
+The initial value of 'access' is 0. So unless a user gives explicity permissions, _after_ creating the group, the group's effect is nil. A group with access control 0 is known as an impotent group. An impotent record is generally a record which is invalid without any negative side effects, or a record which has no effect on the system.
 
 #### Context
 
@@ -90,7 +90,7 @@ Another way of stating this is that if a user is 'authorized' to read or write t
 
 #### Writing
 
-A user can write to their own record, and the *mutable* records which they own. Additionally, a user can write to any *mutable* records which are enumerated in the contexts of any groups with access level > 1 of which the user is a 'grantee.' A *mutable* record is defined as any record which is not explicitly *immutable*.
+A user can write to their own record, and the *mutable* records which they own. Additionally, a user can write to any *mutable* records which are enumerated in the contexts of any groups with access level > 1 of which the user is a 'grantee.' A *mutable* record is defined as any record which is not explicitly *immutable*. This may sound like a tautology but we define it in this manner because records will be marked as immutable. If they are not marked as immutable, then they are assumed to be mutable. Therefore immutability is the exception, not the rule.
 
 As with reading, they can write if authorized by definition of the groups they are a part of and the access level of those groups.
 
