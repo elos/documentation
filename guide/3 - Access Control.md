@@ -100,11 +100,11 @@ A user can only delete records which they own.
 
 ### Functionality
 
-As a quick aside, whenever a external agent is communicating with the elos system we can classify them into 1 of three categories
+As a quick aside, whenever a external agent is communicating with the elos system we can classify them into one of three categories:
 
 ##### Identified-Agent (IA)
 
-An identified agent is any external agent communicating with the elos system whomwe have authorized. That is to say, there exists a user whom we have associated with this agent.
+An identified agent is any external agent communicating with the elos system whom we have authorized. That is to say, there exists a user whom we have associated with this agent.
 
 As a rule, elos serves an IA.
 
@@ -116,7 +116,7 @@ As a rule, elos acknowledges an UA.
 
 ##### Malicious-Agent (MA)
 
-A malicious agent is any external agent communicating with the elos system, whom the elos system has deemed as not fit to communicate with. Hopefully that decision would not have been made arbitrarily, but rather be based off a collection of intel regarding a number of requests, number of failed actions, etc.
+A malicious agent is any external agent communicating with the elos system, whom the elos system has deemed as not fit to communicate with. That decision is not made arbitrarily, but rather is based off of a collection of intel regarding the number of requests made, number of failed actions, etc.
 
 As a rule, elos does not acknowledge a MA.
 
