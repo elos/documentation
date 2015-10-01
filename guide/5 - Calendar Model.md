@@ -1,7 +1,7 @@
 Calendar Model
 --------------
 
-We structure time into a calendrical systems. Elos models time formally based on these well-known constructs. However the elos calendar model introduces another level of abstraction beyond the modular cycle of days, months and years.
+We structure time into calendrical systems. Elos models time formally based on these well-known constructs. However the elos calendar model introduces another level of abstraction beyond the modular cycle of days, months and years.
 
 ### Definition
 
