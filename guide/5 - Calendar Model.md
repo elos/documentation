@@ -14,7 +14,8 @@ These definitions are in the form of the [metis data model](./2 - Data Model.md)
     Kind: 'calendar'
     Space: Calendars
     Domain: { 'calendars' }
-    Traits: { ('name', Strings), ('weekday_schedules', Maps<String, ID>), ('yearday_schedules', Maps<String, ID>) }
+    Traits: { ('name', Strings), ('weekday_schedules', Maps<String, ID>), 
+              ('yearday_schedules', Maps<String, ID>) }
     Relations: { ('owner', Users), ('base_schedule', Schedules), ('manifest_fixture', Fixtures) }
 
 ##### Schedule
@@ -30,5 +31,6 @@ These definitions are in the form of the [metis data model](./2 - Data Model.md)
     Kind: 'fixture'
     Space: Fixtures
     Domain: { 'fixtures' }
-    Traits: { ('name', Strings), ('start_time', Dates), ('end_time', Dates), ('rank', Integers), ('label', Booleans), ('expires_at', Dates), ('exceptions', []Dates)
+    Traits: { ('name', Strings), ('start_time', Dates), ('end_time', Dates), ('rank', Integers), 
+              ('label', Booleans), ('expires_at', Dates), ('exceptions', []Dates)
     Relations: { ('owner', Users), ('note, Notes) }
