@@ -5,13 +5,13 @@ This is the elos guide. I am writing this collection to clarify, elaborate and e
 
 If you feel any part of these documents should be challenged, do so. If you find gramatical or syntactic mistakes, do change them. If there need to be clarifications, raise the issue. To these three treaties, I would like to add that I hope to avoid  needlessly arguing over small details. Indeed elos is _about_ sweating the particulars before you build the system to which you forfeit these decisions. But three axioms, at least, should influence such dialogue.
 
-#### 1. Elos is not new.
+#### 1. Elos is not new
 
 Elos solves old problems. The foundational themes of elos must touch eternality. This is a difficult thing to realize, and hubris blocks such a perspective. We want to think that our time is the most advanced, favorable, and developed period in the history of humanity. Surrending this notion is tough. When I first learned about the classics, 2000 years seemed impossibly long. The lives and experiences of people two millinea ago _must_ be a disjoint set from those that I encounter, I thought. But alas, this is not the case.
 
 Technological advance, which I define to be the improvement of tools used by humans, has changed, perhaps, the scope of the ability of humans. It has not, however, much changed the environment (nodding, of course, to the global emission of so-called green-house gasses, and their effect on our fragile atmosphere of ozone, as a member of the set of notable exceptions). I propose that generally speaking, the enviroment of man has not changed much. In the scope of the 14 billion year old universe, on a 4 billion year old earth, the 200,000 year time scale of the homo sapien sapien should not be overestimated. Socrates is your contemporary. His thoughts have no less influence on elos because of the time at which he formulated them. Elos deals with truth in spite of time, not truth determined by time.
 
-#### 2. Elos is hard.
+#### 2. Elos is hard
 
 Elos has the motto _per aspera_. This phrase translates, from latin, to "through hardship." The role of the elos engineer is to weigh and consider various potential paths. To attempt to establish, in the face of ambiguity, certainty. To build some foundation on which to propel human action and thought. The elos engineer turns not from the arduous nature such a task entails. Nor does she or he fail to jump at the opportunity for joy which such an achievement might bring.
 
