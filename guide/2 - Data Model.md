@@ -5,11 +5,11 @@ The Metis Data Model (MDM) is a theoretical framework for defining a system of d
 
 #### Motivation
 
-We need to be able to persist and store structured data. If this is not something that intuitively sounds useful, think about your brain. Your brain persists information all the time, and some researchers would argue that it is in fact the brain's ability to do so which permits consciousness.
+We need to be able to persist and store structured data. This likely sounds intuitive: your brain persists information all the time.
 
-A system must maintain state, which represents the things it wants to remember or needs to rememeber in order to continue functioning. This can be everything from user information like email and password, to a history of orders and payments, to the current list of tasks on a todo list. We must be able to store this data in a structured way, and be able to retrieve it and reason about it.
+A system must maintain state, which represents the things it wants to remember or needs to rememeber in order to continue functioning. Some example of necessary state include user information such as emails and passwords, order and payment histories, and tasks arranged on a todo list. We must be able to store this data in a structured way, and be able to retrieve and reason about it.
 
-We talk here about the fundamentals of persisted data structures, which we call *records* and their cookie-cutter archetypes, which we call *models*. These models compose the ontology of our system, namely the structured data which we need in order to operate. Hopefully this provides some motivation to the novice for working through the slightly abstract document which follows.
+We talk here about the fundamentals of persisted data structures, which we call *records* and their cookie-cutter archetypes, which we call *models*. These models compose the ontology of our system, namely the structured data which we need in order to operate. We will move to define more abstract concepts now, but all in order to further this aim of modeling structured data.
 
 #### The Paradigm of Set Theory
 
