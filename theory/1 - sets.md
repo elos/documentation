@@ -32,7 +32,7 @@ Of course, there are in fact infinite primes. But here we claim only that there 
 
     (∃n ∈ ℕ)(n is prime)
 
-Again, simply in search of a more compact and clear expression. There is no disputing what we mean here. ∃ quantifies existence.
+We used the existence operator, `∃` to form a more compact and precise expression. It would be difficult to dispute what we intended to say with the latter statement. We are developing a notation for constructing _precise_ statements.
 
 ##### Duality
 
