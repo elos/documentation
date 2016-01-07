@@ -11,7 +11,7 @@ We first define the environment for the implementation of the formal rules gover
 
 #### Entry Point (Users)
 
-Gödel postulated that no formal system can be both consistent and complete. Such is the way with the EAC. We need an entry point. There must be a notion of a "God" object, an un-ownable entity. For these entities need to act on the resources (property) which the system maintains. Whenever you have an un-contained object, which itself is not governed by the access model, you also introduce the new formal rules of the universe (our environment). The user model can not be owned and all other models have an `owner` relation. They are known as "property." We say that property is *ownable*.
+Gödel proved that no formal system can be both consistent and complete. A similar dynamic appears in the EAC. We need an entry point. There must be a notion of a "God" object, an un-ownable entity. For these entities need to act on the resources (property) which the system maintains. Whenever you have an un-contained object, which itself is not governed by the access model, you also introduce the new formal rules of the universe (our environment). The user model can not be owned and all other models have an `owner` relation. They are known as "property." We say that property is *ownable*.
 
 ### Models
 
