@@ -20,7 +20,7 @@ In notation we may write:
 
     (∀n ∈ ℕ)(n^2 ≥ n)
 
-A perhaps more compact and convenient expression. We used the "for all" quantifier: ∀.
+We used the "for all" quantifier, `∀`, which allowed us to form a more compact and _precise_ expression.
 
 ##### Existential Quantifier
 
