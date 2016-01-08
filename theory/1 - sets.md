@@ -20,7 +20,7 @@ In notation we may write:
 
     (∀n ∈ ℕ)(n^2 ≥ n)
 
-We used the "for all" quantifier, `∀`, which allowed us to form a more compact and _precise_ expression. We also introduced a conventional notation `ℕ`, which designates the natural numbers. We used parentheses to indicate the grouping of the statements.
+We used the "for all" quantifier, `∀`, which allowed us to form a more compact and _precise_ expression. We also introduced a conventional notation `ℕ`, which designates the set of natural numbers. We used parentheses to indicate the grouping of the statements.
 
 ##### Existential Quantifier
 
@@ -32,28 +32,29 @@ Of course, there are in fact infinite primes. But here we claim only that there 
 
     (∃n ∈ ℕ)(n is prime)
 
-We used the existence operator, `∃` to form a more compact and precise expression. It would be difficult to dispute what we intended to say with the latter statement. We are developing a notation for constructing _precise_ statements.
+We used the existential quantifier, `∃` to form a more compact and precise expression. It would be difficult to dispute what we intended to say with the latter statement. We are developing a notation for constructing _precise_ statements.
 
 ##### Duality
 
 "∃," is sort of the second half of the universal quantifier, "∀." Consider these two statements
 
-    (∀n ∈ ℕ)(n^ + n + 41 is prime)
+    (∀n ∈ ℕ)(n^2 + n + 41 is prime)
 
     (∃n ∈ ℕ)(n^2 + n + 41 is not prime)
 
-Do you see that these two statements can not both be true? We will further explore this in propositional logic.
+Do you see that these two statements can not both be true? If there existed a natural number such that `n^2 + n + 41` is not prime, then the first statement would be false because `n^2 + n + 41` would not be prime for _all_ natural numbers The universal quantifier is commonly used for proving that something is true _universally_, whereas the existential quantifier is used for stating that a counterexample _exists_. 
 
 ##### Order
 
-Also consider the if you wanted to use both quantifiers in one statement. Consider these two statements
+We can use both quantifiers in a single statement. Consider these two statements, in which ℤ denotes the set of all integers:
 
- 1. (∀x ∈ ℤ)(∃y ∈ ℤ) y > x
- 2. (∃y ∈ ℤ)(∀x ∈ ℤ) y > x
+    (∀x ∈ ℤ)(∃y ∈ ℤ) y > x
+    
+    (∃y ∈ ℤ)(∀x ∈ ℤ) y > x
 
-Are these two the same statement? They are not! The first statement says that, given an integer, we can find a larger one. The second statment says something quite different: that there is alargest integer! The first statement is true, the second is not
+Are these two the identical? They are not! The first statement says that, given an integer, we can find a larger one. The second statment says something quite different: that there exists a largest integer! The first statement is true, the second is not.
 
-Order matters.
+We observe that the order of the quantifiers affects the nature of the statement.
 
 #### Equality
 
