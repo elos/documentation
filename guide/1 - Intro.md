@@ -1,9 +1,9 @@
 Introduction
 ------------
 
-This is the elos guide. I am writing this collection to clarify, elaborate and enumerate the various ideas which influence elos. A small external interest in elos is emerging, and I would like to establish some key things for those interested in learning more. Owing to that interest, and with the aim of helping the developers hoping to further the goal of elos, I will discuss and expound some of the core principles over which I have pored recently. The documents here are not bible. They do provide a reasonable foundation.
+This is the elos guide. I am writing this collection to clarify, elaborate and _hopefully_ enumerate the various ideas which influence elos. A small external interest in elos is emerging, and I would like to establish some key ideas and principles that have surfaced in discussion. The documents here are no bible, but rather form a simple foundation.
 
-If you feel any part of these documents should be challenged, do so. If you find gramatical or syntactic mistakes, do change them. If there need to be clarifications, raise the issue. To these three treaties, I would like to add that I hope to avoid  needlessly arguing over small details. Indeed elos is _about_ sweating the particulars before you build the system to which you forfeit these decisions. But three axioms, at least, should influence such dialogue.
+**A note to the contributor:** If you feel any part of these documents should be challenged, do so. If you find gramatical or syntactic mistakes, do change them. If there need to be clarifications, raise the issue. Indeed elos is _about_ sweating the particulars before you build the system to which you forfeit these decisions. There are three beliefs, at least, which should influence such dialogue.
 
 #### 1. Elos is not new
 
