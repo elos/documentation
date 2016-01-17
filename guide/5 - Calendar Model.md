@@ -37,7 +37,7 @@ A schedule is a composition of fixtures.
     Domain: { 'fixtures' }
     Traits: { ('name', Strings), ('start_time', Dates), ('end_time', Dates), ('rank', Integers), 
               ('label', Booleans), ('expires_at', Dates), ('exceptions', []Dates)
-    Relations: { ('owner', Users), ('note, Notes) }
+    Relations: { ('owner', Users), ('note', Notes), ('location', Locations) }
     
 A fixture is the building block of the elos calendar model. A fixture is a named block of time. A fixture can, however, be composed onto a schedule in order to be used in repetition. 
 
