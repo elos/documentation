@@ -33,7 +33,9 @@ All models have an id and the [bookkeeping traits](./2 - Data Model.md#effective
     Traits: { ('public', Strings), ('private', Strings), ('spec', Strings), ('name', Strings) }
     Relations: { ('owner', Users), ('sessions', Sessions) }
 
-Credentials are immutable. The public part of a credential is unique in the space of Credentials.
+Credentials are immutable. The public part of a credential is unique in the space of Credentials. The spec is the authorization method to use. Currently there is only one supported spec:
+
+    * `password` - the password is plaintext, compare that the private string matches the private challenge
 
 #### Session
 
