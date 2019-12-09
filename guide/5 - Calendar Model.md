@@ -14,10 +14,10 @@ These definitions are in the form of the [metis data model](./2 - Data Model.md)
     Kind: 'calendar'
     Space: Calendars
     Domain: { 'calendars' }
-    Traits: { ('name', Strings), ('weekday_schedules', Maps<String, ID>), 
+    Traits: { ('name', Strings), ('weekday_schedules', Maps<String, ID>),
               ('yearday_schedules', Maps<String, ID>) }
-    Relations: { ('owner', Users), ('base_schedule', Schedules), ('manifest_fixture', Fixtures) }
-    
+    Relations: { ('owner', Users), ('base_schedule', Schedules), ('manifest_fixture', Fixtures), ('fixtures', Fixtures) }
+
 A calendar contains the structures for completely defining a user's events and appointments indefinitely. It chooses fixtures from the base schedule, from the appropriate weekday schedule, and from the appropriate yearday schedule.
 
 ##### Schedule
@@ -27,7 +27,7 @@ A calendar contains the structures for completely defining a user's events and a
     Domain: { 'schedules' }
     Traits: { ('name', Strings), ('start_time', Dates), ('end_time', Dates) }
     Relations: { ('owner', Users), ('fixtures', Fixtures) }
-    
+
 A schedule is a composition of fixtures.
 
 ##### Fixture
@@ -35,11 +35,11 @@ A schedule is a composition of fixtures.
     Kind: 'fixture'
     Space: Fixtures
     Domain: { 'fixtures' }
-    Traits: { ('name', Strings), ('start_time', Dates), ('end_time', Dates), ('rank', Integers), 
+    Traits: { ('name', Strings), ('start_time', Dates), ('end_time', Dates), ('rank', Integers),
               ('label', Booleans), ('expires_at', Dates), ('exceptions', []Dates)
     Relations: { ('owner', Users), ('note', Notes), ('location', Locations) }
-    
-A fixture is the building block of the elos calendar model. A fixture is a named block of time. A fixture can, however, be composed onto a schedule in order to be used in repetition. 
+
+A fixture is the building block of the elos calendar model. A fixture is a named block of time. A fixture can, however, be composed onto a schedule in order to be used in repetition.
 
 On the one hand, a a fixture could appear on a schedule, and therefore manifest repeatedly on a elysian's calendar, then the fixture can be thought of more expressly as an archetype for events.
 
